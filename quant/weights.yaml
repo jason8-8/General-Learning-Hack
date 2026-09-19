@@ -1,0 +1,15 @@
+weights:
+  icp_fit: 0.22
+  problem_intensity: 0.16
+  price_fit: 0.16
+  readiness: 0.14
+  analog_success: 0.14
+  distribution_fit: 0.10
+  switching_ease: 0.05
+  competition_ease: 0.03
+calibration:
+  alpha: -3.80
+  beta: 4.40
+  p_floor: 0.008
+  p_ceil: 0.45
+notes: Published scorecard. Sum of weights must equal 1.00.

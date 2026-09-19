@@ -8,7 +8,15 @@ input -
 	- guideline provided depending on the weights of the algorithm
 
 algorithm - 
-- currently 8 features
+- **currently 8 features**
+1  icp_fit	
+2	problem_intensity	
+3	price_fit	
+4	readiness
+5	distribution_fit
+6	switching_ease
+7	analog_success
+8	competition_ease
 - **price_fit** (below are hard coded values) (not evidence based for the numbers, estimations)
     - ratio = price/WTP (willingness to pay)
         - if ratio <= 0.6, price fit = 1

@@ -1,0 +1,21 @@
+feature,weight,what it captures
+icp_fit,0.22,Does this segment look like the buyer the product was built for?
+problem_intensity,0.16,How acute is the job-to-be-done in this segment?
+price_fit,0.16,Price vs segment WTP ceiling. Collapses above 2x WTP.
+readiness,0.14,B2C: category usage. B2B: digital maturity (Deloitte vs family shop).
+analog_success,0.14,"What happened to similar shipped products, scaled to 0-1."
+distribution_fit,0.10,Does the product sell through the channel this segment already uses?
+switching_ease,0.05,1 minus implementation / habit friction.
+competition_ease,0.03,Penalty when the analog set is full of strong incumbents.
+Weight sum,1.00,Must equal 1.00
+param,value,meaning
+alpha,-3.8,Logistic intercept. More negative -> lower base rate.
+beta,4.4,Logistic slope on S. Higher -> scores separate more.
+P_floor,0.008,Never report a 0% — that pretends certainty.
+P_ceil,0.45,Never report >45% from this model. That is not what analogs support.
+category,prior_P
+consumer_app,0.12
+edtech,0.10
+b2b_saas,0.08
+voice_ai,0.07
+productivity,0.11

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810">
+  <rect width="1440" height="810" fill="#0B0F0C"/>
+  <text x="96" y="72" fill="#7A9586" font-family="ui-monospace, Space Mono, monospace" font-size="14" letter-spacing="2">BRAND LOCK · VOID / PHOSPHOR</text>
+  <text x="1344" y="72" fill="#7A9586" font-family="ui-monospace, Space Mono, monospace" font-size="14" letter-spacing="2" text-anchor="end">SPACE GROTESK + SPACE MONO</text>
+  <text x="96" y="160" fill="#F4FBF6" font-family="Space Grotesk, ui-sans-serif, sans-serif" font-size="56" font-weight="500">Clusters, not an average.</text>
+  <rect x="96" y="210" width="140" height="96" rx="10" fill="#0B0F0C" stroke="#1F3A2E"/>
+  <text x="112" y="236" fill="#C8D5CC" font-family="ui-monospace, Space Mono, monospace" font-size="12">Void</text>
+  <text x="112" y="286" fill="#F4FBF6" font-family="ui-monospace, Space Mono, monospace" font-size="12">#0B0F0C</text>
+  <rect x="252" y="210" width="140" height="96" rx="10" fill="#163226"/>
+  <text x="268" y="236" fill="#C8D5CC" font-family="ui-monospace, Space Mono, monospace" font-size="12">Dim</text>
+  <text x="268" y="286" fill="#F4FBF6" font-family="ui-monospace, Space Mono, monospace" font-size="12">#163226</text>
+  <rect x="408" y="210" width="140" height="96" rx="10" fill="#3DFF8A"/>
+  <text x="424" y="236" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">Phosphor</text>
+  <text x="424" y="286" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">#3DFF8A</text>
+  <rect x="564" y="210" width="140" height="96" rx="10" fill="#C8D5CC"/>
+  <text x="580" y="236" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">Fog</text>
+  <text x="580" y="286" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">#C8D5CC</text>
+  <rect x="720" y="210" width="140" height="96" rx="10" fill="#F4FBF6"/>
+  <text x="736" y="236" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">White</text>
+  <text x="736" y="286" fill="#0B0F0C" font-family="ui-monospace, Space Mono, monospace" font-size="12">#F4FBF6</text>
+  <rect x="876" y="210" width="140" height="96" rx="10" fill="#1F3A2E"/>
+  <text x="892" y="236" fill="#C8D5CC" font-family="ui-monospace, Space Mono, monospace" font-size="12">Rule</text>
+  <text x="892" y="286" fill="#F4FBF6" font-family="ui-monospace, Space Mono, monospace" font-size="12">#1F3A2E</text>
+  <text x="96" y="380" fill="#7A9586" font-family="ui-monospace, Space Mono, monospace" font-size="13" letter-spacing="2">SPACE GROTESK · TITLE / BODY</text>
+  <text x="96" y="420" fill="#C8D5CC" font-family="Space Grotesk, ui-sans-serif, sans-serif" font-size="22">Enter an idea, an audience, and a price.</text>
+  <text x="900" y="380" fill="#7A9586" font-family="ui-monospace, Space Mono, monospace" font-size="13" letter-spacing="2">SPACE MONO · NUMBER ONLY</text>
+  <text x="900" y="450" fill="#3DFF8A" font-family="ui-monospace, Space Mono, monospace" font-size="64">22.1%</text>
+</svg>

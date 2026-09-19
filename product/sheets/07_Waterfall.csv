@@ -1,0 +1,11 @@
+feature,weight,family_SME_z,consulting_z,family_contribution,consulting_contribution
+icp_fit,0.24,0.22,0.90,0.0528,0.2160
+problem_intensity,0.18,0.20,0.80,0.0360,0.1440
+price_fit,0.12,0.02,1.00,0.0024,0.1200
+readiness,0.12,0.28,0.84,0.0336,0.1008
+analog_success,0.08,0.5510,0.5483,0.0441,0.0439
+distribution_fit,0.12,0.45,1.00,0.0540,0.1200
+switching_ease,0.10,0.35,0.35,0.0350,0.0350
+competition_ease,0.04,0.76,0.76,0.0304,0.0304
+S,1.00,,,0.2883,0.8101
+P_adopt,Corporate voice agent,,,0.0266,0.1539

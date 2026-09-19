@@ -1,8 +1,8 @@
 > **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [BUILD.md](BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
-# Synthetic Market Simulation
+# Hindsight
 
-Working name: **general-learning-hack**
+Chosen name: **Hindsight**. Replaces the working name **general-learning-hack**. See the [naming decision](../research/naming.md).
 
 This project is a laptop-scale demo that turns one product idea into a **distribution of simulated buyer reactions**, not a single averaged opinion.
 

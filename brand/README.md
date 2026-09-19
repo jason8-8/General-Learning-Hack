@@ -1,5 +1,7 @@
 # Brand
 
+Product name: **Hindsight**. Use this spelling and capitalisation in slides and UI. See the [naming decision](../research/naming.md).
+
 Look only. Slides and UI read this. Judges do not.
 
 Lock: black / phosphor + Space Grotesk / Space Mono.

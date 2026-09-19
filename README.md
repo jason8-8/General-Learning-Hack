@@ -2,9 +2,9 @@
 
 > **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
-# General Learning Hack
+# Hindsight
 
-Public repo for the GL Hacks submission.
+Public repo for Hindsight, the GL Hacks submission. [Naming decision](research/naming.md).
 
 **Deadline:** Sunday 20 September 2026, 10:00 HKT. No extensions.
 

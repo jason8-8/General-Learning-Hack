@@ -1,7 +1,7 @@
 # Demo video: learn from the future
 
 Updated: 20 September 2026. Target: 120 seconds.
-Status: target-state script and storyboard for refinement, not verified functionality. Implementation paused. [Build amendment](../product/LEARNING-LOOP-AMENDMENT.md).
+Status: target-state script and storyboard for refinement, not verified functionality. Implementation has resumed in the build task; see [production notes](PRODUCTION-NOTES.md) for the latest reported capability boundary. [Build amendment](../product/LEARNING-LOOP-AMENDMENT.md).
 
 The opening is approved verbatim. The middle reflects the approved learning-loop direction. General Learning assesses the travel product; it is not a working travel assistant. This replaces the earlier voice-note/internship demo.
 
@@ -68,6 +68,8 @@ Shape the present.
 The 1,000-respondent target is deliberately absent from spoken claims until a measured run exists. Show the actual completed count on screen. The quantitative layer is not a calibrated commercial-success probability.
 
 ## Scenes and transitions
+
+Opening update: use the four-second digital typing title followed by the ten-second human-evolution clip. The table below is the earlier full storyboard; reconcile subsequent timings to narration. Latest assets and edit decisions are in [production notes](PRODUCTION-NOTES.md).
 
 | Time | Scene | Transition / purpose |
 | --- | --- | --- |

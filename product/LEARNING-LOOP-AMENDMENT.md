@@ -1,11 +1,11 @@
 # Audience learning loop: build-plan amendment
 
-> Build update, 20 September 2026: Jason has resumed implementation. The local six-person MiroFish interview demo and versioned feedback rerun now work, with bundled real-run replays. Sources/profiles remain curated, example feedback is illustrative, and separate validation is pending. Earlier references to a pause below describe the planning snapshot. See [current build](prototype/RUN-MIROFISH.md).
+> Integrated build update: the root demo is now the illustrative Hindsight travel-market presentation; real MiroFish pilots remain at `/lab`. See [current walkthrough](prototype/SHOWCASE-DEMO.md) and [market research](../research/travel-market-positioning.md). Older scale and pause references below are historical.
 
 Updated: 20 September 2026.
-Status: planning direction approved by Jason. Implementation remains paused; no new API spending authorised.
+Status: planning direction approved by Jason. This document records the target learning loop, not implementation completion. Implementation later resumed; see [production notes](../pitch/PRODUCTION-NOTES.md) for the latest reported pilot results. This plan does not authorise additional API spending.
 
-This approved amendment has been reconciled with this worktree's BUILD.md, research decisions and demo storyboard. It supersedes earlier fixed three-audience counts and the mandatory pricing-format comparison. Implementation remains unchanged and paused. The main checkout's BUILD.md was not overwritten.
+This supersedes conflicting example, audience-count and demo-flow statements in this checkout's BUILD.md. That file still contains voice notes and an earlier countdown; those are stale. The build task owns the newer travel plan in its own worktree and must reconcile this amendment there. No implementation or worktree synchronisation is claimed.
 
 ## Experience
 
@@ -42,7 +42,7 @@ Preserve Q10 Option A: agents propose structured scenarios; deterministic Python
 
 Separate source-backed observations, synthetic responses and assumption-based calculations. Audience updates must not silently rewrite legacy scoring weights. Explain each changed input and its provenance.
 
-MiroFish travel adaptation and a full run remain unverified. Its social-simulation origin does not provide validated purchasing predictions or an automatic calibration loop. Identify the engine that actually ran.
+At the time of this amendment, MiroFish travel adaptation and a full run were unverified. Subsequent local pilot progress is recorded in the production notes; it does not establish predictive validity. Its social-simulation origin does not provide validated purchasing predictions or an automatic calibration loop. Identify the engine that actually ran.
 
 ## Demo and acceptance
 

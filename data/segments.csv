@@ -1,6 +1,0 @@
-segment_id,name,buyer_type,geo,universe,wtp_ceiling_usd,category_usage,digital_maturity,buys_via,ownership,notes
-HK_STUDENT_16_24,HK students 16–24,b2c,Hong Kong,380000,8.0,0.72,0.88,app_store,n/a,Census-scale youth + high smartphone / notes-app usage
-HK_YOUNG_PRO_25_34,HK young professionals 25–34,b2c,Hong Kong,920000,15.0,0.55,0.8,app_store,n/a,Time-poor; pays for productivity if it saves commute time
-HK_FAMILY_SME,HK family-owned SMEs,b2b,Hong Kong,280000,40.0,0.18,0.28,owner_direct,family,Owner-operator budget; low IT headcount; high switching friction
-HK_MIDMARKET,HK mid-market firms 50–499 staff,b2b,Hong Kong,18000,250.0,0.42,0.55,sales_led,private,Has an ops/IT owner; buys SaaS if ROI is obvious in 1 quarter
-APAC_CONSULTING,APAC consulting / professional services,b2b,APAC,4200,800.0,0.7,0.84,sales_led,listed_or_pe,"Deloitte-like: digital transformation mandate, budget, procurement"

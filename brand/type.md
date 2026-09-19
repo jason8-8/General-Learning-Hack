@@ -1,13 +1,18 @@
 # Type
 
-Slides and UI: **Calibri** or the system sans if Calibri is missing.
+**Space Grotesk** for titles and body.
+**Space Mono** for `P(adopt)`, scores, IDs, citations.
 
-| Role | Size |
+If missing: system sans + Consolas (Win) or Menlo (Mac).
+
+| Role | Face | Size |
 | --- | --- |
-| Slide title | 32–40 |
-| Slide body | 18–22 |
-| UI heading | 20 |
-| UI body | 14 |
-| Caption / source | 12 |
+| Slide title | Space Grotesk Medium | 32–40 |
+| Slide body | Space Grotesk | 18–22 |
+| UI heading | Space Grotesk Medium | 20 |
+| UI body | Space Grotesk | 14 |
+| Caption / source | Space Grotesk | 12 |
+| Number / code | Space Mono | 12–18 |
 
-One typeface. No decorative fonts on camera.
+Two faces only. No decorative fonts on camera.
+Do not set a whole slide in Mono.

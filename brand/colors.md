@@ -1,10 +1,14 @@
 # Colors
 
+Black field. One green. No teal, no navy.
+
 | Token | Hex | Use |
-| --- | --- | --- |
-| Navy | `#1B2A4A` | Headings, slide chrome |
-| Teal | `#0F6E6B` | Action, emphasis |
-| Pale | `#F4F1EA` | Background |
-| Ink | `#1A1A1A` | Body |
-| White | `#FFFFFF` | Type on navy or teal |
-| Rule | `#D9D1C3` | Borders |
+| --- | --- |
+| Void | `#0B0F0C` | Slide chrome, UI canvas |
+| Phosphor | `#3DFF8A` | Action, `P(adopt)`, one emphasis |
+| Dim | `#163226` | Cards, header row 2, hover |
+| Fog | `#C8D5CC` | Body on void |
+| White | `#F4FBF6` | Titles on void |
+| Rule | `#1F3A2E` | Borders |
+
+Phosphor is the only saturated color on a frame.

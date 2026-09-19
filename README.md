@@ -66,7 +66,7 @@ brand/         how it looks
 | [`product/`](product/README.md) | Prototype + scorecard |
 | [`research/decisions.md`](research/decisions.md) | Locks that survived argument |
 | [`discussion/`](discussion/README.md) | Meeting threads |
-| [`brand/`](brand/README.md) | Navy / teal tokens for slides and UI |
+| [`brand/`](brand/README.md) | Black / phosphor + Space Grotesk / Space Mono |
 
 ## What to show
 

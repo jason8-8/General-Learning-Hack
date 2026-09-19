@@ -13,19 +13,27 @@ ROOT = Path(__file__).resolve().parents[1]
 SHEETS = ROOT / "sheets"
 OUT = ROOT / "GL_Hack_Adoption_Quant_Model.xlsx"
 
-NAVY = "1B2A4A"
-TEAL = "0F6E6B"
-PALE = "F4F1EA"
-WHITE = "FFFFFF"
+VOID = "0B0F0C"
+PHOSPHOR = "3DFF8A"
+DIM = "163226"
+PALE = "E8F2EC"
+WHITE = "F4FBF6"
 thin = Border(
-    left=Side(style="thin", color="D9D1C3"),
-    right=Side(style="thin", color="D9D1C3"),
-    top=Side(style="thin", color="D9D1C3"),
-    bottom=Side(style="thin", color="D9D1C3"),
+    left=Side(style="thin", color="1F3A2E"),
+    right=Side(style="thin", color="1F3A2E"),
+    top=Side(style="thin", color="1F3A2E"),
+    bottom=Side(style="thin", color="1F3A2E"),
 )
 ORDER = [
-    "00_Cover", "01_Method", "02_Assumptions", "03_Product", "04_Segments",
-    "05_Analogs", "06_Results", "07_Waterfall", "08_Sensitivity",
+    "00_Cover",
+    "01_Method",
+    "02_Assumptions",
+    "03_Product",
+    "04_Segments",
+    "05_Analogs",
+    "06_Results",
+    "07_Waterfall",
+    "08_Sensitivity",
 ]
 
 
@@ -44,15 +52,15 @@ def write_sheet(wb: Workbook, name: str, first: bool) -> None:
     for r_i, row in enumerate(rows, 1):
         for c_i, val in enumerate(row, 1):
             cell = ws.cell(r_i, c_i, val)
-            cell.font = Font(name="Calibri", size=11)
+            cell.font = Font(name="Space Grotesk", size=11)
             cell.alignment = Alignment(wrap_text=True, vertical="center")
             cell.border = thin
             if r_i == 1:
-                cell.font = Font(name="Calibri", size=14, bold=True, color=WHITE)
-                cell.fill = PatternFill("solid", fgColor=NAVY)
+                cell.font = Font(name="Space Grotesk", size=14, bold=True, color=WHITE)
+                cell.fill = PatternFill("solid", fgColor=VOID)
             elif r_i == 2:
-                cell.fill = PatternFill("solid", fgColor=TEAL)
-                cell.font = Font(name="Calibri", size=11, color=WHITE)
+                cell.fill = PatternFill("solid", fgColor=DIM)
+                cell.font = Font(name="Space Mono", size=11, color=PHOSPHOR)
             elif r_i % 2 == 0:
                 cell.fill = PatternFill("solid", fgColor=PALE)
         ws.row_dimensions[r_i].height = 18 if r_i > 2 else 22

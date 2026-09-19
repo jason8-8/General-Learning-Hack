@@ -1,0 +1,11 @@
+feature,weight,family_SME_z,consulting_z,family_contribution,consulting_contribution
+icp_fit,0.22,0.22,0.90,0.0484,0.1980
+problem_intensity,0.16,0.20,0.80,0.0320,0.1280
+price_fit,0.16,0.02,1.00,0.0032,0.1600
+readiness,0.14,0.28,0.84,0.0392,0.1176
+analog_success,0.14,0.5510,0.5483,0.0771,0.0768
+distribution_fit,0.10,0.45,1.00,0.0450,0.1000
+switching_ease,0.05,0.35,0.35,0.0175,0.0175
+competition_ease,0.03,0.76,0.76,0.0228,0.0228
+S,1.00,,,0.2852,0.8207
+P_adopt,,,,0.0232,0.1539

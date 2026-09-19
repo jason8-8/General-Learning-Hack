@@ -1,0 +1,24 @@
+GL Hack — Deterministic adoption model
+"P(adopt | segment, product)  ·  same inputs → same output"
+This workbook is the quant model. It does not interview synthetic users. It scores a product against a frozen segment universe and an analog table, then maps the score to an adoption probability.
+Sheets
+Sheet,What to look at
+01_Method,"What is being predicted, the equation, and what is out of scope."
+02_Assumptions,"Weights, calibration, floors/ceilings. Blue text = inputs you can edit."
+03_Product,The two demo ideas from the meeting. Change price and re-read 06_Results.
+04_Segments,Audience universe. This is the don't-sample-everyone layer.
+05_Analogs,Similar shipped products with proxy conversion rates.
+06_Results,"Feature scores, P(adopt), expected adopters, confidence."
+07_Waterfall,How the score is built for the highlighted pair.
+08_Sensitivity,"Tornado on price, WTP, and analog coverage."
+Equation
+"S = sum w_i * z_i; P_raw = 1/(1+exp(-(a+bS))); P = clipped blend of analog rate and P_raw"
+How to use in the hack
+1. Keep 02_Assumptions weights summing to 1.00 — that file is the model artifact.
+2. Edit 03_Product price or channel, then rebuild.
+3. Demo student voice-notes vs corporate voice agent. Watch ICP and price_fit flip the ranking.
+4. Tell the judge: LLM may fill the product schema; it does not produce P(adopt).
+5. Label every rate as a proxy. Confidence falls when analog coverage is thin.
+Color key
+Blue text + yellow cell,Editable input
+Black text,Calculated

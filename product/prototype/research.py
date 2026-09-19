@@ -58,9 +58,9 @@ def fetch_source(entry):
 
 def classify(brief):
     text = (brief['description'] + ' ' + brief['benefit']).lower()
-    if re.search(r'voice|note|transcri|journal|knowledge|read|bookmark', text):
+    if re.search(r'\b(?:voice|notes?|note-taking|notetaking|transcri\w*|journal\w*|knowledge|reading|bookmarks?)\b', text):
         return 'notes'
-    if re.search(r'task|habit|plan|focus|productiv|calendar|todo|to-do|routine', text):
+    if re.search(r'\b(?:tasks?|habits?|plans?|planning|planners?|focus\w*|productiv\w*|calendars?|todo|to-do|routines?)\b', text):
         return 'tasks'
     return None
 

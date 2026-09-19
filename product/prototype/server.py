@@ -14,13 +14,13 @@ from urllib.parse import urlsplit
 
 from contracts import audiences_record, brief_record, clean_text, fingerprint
 from quant_adapter import LABELS, WEIGHTS, assess
-from research import research
+from research import research, classify
 from assessment import build_report, compare
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / 'static'
 RUNS = ROOT / '.runs'
-STATE = {'packs': {}, 'reports': {}}
+STATE = {'packs': {}, 'reports': {}, 'comparisons': {}}
 LOCK = threading.Lock()
 TOKEN = secrets.token_urlsafe(32)
 
@@ -43,6 +43,14 @@ def dispatch(path, data):
     if path == '/api/save':
         report = load('reports', data.get('report_id'))
         saved = deepcopy(report)
+        comparison_id = data.get('comparison_id')
+        if comparison_id:
+            comparison = load('comparisons', comparison_id)
+            if comparison['baseline_id'] != report['id']:
+                raise ValueError('Comparison belongs to a different baseline')
+            saved['comparison'] = comparison
+        else:
+            saved.pop('comparison', None)
         saved['saved_at'] = datetime.now(timezone.utc).isoformat()
         saved['simulation']['saved_run'] = True
         RUNS.mkdir(exist_ok=True)
@@ -62,6 +70,15 @@ def dispatch(path, data):
         report['evidence']['cached'] = True
         report['evidence']['mode'] = 'saved evidence replay; no new retrieval'
         report['simulation']['saved_run'] = True
+        comparison = report.get('comparison')
+        if comparison:
+            revised = comparison['revised']
+            revised['evidence']['cached'] = True
+            revised['evidence']['mode'] = 'saved comparison replay; no new retrieval'
+            revised['simulation']['saved_run'] = True
+            revised['saved_at'] = report['saved_at']
+            store('reports', revised['id'], revised)
+            store('comparisons', revised['id'], comparison)
         store('reports', report['id'], report)
         return report
     if path == '/api/draft':
@@ -77,7 +94,20 @@ def dispatch(path, data):
         offline = data.get('offline', False)
         if not isinstance(offline, bool):
             raise ValueError('Offline must be true or false')
-        pack = research(brief, offline=offline)
+        if classify(brief) is None:
+            raise ValueError('This prototype currently supports note-taking and personal-productivity ideas only. Use Start guided demo to see a complete example. Your brief has been kept for editing.')
+        demo = json.loads((ROOT / 'demo.json').read_text())
+        if data.get('demo') is True and brief['version'] == brief_record(demo['brief'])['version']:
+            pack = research(brief, offline=True)
+            pack['sources'] = demo['sources']
+            pack['mode'] = 'guided demo: recorded vendor sources; no live retrieval'
+            pack['cached'] = True
+            pack['demo'] = True
+            pack['version'] = fingerprint({'brief': brief['version'], 'sources': pack['sources'], 'demo': True})
+            for worker in pack['workers']:
+                worker['failures'] = []
+        else:
+            pack = research(brief, offline=offline)
         pack['brief'] = brief
         store('packs', pack['version'], pack)
         return pack
@@ -97,6 +127,7 @@ def dispatch(path, data):
         reason = clean_text(data.get('reason', ''), 'reason', bool(factor), 1000)
         result = compare(baseline, proposition, factor, data.get('value'), reason)
         store('reports', result['revised']['id'], result['revised'])
+        store('comparisons', result['revised']['id'], result)
         return result
     raise ValueError('Unknown endpoint')
 
@@ -119,6 +150,8 @@ class Handler(BaseHTTPRequestHandler):
         if not self.allowed_host():
             return self.send(403, {'error': 'Localhost access only'})
         path = urlsplit(self.path).path
+        if path == '/api/demo':
+            return self.send(200, json.loads((ROOT / 'demo.json').read_text()))
         if path == '/api/saved':
             runs = []
             if RUNS.exists():

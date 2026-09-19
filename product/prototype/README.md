@@ -6,6 +6,8 @@ Latest decisions take precedence over `product/BUILD.md`: note-taking and person
 
 ## Run
 
+For fresh-checkout, Windows/macOS/Linux instructions and the guided walkthrough, see [Run the demo](RUN-DEMO.md).
+
 From the repository root (Python 3.9+; no pip install needed):
 
 ```bash
@@ -20,6 +22,16 @@ http://127.0.0.1:8765
 
 The server binds only to loopback. It serves its own assets and the existing brand logo; fonts fall back to the system stack as specified by the brand guide. No external frontend dependencies, database, auth service or billing.
 
+## Guided demo
+
+Choose **Start guided demo** on the start screen. It opens a prewritten voice-notes brief. Confirm it to load the recorded vendor excerpts in `demo.json`, with their original retrieval dates. No network or model calls are made for the unchanged demo brief.
+
+Review the audiences. Open **Add explicit quant inputs**, then choose **Use illustrative demo assumptions**. This explicitly fills all eight factors with 0.50 and labels each as an invented teaching input. Confirm the audiences: the real deterministic engine returns 0.500, while the outlook remains insufficient evidence and coverage stays 0/8.
+
+Open **Compare**, choose **Load the demo comparison**, then run it. The sample changes switching ease to 0.90, producing 0.540 and a +0.040 difference. This demonstrates sensitivity, not improved success odds. Save the comparison to replay both runs later.
+
+Changing the example brief switches to normal catalogue research. Sports coaching and other unsupported domains now show an explicit scope message instead of a generic empty report. This is still a demonstration of the workflow and arithmetic, not a live AI research system.
+
 ## What works
 
 1. Describe an idea. The manual drafting fallback preserves the original description. Edit the problem, core benefit, geography, alternatives and channel, then confirm.
@@ -29,13 +41,13 @@ The server binds only to loopback. It serves its own assets and the existing bra
 5. Optionally supply quant inputs with reasons. Missing values stay null; the aggregate is suppressed until all eight inputs exist. User-entered values are labelled assumptions.
 6. Run six independent **authored rule-based stress tests** over the confirmed audiences. Each invokes the deterministic quant adapter. Actual LLM-agent count is zero. No synthetic votes or demand estimates.
 7. Inspect the report, assumptions, unvalidated rubric and next tests. Change the feature proposition and optionally one non-price factor. Baseline is immutable; evidence is visibly reused. Price comparison is rejected by both UI and server.
-8. Save a baseline locally and replay it with cached-evidence and saved-run labels. Original retrieval dates and reactions are retained. Export JSON includes baseline plus the current comparison.
+8. Save a baseline locally and replay it with cached-evidence and saved-run labels. Original retrieval dates and reactions are retained. Both local save and JSON export retain the baseline plus the current comparison.
 
-Local saves are under `product/prototype/.runs/`, excluded by the nested `.gitignore`. They contain the founder's brief and evidence, but no credentials. In-memory reports are capped at 100; the start page lists the 20 most recent saved runs. Export before ending a session if you want to retain a comparison: local save currently saves only its baseline.
+Local saves are under `product/prototype/.runs/`, excluded by the nested `.gitignore`. They contain the founder's brief and evidence, but no credentials. In-memory reports are capped at 100; the start page lists the 20 most recent saved runs. Use Save comparison after making a change to retain both runs across server restarts.
 
 ## Evidence and numerical boundaries
 
-Catalogue selection is a keyword heuristic: note-taking uses Voicenotes and Obsidian; task/planning/habit ideas use Todoist and TickTick. Unknown categories retrieve nothing. Vendor pages only establish what a vendor publishes, not actual capability, preferences, growth, willingness to pay or geographic demand. No source is fabricated or borrowed from a different cached idea.
+Catalogue selection is a keyword heuristic: note-taking uses Voicenotes and Obsidian; task/planning/habit ideas use Todoist and TickTick. Unknown categories are rejected before research with a clear scope message; your brief remains editable. Vendor pages only establish what a vendor publishes, not actual capability, preferences, growth, willingness to pay or geographic demand. No source is fabricated or borrowed from a different cached idea.
 
 Each evidence item has ID, URL, title, retrieval/publication dates, exact short observation, narrow supported claim, limitation, provenance, content hash and worker roles. A page shared by three workers remains one source.
 
@@ -61,7 +73,7 @@ No historical outcome dataset exists. Commercial viability, demand trend, compet
 
 **Not implemented:** LLM brief extraction, open-web search, LLM research synthesis, evidence-derived factor mapping, real MiroFish or LLM agents, measured paid-model usage, 30-agent cohort, automatic customer discovery, automatic launch verdict generation from research. Broad report prose and stress-test prompts are authored templates. Do not present them as live AI analysis.
 
-Provider/search credentials, an explicit external API budget and teammate code ownership remain unresolved. Codex weekly usage is separate from external app-provider charges. No paid calls were authorised or made. All new work is confined to this directory; the team scorer, brand and planning files are unchanged. The app has not been deployed; running it still requires the local server above.
+Provider/search credentials, an explicit external API budget and teammate code ownership remain unresolved. Codex weekly usage is separate from external app-provider charges. No paid calls were authorised or made. Implementation changes are confined to this directory, with a root README link for teammates; the team scorer, brand and planning files are unchanged. The app has not been deployed; running it still requires the local server above.
 
 ## MiroFish feasibility check
 

@@ -1,7 +1,7 @@
 'use strict';
 const $ = id => document.getElementById(id);
 const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const state = {token: '', factors: [], pack: null, report: null, comparison: null};
+const state = {token: '', factors: [], pack: null, report: null, comparison: null, demo: false};
 const examples = {
   notes: 'A voice-note app that turns spoken thoughts into searchable notes and action items, so useful ideas do not disappear before I act on them.',
   tasks: 'A personal planner that rearranges unfinished tasks around changing energy levels and available time, so people can recover when their day goes off plan.'
@@ -13,6 +13,7 @@ function show(step) {
     $('nav-' + name).removeAttribute('aria-current');
   }
   $('nav-' + step).setAttribute('aria-current', 'step');
+  updateGuide(step);
   notice(); window.scrollTo({top: 0, behavior: 'instant'});
   const heading = $(step).querySelector('h1'); heading.tabIndex = -1; heading.focus({preventScroll: true});
 }
@@ -30,14 +31,45 @@ async function busy(form, message, action) {
   finally { buttons.forEach((b, i) => b.disabled = disabled[i]); form.removeAttribute('aria-busy'); }
 }
 function evidenceHTML(pack) {
-  return `<p class="runline">${escapeHTML(pack.mode)} · ${pack.sources.length} unique sources · ${pack.elapsed_seconds}s · $0 API spend${pack.cached ? ' · baseline evidence reused' : ''}</p>` +
+  return `<p class="runline">${escapeHTML(pack.mode)} · ${pack.sources.length} unique sources · ${pack.elapsed_seconds}s · $0 API spend${pack.cached ? ' · recorded evidence' : ''}</p>` +
     pack.sources.map(s => `<article class="source" data-source="${escapeHTML(s.id)}"><h3><a href="${escapeHTML(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(s.title)} ↗</a></h3><div class="meta mono">${escapeHTML(s.id)} · ${escapeHTML(s.provenance)} · ${escapeHTML(s.roles.join(', '))}</div><blockquote>${escapeHTML(s.observation)}</blockquote><p>${escapeHTML(s.supported_claim)}</p><p class="meta">${escapeHTML(s.limitation)}<br>Retrieved ${escapeHTML(s.retrieved_at)} · Publication date: ${escapeHTML(s.publication_date || 'unknown')}</p></article>`).join('') +
     (!pack.sources.length ? '<p class="empty">No evidence retrieved. All missing inputs remain unscored.</p>' : '') +
     '<h2>Research gaps</h2>' + pack.workers.map(w => `<p><strong>${escapeHTML(w.role)}</strong> · ${escapeHTML(w.gap)}</p>${w.failures.map(f => `<p class="meta">${escapeHTML(f.url)} · ${escapeHTML(f.reason)}</p>`).join('')}`).join('');
 }
+function updateGuide(step) {
+  $('demo-guide').hidden = !state.demo || step === 'intake';
+  $('offline').parentElement.hidden = state.demo;
+  $('brief-mode-note').textContent = state.demo ? 'Prewritten example. Review and confirm it before continuing.' : 'No LLM connected. Your description is preserved below. Add the problem and refine the benefit.';
+  $('research-mode-note').textContent = state.demo ? 'The unchanged example uses recorded Voicenotes and Obsidian excerpts. It does not make live research or model calls.' : 'Live mode checks a small catalogue of official product pages. Open-web search and independent customer research are not connected.';
+  const steps = {
+    brief: ['1 / 4 · Confirm the example', 'This is a prewritten demonstration brief, not LLM output. Check the problem and benefit, then confirm to inspect recorded vendor sources. Editing it switches research to the normal live catalogue.'],
+    audiences: ['2 / 4 · Inspect the evidence and inputs', 'Open the source panel to see real recorded excerpts. Review the three audience hypotheses. To demonstrate the arithmetic, open Add explicit quant inputs and choose Use illustrative demo assumptions. Then confirm the audiences.'],
+    report: ['3 / 4 · Understand the result', 'With all eight illustrative inputs at 0.50, the weighted index is 0.500. Evidence coverage remains 0/8: sample assumptions are not evidence. Inspect the sources and stress tests, then open Compare.']
+  };
+  if (steps[step]) { $('demo-step').textContent = steps[step][0]; $('demo-explanation').textContent = steps[step][1]; }
+}
+$('start-demo').onclick = () => busy($('intake'), 'Loading the guided example…', async () => {
+  const response = await fetch('/api/demo');
+  if (!response.ok) throw new Error('Could not load the demo. Restart the updated server and reload.');
+  const demo = await response.json(); state.demo = true;
+  $('description').value = demo.brief.description;
+  for (const key of ['description','problem','benefit','geography','alternatives','channel']) $('brief-' + key).value = demo.brief[key];
+  $('offline').checked = false; show('brief');
+});
+$('demo-assumptions').onclick = () => {
+  for (const f of state.factors) { $('factor-' + f.key).value = '0.50'; $('reason-' + f.key).value = 'Illustrative demo assumption only; not supported by product evidence.'; }
+  notice('All eight factors are now 0.50 for demonstration only. Review them before confirming.');
+};
+$('demo-scenario').onclick = () => {
+  $('scenario-benefit').value = 'Turn voice notes into searchable actions, with one-step import from your existing notes.';
+  $('scenario-factor').value = 'switching_ease'; $('scenario-factor').onchange();
+  $('scenario-value').value = '0.90';
+  $('scenario-reason').value = 'Illustrative assumption: one-step import makes switching easier. This has not been tested with users.';
+};
 function renderAudiences() {
   const p = state.pack;
-  $('research-summary').innerHTML = `<p class="runline">${p.sources.length} unique sources · Three concurrent source-review workers · ${p.elapsed_seconds}s<br>Suggestions below are rule-based hypotheses. No customer evidence has been inferred from vendor pages.</p>`;
+  $('demo-assumptions').hidden = !state.demo; $('demo-assumption-note').hidden = !state.demo;
+  $('research-summary').innerHTML = `<p class="runline">${p.sources.length} unique sources · ${p.demo ? 'Recorded demo pack; no new research' : 'Three concurrent source-review workers'} · ${p.elapsed_seconds}s<br>Suggestions below are rule-based hypotheses. No customer evidence has been inferred from vendor pages.</p>`;
   $('evidence-before').innerHTML = evidenceHTML(p);
   $('audience-fields').innerHTML = p.audiences.map((a, i) => `<div class="audience-edit"><div class="columns"><div><label for="audience-${i}-name">Need-based group ${i + 1}</label><input id="audience-${i}-name" maxlength="800" value="${escapeHTML(a.name)}"></div><div><label for="audience-${i}-need">What they need</label><textarea id="audience-${i}-need" rows="2" maxlength="800">${escapeHTML(a.need)}</textarea></div></div></div>`).join('');
   $('factor-fields').innerHTML = state.factors.map(f => `<div class="factor-entry"><span class="factor-name">${escapeHTML(f.label)}<br><span class="meta mono">weight ${f.weight.toFixed(2)}</span></span><div><label for="factor-${f.key}">Value 0–1</label><input id="factor-${f.key}" type="number" min="0" max="1" step="0.01" aria-label="${escapeHTML(f.label)} value"></div><div><label for="reason-${f.key}">Assumption and reason</label><input id="reason-${f.key}" maxlength="1000" placeholder="Leave blank when unknown" aria-label="${escapeHTML(f.label)} reason"></div></div>`).join('');
@@ -45,6 +77,7 @@ function renderAudiences() {
 function citations(ids) {return ids.length ? `<p class="meta mono">Sources: ${ids.map(escapeHTML).join(', ')}</p>` : '';}
 function renderReport() {
   const r = state.report, q = r.quant;
+  $('demo-scenario').hidden = !state.demo;
   $('report-proposition').textContent = r.brief.benefit;
   $('save-run').textContent = r.saved_at ? 'Saved locally' : 'Save run';
   $('report-overview').innerHTML = `<div class="overview"><div class="metric"><span class="meta">Commercial outlook</span><strong>${escapeHTML(q.outlook[0].toUpperCase() + q.outlook.slice(1))}</strong><span class="meta">Heuristic assessment, unvalidated</span></div><div class="metric"><span class="meta">Evidence coverage</span><strong class="mono">${q.evidence_backed} / ${q.total}</strong><span class="meta">Factors supported by cited evidence</span></div><div class="metric"><span class="meta">Model index</span><strong class="mono">${q.index === null ? 'Unscored' : q.index.toFixed(3)}</strong><span class="meta">${q.supplied} / ${q.total} inputs supplied${q.index !== null ? ' · not a probability' : ''}</span></div></div>`;
@@ -59,6 +92,10 @@ function renderReport() {
   $('comparison').innerHTML = ''; selectTab('outlook');
 }
 function selectTab(name) {
+  if (state.demo && name === 'scenario') {
+    $('demo-step').textContent = '4 / 4 · Change one assumption';
+    $('demo-explanation').textContent = 'Load the demo comparison, review it, then compare. Moving switching ease from 0.50 to 0.90 adds 0.040 because its weight is 0.10. This demonstrates model sensitivity, not improved success odds.';
+  } else if (state.demo) updateGuide('report');
   document.querySelectorAll('[data-tab]').forEach(b => {const active = b.dataset.tab === name; b.setAttribute('aria-selected', active); b.tabIndex = active ? 0 : -1;});
   for (const tab of ['outlook','evidence','reactions','scenario']) $('panel-' + tab).hidden = name !== tab;
 }
@@ -66,18 +103,20 @@ $('example-notes').onclick = () => {$('description').value = examples.notes; $('
 $('example-tasks').onclick = () => {$('description').value = examples.tasks; $('description').focus();};
 $('back-intake').onclick = () => show('intake');
 $('back-brief').onclick = () => show('brief');
-$('new-assessment').onclick = () => {state.comparison = null; refreshSaved(); show('intake');};
+$('new-assessment').onclick = () => {state.comparison = null; state.demo = false; refreshSaved().catch(() => notice('Saved runs could not be loaded. Reload to retry.', true)); show('intake');};
 $('intake-form').onsubmit = event => {
   event.preventDefault(); busy(event.target, 'Preparing your editable brief…', async () => {
+    state.demo = false;
     const draft = await api('draft', {description: $('description').value});
     for (const key of ['description','problem','benefit','geography','alternatives','channel']) $('brief-' + key).value = draft[key];
     show('brief');
   });
 };
 $('brief-form').onsubmit = event => {
-  event.preventDefault(); busy(event.target, $('offline').checked ? 'Preparing an offline assessment…' : 'Inspecting official product pages with three concurrent source-review workers…', async () => {
+  event.preventDefault(); busy(event.target, state.demo ? 'Loading the recorded demo sources…' : $('offline').checked ? 'Preparing an offline assessment…' : 'Inspecting official product pages with three concurrent source-review workers…', async () => {
     const brief = Object.fromEntries(['description','problem','benefit','geography','alternatives','channel'].map(key => [key, $('brief-' + key).value]));
-    state.pack = await api('research', {brief, confirmed:true, offline:$('offline').checked});
+    state.pack = await api('research', {brief, confirmed:true, offline:$('offline').checked, demo:state.demo});
+    state.demo = Boolean(state.pack.demo);
     state.report = null; state.comparison = null; renderAudiences(); show('audiences');
   });
 };
@@ -111,11 +150,21 @@ $('scenario-form').onsubmit = event => {
   event.preventDefault(); busy(event.target, 'Comparing the changed proposition with the preserved baseline…', async () => {
     const result = await api('compare', {baseline_id:state.report.id, proposition:$('scenario-benefit').value, factor:$('scenario-factor').value, value:$('scenario-value').value === '' ? null : Number($('scenario-value').value), reason:$('scenario-reason').value});
     state.comparison = result;
-    const before = state.report, after = result.revised;
-    $('comparison').innerHTML = `<div class="comparison">${[[before,'Baseline'],[after,'Alternative assumption']].map(([r, label]) => `<div><h3>${label}</h3><p>${escapeHTML(r.brief.benefit)}</p><p class="mono">Index: ${r.quant.index === null ? 'unscored' : r.quant.index.toFixed(3)}</p><p class="meta">${escapeHTML(r.quant.outlook)} · ${r.quant.evidence_backed}/${r.quant.total} evidence-backed factors</p></div>`).join('')}</div><p>${result.delta === null ? 'No numerical delta: at least one run has missing inputs.' : 'Heuristic index change: ' + (result.delta >= 0 ? '+' : '') + result.delta.toFixed(3) + '. Not a change in success probability.'}</p><p class="meta">${escapeHTML(result.limitation)}</p><p><strong>Next test:</strong> Put both propositions in front of people with the confirmed need. Ask which better solves their last real problem and why.</p>`;
+    renderComparison(result);
+    $('save-run').textContent = 'Save comparison';
     notice(); $('comparison').scrollIntoView({block:'nearest'});
   });
 };
+function renderComparison(result) {
+  $('scenario-benefit').value = result.revised.brief.benefit;
+  $('scenario-factor').value = result.changed_factor || '';
+  $('scenario-factor').onchange();
+  const input = result.changed_factor ? result.revised.factor_inputs[result.changed_factor] : null;
+  $('scenario-value').value = input?.value ?? '';
+  $('scenario-reason').value = input?.reason || '';
+  const before = state.report, after = result.revised;
+  $('comparison').innerHTML = `<div class="comparison">${[[before,'Baseline'],[after,'Alternative assumption']].map(([r, label]) => `<div><h3>${label}</h3><p>${escapeHTML(r.brief.benefit)}</p><p class="mono">Index: ${r.quant.index === null ? 'unscored' : r.quant.index.toFixed(3)}</p><p class="meta">${escapeHTML(r.quant.outlook)} · ${r.quant.evidence_backed}/${r.quant.total} evidence-backed factors</p></div>`).join('')}</div><p>${result.delta === null ? 'No numerical delta: at least one run has missing inputs.' : 'Heuristic index change: ' + (result.delta >= 0 ? '+' : '') + result.delta.toFixed(3) + '. Not a change in success probability.'}</p><p class="meta">${escapeHTML(result.limitation)}</p><p><strong>Next test:</strong> Put both propositions in front of people with the confirmed need. Ask which better solves their last real problem and why.</p>`;
+}
 async function refreshSaved() {
   const response = await fetch('/api/saved');
   if (!response.ok) return;
@@ -123,16 +172,17 @@ async function refreshSaved() {
   $('saved-runs').hidden = !runs.length;
   $('saved-list').innerHTML = runs.map(r => `<button class="saved-item" data-run="${escapeHTML(r.id)}">${escapeHTML(r.benefit)}<span class="meta">Saved ${escapeHTML(r.saved_at)} · Replay cached run →</span></button>`).join('');
   document.querySelectorAll('[data-run]').forEach(button => button.onclick = () => busy($('saved-runs'), 'Loading a saved assessment; no research is being run…', async () => {
-    state.report = await api('replay', {run_id: button.dataset.run}); state.comparison = null;
-    renderReport(); show('report'); notice('Saved run replay. Sources and stress tests retain their original dates.');
+    state.report = await api('replay', {run_id: button.dataset.run}); state.comparison = state.report.comparison || null; state.demo = Boolean(state.report.evidence.demo);
+    delete state.report.comparison;
+    renderReport(); if (state.comparison) renderComparison(state.comparison); show('report'); notice('Saved run replay. Sources and stress tests retain their original dates.');
   }));
 }
 $('save-run').onclick = () => busy($('report'), 'Saving this baseline locally…', async () => {
-  const saved = await api('save', {report_id: state.report.id});
+  const saved = await api('save', {report_id: state.report.id, comparison_id: state.comparison?.revised.id || null});
   state.report.saved_at = saved.saved_at; state.report.simulation.saved_run = true;
   $('save-run').textContent = 'Saved locally';
   $('simulation-status').textContent = `Rule-based fallback · 0 LLM agents · 6 independent stress-test passes · 1 round · $0 API spend · Saved locally at ${saved.saved_at}`;
-  notice('Baseline saved locally. Use Saved assessments on the start screen to replay it. Export JSON to retain the comparison too.');
+  notice(state.comparison ? 'Baseline and comparison saved locally. Both will be restored when you replay this assessment.' : 'Baseline saved locally. Use Saved assessments on the start screen to replay it.');
 });
 $('export').onclick = () => {
   const blob = new Blob([JSON.stringify({baseline:state.report, comparison:state.comparison, exported_at:new Date().toISOString()}, null, 2)], {type:'application/json'});

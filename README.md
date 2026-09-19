@@ -1,3 +1,5 @@
+> **Runnable demo:** [Run the guided demo on your computer](product/prototype/RUN-DEMO.md). Requires Python 3.9+ only; no API keys or dependency installation. The current demo uses recorded sources and explicitly labelled illustrative assumptions. [Implementation status](product/prototype/README.md). Earlier forecasting claims below are historical and do not describe the current demo.
+
 > **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
 # General Learning Hack

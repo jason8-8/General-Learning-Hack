@@ -34,3 +34,13 @@ Browser summary:
 `tests/browser.cjs` requires a running localhost server and Playwright/Chrome. It accepts `PLAYWRIGHT_MODULE`, `CHROME_PATH` and `PROTOTYPE_URL` for an existing runtime. It makes no paid calls, fetches the fixed official vendor pages, and creates a demo saved baseline. Screenshots and JSON export go to `/private/tmp/launch-*` on this macOS workspace.
 
 The first browser attempt found no bundled Chromium executable. The installed Chrome worked when launched outside the filesystem sandbox. An ambiguous test selector was corrected; application functionality did not fail at that step.
+
+## Demo repair follow-up
+
+- Reproduced the actual user-facing problem in the in-app browser: a sports-coaching idea was accepted outside the source catalogue and produced a generic unscored report. Preserved that input as a local saved run.
+- Added a four-step guided voice-note demonstration with a prewritten editable brief, real recorded vendor excerpts, opt-in illustrative factors and a prepared comparison. The unchanged demo makes no network calls.
+- Fixed category substring matches (for example, “already”, “invoice” and “planet”) and reject unsupported ideas before research.
+- Local saves now retain the selected comparison and restore it across loss of server memory. Existing baseline-only saves remain readable.
+- 20 Python tests passed, including demo network isolation, unsupported-category rejection, classification regression and full comparison persistence.
+- Verified the guided flow in the actual in-app browser: 0.500 baseline, 0.540 alternative, +0.040 delta, 0/8 evidence coverage, explicit authored-fallback labels and save confirmation.
+- LLM and MiroFish integration remain unimplemented. The guided demo demonstrates workflow and deterministic sensitivity, not real market prediction.

@@ -1,0 +1,47 @@
+{
+  "brief": {
+    "description": "A voice-note app that turns spoken thoughts into searchable notes and action items, so useful ideas do not disappear before I act on them.",
+    "problem": "Spoken ideas and commitments disappear before I act on them.",
+    "benefit": "Turn spoken ideas into searchable notes and actionable next steps.",
+    "geography": "",
+    "alternatives": "",
+    "channel": ""
+  },
+  "sources": [
+    {
+      "url": "https://voicenotes.com/",
+      "title": "Voicenotes",
+      "retrieved_at": "2026-09-19T17:23:57.340979+00:00",
+      "publication_date": null,
+      "observation": "Voicenotes turns every meeting into perfect notes and instant answers, and works with every meeting app. You'll never write \"quick recap\" again.",
+      "supported_claim": "Voicenotes publishes the quoted product description on its own website.",
+      "limitation": "Vendor self-description; not independent customer evidence, demand, growth or willingness to pay. Publication date unknown.",
+      "provenance": "observed",
+      "content_hash": "257146aaf4d7fdbd",
+      "roles": [
+        "competitor",
+        "customer",
+        "market"
+      ],
+      "id": "src-7ab56f46"
+    },
+    {
+      "url": "https://obsidian.md/",
+      "title": "Obsidian",
+      "retrieved_at": "2026-09-19T17:23:56.668662+00:00",
+      "publication_date": null,
+      "observation": "The free and flexible app for your private thoughts.",
+      "supported_claim": "Obsidian publishes the quoted product description on its own website.",
+      "limitation": "Vendor self-description; not independent customer evidence, demand, growth or willingness to pay. Publication date unknown.",
+      "provenance": "observed",
+      "content_hash": "99236ee1857e0aa3",
+      "roles": [
+        "competitor",
+        "customer",
+        "market"
+      ],
+      "id": "src-ea670242"
+    }
+  ],
+  "notice": "Recorded vendor-page excerpts from 20 September 2026 Hong Kong time. Not live research, customer evidence or model-generated analysis."
+}

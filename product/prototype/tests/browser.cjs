@@ -27,7 +27,7 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
  await page.getByRole('button',{name:'Compare with baseline'}).click();
  await page.getByText('No numerical delta: at least one run has missing inputs.').waitFor();
  await page.screenshot({path:'/private/tmp/launch-compare.png',fullPage:true});
- await page.getByRole('button',{name:'Save run',exact:true}).click();
+ await page.getByRole('button',{name:/Save (run|comparison)/}).click();
  await page.getByRole('button',{name:'Saved locally',exact:true}).waitFor();
  const downloadPromise=page.waitForEvent('download'); await page.getByRole('button',{name:'Export JSON'}).click(); const download=await downloadPromise;
  await download.saveAs('/private/tmp/launch-browser-export.json');

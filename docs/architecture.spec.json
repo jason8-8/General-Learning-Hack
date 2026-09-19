@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Synthetic Market Simulation",
+    "quality_profile": "showcase",
+    "viewBox": [1280, 700],
+    "views": [
+      {
+        "id": "main-path",
+        "label": "Idea to distribution",
+        "focus": ["founder", "console", "frame", "cohort", "runner", "divergence", "report"],
+        "note": "One idea in, a spread of simulated reactions out."
+      },
+      {
+        "id": "grounding",
+        "label": "Where the people come from",
+        "focus": ["evidence", "frame", "cohort"],
+        "note": "The sampling frame is the claim a judge will interrogate."
+      },
+      {
+        "id": "fan-out",
+        "label": "Fan-out and aggregation",
+        "focus": ["cohort", "runner", "llm", "divergence"],
+        "note": "Concurrent calls collapse into clusters, not an average."
+      }
+    ]
+  },
+  "components": [
+    {"id": "founder", "type": "external", "label": "Founder / Analyst", "sublabel": "pitch in one box", "pos": [70, 260], "size": [140, 64]},
+    {"id": "console", "type": "frontend", "label": "Pitch Intake", "sublabel": "idea + category", "pos": [300, 260], "size": [145, 64]},
+    {"id": "evidence", "type": "external", "label": "Market Evidence", "sublabel": "reviews, filings, forums", "pos": [560, 70], "size": [165, 70], "tag": "cited, not invented"},
+    {"id": "frame", "type": "backend", "label": "Sampling Frame", "sublabel": "segments + weights", "pos": [560, 260], "size": [165, 70]},
+    {"id": "cohort", "type": "database", "label": "Persona Cohort", "sublabel": "200 rows, seeded", "pos": [820, 260], "size": [150, 64]},
+    {"id": "llm", "type": "external", "label": "Claude API", "sublabel": "batched inference", "pos": [1060, 560], "size": [150, 64]},
+    {"id": "runner", "type": "backend", "label": "Simulation Runner", "sublabel": "async fan-out", "pos": [820, 560], "size": [155, 64]},
+    {"id": "divergence", "type": "backend", "label": "Divergence Engine", "sublabel": "clusters the split", "pos": [540, 560], "size": [165, 70]},
+    {"id": "report", "type": "frontend", "label": "Distribution View", "sublabel": "spread + objections", "pos": [290, 560], "size": [155, 64]}
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Runs on the demo laptop — no infrastructure to stand up",
+      "wraps": ["console", "frame", "cohort", "runner", "divergence", "report"]
+    }
+  ],
+  "connections": [
+    {"id": "submit", "from": "founder", "to": "console", "label": "one idea", "variant": "emphasis", "fromSide": "right", "toSide": "left"},
+    {"id": "to-frame", "from": "console", "to": "frame", "fromSide": "right", "toSide": "left"},
+    {"id": "ground", "from": "evidence", "to": "frame", "label": "who actually buys this", "variant": "emphasis", "fromSide": "bottom", "toSide": "top", "labelDy": 62},
+    {"id": "derive", "from": "frame", "to": "cohort", "label": "derives cohort", "fromSide": "right", "toSide": "left", "labelDy": 52},
+    {"id": "load", "from": "cohort", "to": "runner", "label": "loads cohort", "fromSide": "bottom", "toSide": "top"},
+    {"id": "fanout", "from": "runner", "to": "llm", "label": "1 call per persona", "fromSide": "right", "toSide": "left", "labelDy": 58},
+    {"id": "reactions", "from": "runner", "to": "divergence", "label": "raw reactions", "fromSide": "left", "toSide": "right", "labelDy": 48},
+    {"id": "render", "from": "divergence", "to": "report", "label": "clusters, not an average", "variant": "emphasis", "fromSide": "left", "toSide": "right", "labelDy": 53}
+  ],
+  "cards": [
+    {"dot": "cyan", "title": "The main path", "items": ["One idea in, a spread of reactions out", "Runs cold on stage — no account, no upload, no setup"]},
+    {"dot": "emerald", "title": "Why it survives the Claude test", "items": ["The cohort is derived from cited evidence, not imagined", "Output is a distribution with a tail, not one paragraph", "Divergence Engine reports the split and refuses to average it"]},
+    {"dot": "amber", "title": "Scope by 14:00", "items": ["Real: frame builder, fan-out, clustering, the view", "Stubbed: one cached evidence pull per category", "Cut if late: persistence — keep the cohort in memory"]}
+  ]
+}

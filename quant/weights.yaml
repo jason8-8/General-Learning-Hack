@@ -1,15 +1,38 @@
+# Published scorecard. Sum of feature weights must equal 1.00.
+# These are PLACEHOLDERS: internally consistent priors for the hack,
+# not fitted coefficients. Replace with analog holdout / logistic fit later.
+#
+# Change log 2026-09-19:
+#   icp_fit           0.22 → 0.24
+#   problem_intensity 0.16 → 0.18
+#   price_fit         0.16 → 0.12   (engine already multiplies P by price_fit)
+#   readiness         0.14 → 0.12
+#   analog_success    0.14 → 0.08   (engine already blends analog_rate)
+#   distribution_fit  0.10 → 0.12
+#   switching_ease    0.05 → 0.10
+#   competition_ease  0.03 → 0.04
+# Rationale: quant/WEIGHTS.md
+
 weights:
-  icp_fit: 0.22
-  problem_intensity: 0.16
-  price_fit: 0.16
-  readiness: 0.14
-  analog_success: 0.14
-  distribution_fit: 0.10
-  switching_ease: 0.05
-  competition_ease: 0.03
+  icp_fit: 0.24
+  problem_intensity: 0.18
+  price_fit: 0.12
+  readiness: 0.12
+  analog_success: 0.08
+  distribution_fit: 0.12
+  switching_ease: 0.10
+  competition_ease: 0.04
+
 calibration:
-  alpha: -3.80
-  beta: 4.40
+  alpha: -3.60
+  beta: 4.20
   p_floor: 0.008
-  p_ceil: 0.45
-notes: Published scorecard. Sum of weights must equal 1.00.
+  p_ceil: 0.40
+
+# Fallback mix for the two-segment qualitative frame only.
+# Not used inside P(adopt). Labeled assumed until evidence supplies weights.
+frame_mix:
+  in_market_buyer: 0.60
+  skeptic_blocker: 0.40
+
+notes: Sum of weights must equal 1.00. Do not edit score_engine.py by hand.

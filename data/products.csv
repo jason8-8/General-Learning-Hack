@@ -1,0 +1,3 @@
+product_id,name,category,buyer_type,price_usd_mo,billing,channel,switching_cost,impl_days,jtbd,must_have_flags
+NOTE_VOICE_STUDENT,Voice notes for students,edtech,b2c,6.0,sub,app_store,0.25,0,Capture lectures and turn them into searchable notes,"offline,cantonese_english,cheap"
+CORP_VOICE_AGENT,Corporate voice agent,voice_ai,b2b,480.0,sub,sales_led,0.65,30,Automate inbound / internal voice workflows for digital-transforming firms,"sso,audit,hk_data_residency,integrations"

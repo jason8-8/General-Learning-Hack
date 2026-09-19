@@ -1,16 +1,13 @@
 # General Learning Hack
 
-**Deadline:** Sunday 20 September 2026, 10:00 HKT. No extensions.
-
-Judges do not read this repo. They see two artifacts:
-
-1. A **two-minute video** with a working prototype
-2. A **90-second live pitch**
+**Deadline:** Sunday 20 September 2026, 10:00 HKT.
 
 ```
-README.md                 you are here
-pitch/                    what judges hear and see
-product/                  the prototype + quant model
+pitch/         what judges hear
+product/       what runs
+research/      what we can cite
+discussion/    how we decided
+brand/         how it looks
 ```
 
-Start in [`pitch/`](pitch/README.md). Build from [`product/`](product/README.md).
+Start at [`pitch/`](pitch/README.md). Build from [`product/`](product/README.md).

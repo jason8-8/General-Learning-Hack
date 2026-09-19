@@ -12,6 +12,7 @@ If missing: system sans + Consolas (Win) or Menlo (Mac).
 | UI heading | Space Grotesk Medium | 20 |
 | UI body | Space Grotesk | 14 |
 | Caption / source | Space Grotesk | 12 |
+| Eyebrow / meta | Space Mono | 12 |
 | Number / code | Space Mono | 12–18 |
 
 Two faces only. No decorative fonts on camera.

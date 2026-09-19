@@ -1,0 +1,11 @@
+product,segment,buyer,universe,S,P_adopt,expected_adopters
+Corporate voice agent,APAC consulting / professional services,b2b,4200,0.8101,0.1536,645
+Corporate voice agent,HK mid-market firms 50–499 staff,b2b,18000,0.5540,0.0703,1266
+Corporate voice agent,HK family-owned SMEs,b2b,280000,0.2883,0.0266,7457
+Corporate voice agent,HK students 16–24,b2c,380000,0.2637,0.0080,3040
+Corporate voice agent,HK young professionals 25–34,b2c,920000,0.2775,0.0080,7360
+Voice notes for students,HK young professionals 25–34,b2c,920000,0.6726,0.2212,203458
+Voice notes for students,HK students 16–24,b2c,380000,0.8299,0.1950,74088
+Voice notes for students,APAC consulting / professional services,b2b,4200,0.4164,0.0341,143
+Voice notes for students,HK family-owned SMEs,b2b,280000,0.3810,0.0303,8484
+Voice notes for students,HK mid-market firms 50–499 staff,b2b,18000,0.3774,0.0299,539

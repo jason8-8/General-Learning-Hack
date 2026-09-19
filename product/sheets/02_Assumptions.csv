@@ -1,0 +1,24 @@
+feature,weight,what it captures,why this placeholder
+icp_fit,0.24,Does this segment look like the buyer the product was built for?,Largest weight. Wrong buyer kills the row. 0.24 not 0.40 so other features can still rank inside a valid buyer.
+problem_intensity,0.18,How acute is the job-to-be-done in this segment?,Raised from 0.16 so pain can beat a mediocre analog. Second to ICP on purpose.
+price_fit,0.12,Price vs segment WTP ceiling. Collapses above 2x WTP.,Cut from 0.16 because the engine already multiplies final P by price_fit. Avoids double-counting.
+readiness,0.12,B2C: category usage. B2B: digital maturity (Deloitte vs family shop).,Trimmed from 0.14. Segment tables already carry usage/maturity — do not count twice.
+analog_success,0.08,"What happened to similar shipped products, scaled to 0-1.",Cut from 0.14 because P already blends analog_rate. 0.08 is a residue prior not a second analog model.
+distribution_fit,0.12,Does the product sell through the channel this segment already uses?,Raised from 0.10. Channel is observed and is the silent miss in most pitch decks.
+switching_ease,0.10,1 minus implementation / habit friction.,Doubled from 0.05. Old value could not move P. Skeptic/blocker segment lives here.
+competition_ease,0.04,Penalty when the analog set is full of strong incumbents.,Raised from 0.03 (was noise) but kept small. No share data yet.
+Weight sum,1.00,Must equal 1.00,Change weights only in quant/weights.yaml.
+param,value,meaning,why this placeholder
+alpha,-3.6,Logistic intercept. More negative -> lower base rate.,Less punitive than -3.8 so a mid B2C scorecard lands ~12-15% raw. Still negative: most people do not adopt.
+beta,4.2,Logistic slope on S. Higher -> scores separate more.,Eased from 4.4 so "pretty good" does not print 30%+ raw P.
+P_floor,0.008,Never report a 0% — that pretends certainty.,Unchanged. Trace not none.
+P_ceil,0.40,Never report >40% from this model. That is not what analogs support.,Tightened from 0.45. No paid-acq or virality term in this scorer.
+category,prior_P,note,why this placeholder
+consumer_app,0.12,Typical 12-month attach band for a free-to-paid consumer app.,Category prior only. Used as a sanity check not a feature.
+edtech,0.10,Student tools convert; they do not convert like Instagram.,Below consumer_app. Education willingness-to-pay is thinner.
+b2b_saas,0.08,First-year attach on an eligible firm universe is low.,Most firms in a Census-like file are not in-market this year.
+voice_ai,0.07,Newer category; procurement + trust drag.,Lowest prior. Demo corporate agent should not inherit consumer-app base rates.
+productivity,0.11,Notes / workflow tools sit between consumer and edtech.,Placeholder between consumer_app and edtech.
+frame_segment,weight,meaning,why this placeholder
+in_market_buyer,0.60,Qualitative frame mix if evidence has no cited weights.,Over-sample people who could care so clusters are not 80% "not for me". Assumed not cited.
+skeptic_blocker,0.40,Qualitative frame mix if evidence has no cited weights.,Large enough that kill objections survive. Assumed not cited.

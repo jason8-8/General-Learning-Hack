@@ -9,3 +9,4 @@ switching_ease,0.10,0.35,0.35,0.0350,0.0350
 competition_ease,0.04,0.76,0.76,0.0304,0.0304
 S,1.00,,,0.2883,0.8101
 P_adopt,Corporate voice agent,,,0.0266,0.1539
+note,Rescored 19 Sep. P uses analog blend + price multiply in score_engine.

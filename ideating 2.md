@@ -1,3 +1,5 @@
+> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+
 predicting whether a user is going to use the product within 12 months (validating vc decision to invest in a company) 
 (no llm involved in the weighting process, thus deterministic - but we can add automation to grab data from the web, or somewhere since we're probably not going to have it all info of all companies in a database)
 

@@ -1,3 +1,5 @@
+> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+
 # GL Hack: handoff for Claude Code
 
 Rewritten 19 Sep 2026, against `General-Learning-Hack-main1.zip`. Design switched to black and green the same evening. Read this whole file before touching code. It replaces the earlier handoff.

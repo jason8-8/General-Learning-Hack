@@ -1,3 +1,5 @@
+> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [../product/BUILD.md](../product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+
 # Demo video — 120 seconds
 
 Record this. Do not invent findings to fill the beats.

@@ -1,3 +1,5 @@
+> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [../product/BUILD.md](../product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+
 # Live pitch — 90 seconds
 
 Two slides. 20 seconds of slides, 70 seconds of talking over the product if a screen is up. If there is no screen, say the same beats.

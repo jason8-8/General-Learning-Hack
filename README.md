@@ -13,12 +13,16 @@ expected adopters = M_s × P
 
 Same inputs always produce the same output.
 
+Weights were revamped 19 Sep 2026. Every value is a **placeholder prior** with a written reason — see [`quant/WEIGHTS.md`](quant/WEIGHTS.md). Meeting notes: [`notes/MEETING_NOTES.md`](notes/MEETING_NOTES.md).
+
 ## Demo contrast
 
 | Product | Best-fit segment | P(adopt) | Poor-fit |
 |---|---|---|---|
-| Voice notes for students ($6/mo) | HK students / young professionals | ~19–22% | firms ~3% |
-| Corporate voice agent ($480/mo) | APAC consulting | ~15% | family SME ~2%, students floored |
+| Voice notes for students ($6/mo) | HK students / young professionals | recompute after weight revamp | firms low |
+| Corporate voice agent ($480/mo) | APAC consulting | recompute after weight revamp | family SME / students floored |
+
+Do not quote stale `data/results_scored.csv` numbers until that file is regenerated.
 
 ## Workbook (the 00–08 sheets)
 
@@ -40,10 +44,12 @@ GitHub cannot store the binary `.xlsx` through this push path. The CSVs + builde
 ```
 README.md
 requirements.txt
+notes/MEETING_NOTES.md      # 19 Sep locked decisions
 scripts/build_workbook.py   # sheets/*.csv -> .xlsx
 quant/score_engine.py
 quant/score_all.py
-quant/weights.yaml
+quant/weights.yaml          # published weights (edit here)
+quant/WEIGHTS.md            # why each placeholder
 data/
 sheets/                     # the nine model tabs
 ```

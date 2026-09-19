@@ -1,29 +1,78 @@
 """Deterministic P(adopt | segment, product) engine.
 
 Same inputs → same output. No LLM in the scoring path.
+
+Weights live in weights.yaml. The dicts below are the fallback copy so
+this file still runs if PyYAML is missing.
 """
 from __future__ import annotations
 
-import csv
 import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
 WEIGHTS = {
-    "icp_fit": 0.22,
-    "problem_intensity": 0.16,
-    "price_fit": 0.16,
-    "readiness": 0.14,
-    "analog_success": 0.14,
-    "distribution_fit": 0.10,
-    "switching_ease": 0.05,
-    "competition_ease": 0.03,
+    "icp_fit": 0.24,
+    "problem_intensity": 0.18,
+    "price_fit": 0.12,
+    "readiness": 0.12,
+    "analog_success": 0.08,
+    "distribution_fit": 0.12,
+    "switching_ease": 0.10,
+    "competition_ease": 0.04,
 }
-CALIB_A = -3.80
-CALIB_B = 4.40
+CALIB_A = -3.60
+CALIB_B = 4.20
 P_FLOOR = 0.008
-P_CEIL = 0.45
+P_CEIL = 0.40
+
+
+def _load_yaml_overrides() -> None:
+    """Pull published numbers from weights.yaml without requiring PyYAML."""
+    path = ROOT / "weights.yaml"
+    if not path.exists():
+        return
+    section = None
+    weights: dict[str, float] = {}
+    calib: dict[str, float] = {}
+    for raw in path.read_text().splitlines():
+        line = raw.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+        if line.startswith("weights:"):
+            section = "weights"
+            continue
+        if line.startswith("calibration:"):
+            section = "calibration"
+            continue
+        if line.startswith("frame_mix:") or line.startswith("notes:"):
+            section = None
+            continue
+        if section and ":" in line and line.startswith("  "):
+            key, val = line.strip().split(":", 1)
+            try:
+                num = float(val.strip())
+            except ValueError:
+                continue
+            if section == "weights":
+                weights[key] = num
+            elif section == "calibration":
+                calib[key] = num
+    global WEIGHTS, CALIB_A, CALIB_B, P_FLOOR, P_CEIL
+    if weights:
+        WEIGHTS = weights
+    if "alpha" in calib:
+        CALIB_A = calib["alpha"]
+    if "beta" in calib:
+        CALIB_B = calib["beta"]
+    if "p_floor" in calib:
+        P_FLOOR = calib["p_floor"]
+    if "p_ceil" in calib:
+        P_CEIL = calib["p_ceil"]
+
+
+_load_yaml_overrides()
 
 
 def sigmoid(z: float) -> float:
@@ -66,7 +115,9 @@ def score(features: dict) -> dict:
 
 
 if __name__ == "__main__":
-    print("weights sum", sum(WEIGHTS.values()))
+    print("weights", WEIGHTS)
+    print("weights sum", round(sum(WEIGHTS.values()), 6))
+    print("calib", {"alpha": CALIB_A, "beta": CALIB_B, "floor": P_FLOOR, "ceil": P_CEIL})
     demo = {
         "icp_fit": 0.90,
         "problem_intensity": 0.80,

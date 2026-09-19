@@ -1,11 +1,12 @@
 feature,weight,family_SME_z,consulting_z,family_contribution,consulting_contribution
-icp_fit,0.22,0.22,0.90,0.0484,0.1980
-problem_intensity,0.16,0.20,0.80,0.0320,0.1280
-price_fit,0.16,0.02,1.00,0.0032,0.1600
-readiness,0.14,0.28,0.84,0.0392,0.1176
-analog_success,0.14,0.5510,0.5483,0.0771,0.0768
-distribution_fit,0.10,0.45,1.00,0.0450,0.1000
-switching_ease,0.05,0.35,0.35,0.0175,0.0175
-competition_ease,0.03,0.76,0.76,0.0228,0.0228
-S,1.00,,,0.2852,0.8207
-P_adopt,,,,0.0232,0.1539
+icp_fit,0.24,0.22,0.90,0.0528,0.2160
+problem_intensity,0.18,0.20,0.80,0.0360,0.1440
+price_fit,0.12,0.02,1.00,0.0024,0.1200
+readiness,0.12,0.28,0.84,0.0336,0.1008
+analog_success,0.08,0.5510,0.5483,0.0441,0.0439
+distribution_fit,0.12,0.45,1.00,0.0540,0.1200
+switching_ease,0.10,0.35,0.35,0.0350,0.0350
+competition_ease,0.04,0.76,0.76,0.0304,0.0304
+S,1.00,,,0.2883,0.8101
+P_adopt_recompute_after_weight_revamp,,,,see score_engine,see score_engine
+note,Weights revamped 2026-09-19. Contribution = weight x z. Re-run quant/score_all.py before quoting P from 06_Results.

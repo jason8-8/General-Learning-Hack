@@ -1,0 +1,11 @@
+{
+  "diagram_type": "architecture",
+  "output": "/Users/jasoncheng/.codex/worktrees/059c/general-learning-hack/docs/architecture/current-build.html",
+  "specification_sha256": "62e0c2dc6cb7d5ea462b97ca9c00e8bed593cc070eaba8b9a719f0a519bab512",
+  "artifact_sha256": "44cb8306c4427235ad2218c389b18364d56167fbaa8fdca2d7a0ad939ade9e46",
+  "validation": "9/9 showcase, 0 errors, 0 warnings",
+  "browser_evidence": "passed",
+  "visual_review": "passed",
+  "correction_rounds": 1,
+  "visual_review_scope": "Inspected 1440x900 light and 2048x1320 dark screenshots; readable topology, no overlapping labels or clipped cards. Search, focus and export interactions not manually exercised."
+}

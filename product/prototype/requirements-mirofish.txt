@@ -1,0 +1,12 @@
+# Bounded interview adapter. The complete MiroFish web app is not required.
+camel-oasis==0.2.5
+camel-ai==0.2.78
+# camel-ai 0.2.78 imports FastMCP, removed from mcp 2.x.
+mcp==1.30.0
+python-dotenv>=1.0,<2
+
+# MiroFish graph service imports
+flask>=3,<4
+flask-cors>=6,<7
+PyMuPDF>=1.24,<2
+chardet>=5,<6

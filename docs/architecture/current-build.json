@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "General Learning \u00b7 Current build",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1340,
+      760
+    ]
+  },
+  "components": [
+    {
+      "id": "browser-ui",
+      "type": "frontend",
+      "label": "Interactive demo",
+      "sublabel": "HTML \u00b7 CSS \u00b7 JavaScript",
+      "pos": [
+        40,
+        330
+      ],
+      "size": [
+        210,
+        82
+      ]
+    },
+    {
+      "id": "local-server",
+      "type": "backend",
+      "label": "Local Python server",
+      "sublabel": "Confirm \u00b7 validate \u00b7 route",
+      "tag": "127.0.0.1:8765",
+      "pos": [
+        360,
+        330
+      ],
+      "size": [
+        220,
+        82
+      ]
+    },
+    {
+      "id": "report-builder",
+      "type": "backend",
+      "label": "Report + comparison",
+      "sublabel": "Original baseline preserved",
+      "pos": [
+        710,
+        330
+      ],
+      "size": [
+        220,
+        82
+      ]
+    },
+    {
+      "id": "weighted-score",
+      "type": "backend",
+      "label": "Weighted scorer",
+      "sublabel": "8 factors \u00b7 missing-aware",
+      "tag": "Unvalidated heuristic",
+      "pos": [
+        1060,
+        330
+      ],
+      "size": [
+        230,
+        82
+      ]
+    },
+    {
+      "id": "source-review",
+      "type": "backend",
+      "label": "Evidence review",
+      "sublabel": "3 rule-based review workers",
+      "pos": [
+        360,
+        90
+      ],
+      "size": [
+        220,
+        82
+      ]
+    },
+    {
+      "id": "source-material",
+      "type": "external",
+      "label": "Source material",
+      "sublabel": "Demo excerpts / vendor pages",
+      "tag": "No broad web search",
+      "pos": [
+        710,
+        90
+      ],
+      "size": [
+        240,
+        82
+      ]
+    },
+    {
+      "id": "local-files",
+      "type": "database",
+      "label": "Local saved reports",
+      "sublabel": "JSON files \u00b7 explicit Save",
+      "tag": "No shared database",
+      "pos": [
+        360,
+        585
+      ],
+      "size": [
+        220,
+        82
+      ]
+    },
+    {
+      "id": "authored-checks",
+      "type": "backend",
+      "label": "Six stress tests",
+      "sublabel": "Authored objections + tests",
+      "tag": "0 AI agents",
+      "pos": [
+        710,
+        585
+      ],
+      "size": [
+        220,
+        82
+      ]
+    },
+    {
+      "id": "future-mirofish",
+      "type": "external",
+      "label": "MiroFish + AI models",
+      "sublabel": "Planned \u00b7 not connected",
+      "tag": "No running integration",
+      "pos": [
+        1060,
+        585
+      ],
+      "size": [
+        230,
+        82
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "from": "browser-ui",
+      "to": "local-server",
+      "label": "HTTP / JSON",
+      "variant": "emphasis"
+    },
+    {
+      "from": "local-server",
+      "to": "report-builder",
+      "label": "Build / compare",
+      "variant": "emphasis"
+    },
+    {
+      "from": "report-builder",
+      "to": "weighted-score",
+      "label": "Score inputs"
+    },
+    {
+      "from": "local-server",
+      "to": "source-review",
+      "label": "Confirmed brief"
+    },
+    {
+      "from": "source-review",
+      "to": "source-material",
+      "label": "Load / fetch"
+    },
+    {
+      "from": "local-server",
+      "to": "local-files",
+      "label": "Save / replay",
+      "labelDy": 70
+    },
+    {
+      "from": "report-builder",
+      "to": "authored-checks",
+      "label": "Run checks",
+      "labelDy": 70
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "What you control",
+      "items": [
+        "Edit brief, then confirm research.",
+        "Review audiences and scoring assumptions."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "What runs today",
+      "items": [
+        "Recorded demo or limited vendor retrieval.",
+        "Reports return as JSON to the browser."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "What the result means",
+      "items": [
+        "Comparison changes an assumption, not evidence.",
+        "No customer simulation or success probability."
+      ]
+    }
+  ]
+}

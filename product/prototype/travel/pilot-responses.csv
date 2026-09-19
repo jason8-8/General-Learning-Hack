@@ -1,0 +1,41 @@
+run_id,price_gbp_per_trip,profile_id,decision,reason,objection
+4a9ae7e5390c4a87,10,G0001,free_only,Skeptical of AI planning tools; prefer manual verification,No demonstrated benefit over existing workflow
+4a9ae7e5390c4a87,10,G0002,free_only,Skepticism toward unproven AI benefits outweighs £10 trip cost. Existing workflow verified.,No demonstrated time savings or accuracy improvements
+4a9ae7e5390c4a87,10,G0003,free_only,Skeptical of AI planning tools; prefer personal judgment,No demonstrated benefit over free tools; unproven accuracy
+4a9ae7e5390c4a87,10,G0004,free_only,Existing tools suffice for my planning workflow,No demonstrated benefit over free tools
+4a9ae7e5390c4a87,10,G0005,free_only,Cautious skepticism toward AI planning; prefer human control,"No autonomous purchases, unproven benefits"
+4a9ae7e5390c4a87,10,G0006,free_only,Existing spreadsheet meets needs; no proven benefit,No demonstrated time savings or value
+4a9ae7e5390c4a87,10,G0007,free_only,"Existing workflow sufficient, no proven time saving",No demonstrated benefit over manual process
+4a9ae7e5390c4a87,10,G0008,free_only,Existing tools suffice; no proven benefit at £10/trip,No demonstrated time savings or value
+4a9ae7e5390c4a87,10,G0009,free_only,"Skeptical of AI planning without proven benefits, prefer existing tools",No demonstrated value over current free methods
+4a9ae7e5390c4a87,10,G0010,free_only,Existing spreadsheet workflow proven; no demonstrated benefit,No verified time savings or accuracy improvements
+4a9ae7e5390c4a87,10,G0011,free_only,No demonstrated benefit at £10/trip. Existing tools suffice.,"Unproven time savings, no autonomy"
+4a9ae7e5390c4a87,10,G0012,free_only,"Skeptical of AI planning, prefer verified free tools",No demonstrated benefit over existing workflow
+4a9ae7e5390c4a87,10,G0013,free_only,Existing tools suffice; no proven benefit at £10/trip,No demonstrated time savings or accuracy gains
+4a9ae7e5390c4a87,10,G0014,free_only,Existing tools suffice; no proven benefit at £10/trip,No demonstrated time savings or accuracy gains
+4a9ae7e5390c4a87,10,G0015,free_only,Cautious skepticism toward AI planning; existing spreadsheet works,No demonstrated benefit over spreadsheet
+4a9ae7e5390c4a87,10,G0016,free_only,Skeptical of AI planning; prefer personal control over free tools,No demonstrated benefit vs. existing workflow
+4a9ae7e5390c4a87,10,G0017,free_only,Skeptical of AI planning tools; prefer personal control,No demonstrated benefit over free tools
+4a9ae7e5390c4a87,10,G0018,free_only,Skepticism toward unproven AI benefits outweighs cost-benefit. Existing spreadsheet workflow is trusted.,No demonstrated time savings or accuracy improvements
+4a9ae7e5390c4a87,10,G0019,free_only,Existing tools suffice for planning needs,No demonstrated benefit over current methods
+4a9ae7e5390c4a87,10,G0020,free_only,Skeptical of AI planning tools; prefer personal spreadsheet control,No demonstrated benefit over existing method
+0fa0698461e24616,30,G0001,free_only,Skeptical of AI planning tools; prefer manual verification,No demonstrated benefit over existing workflow
+0fa0698461e24616,30,G0002,free_only,"Skeptical of AI planning without demonstrated benefits, prefer manual verification","No autonomous purchases, unproven time savings"
+0fa0698461e24616,30,G0003,free_only,Skeptical of AI planning tools; prefer personal control,No demonstrated benefits vs. existing workflow
+0fa0698461e24616,30,G0004,free_only,Existing tools suffice; no proven benefit at £30/trip,No demonstrated time savings or accuracy gains
+0fa0698461e24616,30,G0005,free_only,Prefers human judgment over AI suggestions. Existing tools suffice.,"No autonomous purchases, unproven benefits"
+0fa0698461e24616,30,G0006,free_only,Existing spreadsheet meets needs; no proven benefit,No demonstrated time savings or accuracy gains
+0fa0698461e24616,30,G0007,free_only,Existing tools suffice; no proven benefit at £30/trip,No demonstrated time savings or accuracy gains
+0fa0698461e24616,30,G0008,free_only,Existing tools suffice; no proven benefit at £30/trip,No demonstrated time savings or value
+0fa0698461e24616,30,G0009,free_only,"Skeptical of AI planning without demonstrated benefits, prefer existing tools",No proven time savings or accuracy improvements
+0fa0698461e24616,30,G0010,free_only,"Existing spreadsheet workflow proven reliable, no demonstrated time savings","Unproven AI accuracy, no autonomous purchase capability"
+0fa0698461e24616,30,G0011,free_only,No demonstrated benefit at £30/trip. Existing tools suffice.,"Unproven time savings, no autonomous purchases"
+0fa0698461e24616,30,G0012,free_only,"Skeptical of AI planning tools, prefer established search engines and maps for control.","No demonstrated benefits, unproven accuracy"
+0fa0698461e24616,30,G0013,free_only,Existing tools sufficient for 8hr planning workflow,No demonstrated time savings vs current 8hr process
+0fa0698461e24616,30,G0014,free_only,Existing tools sufficient for workflow; no proven benefit,No demonstrated time savings or accuracy improvements
+0fa0698461e24616,30,G0015,free_only,Prefer human control over planning process,"No autonomous purchases, unproven benefits"
+0fa0698461e24616,30,G0016,free_only,Skeptical of AI planning tools; prefer verified free alternatives,No demonstrated benefits vs. existing workflow
+0fa0698461e24616,30,G0017,free_only,"Skeptical of AI planning tools, prefer proven processes","No demonstrated benefits, unproven value"
+0fa0698461e24616,30,G0018,free_only,"Skeptical of AI planning without demonstrated benefits, prefer existing spreadsheet method","No autonomous purchases, unproven time savings"
+0fa0698461e24616,30,G0019,free_only,Existing tools suffice for planning; no proven benefit,No demonstrated time savings or accuracy improvements
+0fa0698461e24616,30,G0020,free_only,Skeptical of AI planning tools; prefer personal spreadsheet control,No demonstrated benefit over existing method

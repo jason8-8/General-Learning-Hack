@@ -1,0 +1,306 @@
+{
+  "version": "travel-v1",
+  "brief": "An AI travel assistant that helps people plan and navigate trips.",
+  "offer": "Build and edit an itinerary, combine travellers' preferences, organise booking details and suggest changes during the trip. Users verify recommendations and approve bookings. No autonomous purchases or human concierge are included.",
+  "question": "Who would consider paying, for which benefit, and why choose this over ChatGPT or free travel tools?",
+  "sources": [
+    {
+      "id": "TR01",
+      "title": "Mindtrip traveller FAQs",
+      "url": "https://resources.mindtrip.ai/travelers/help/traveler-faqs",
+      "observation": "Vendor describes conversational recommendations, editable itineraries, collaboration, booking organisation and in-trip maps.",
+      "limit": "Feature baseline only. Does not establish independent performance or payment demand.",
+      "checked": "2026-09-20"
+    },
+    {
+      "id": "TR02",
+      "title": "Layla",
+      "url": "https://layla.ai/",
+      "observation": "Vendor advertises AI trip planning and optional human travel experts.",
+      "limit": "No verified price benchmark. Human support is outside this study's offer.",
+      "checked": "2026-09-20"
+    },
+    {
+      "id": "TR03",
+      "title": "Booking.com AI sentiment report",
+      "url": "https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/",
+      "observation": "2025 survey of 37,325 people in 33 markets reports interest in AI travel planning and limited comfort with autonomous AI decisions.",
+      "limit": "Industry-sponsored self-report. Does not establish paid conversion or audience proportions.",
+      "checked": "2026-09-20"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "T01",
+      "label": "The group organiser",
+      "persona": "Plans two leisure trips a year for friends with different budgets. Collects preferences in messages and moves places into maps. Often spends several evenings reconciling changes. Usually compares tools before adopting one.",
+      "sources": [
+        "TR01"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and effort are illustrative."
+    },
+    {
+      "id": "T02",
+      "label": "The occasional traveller",
+      "persona": "Takes one leisure trip a year. Compares booking sites and reads reviews because unfamiliar transport and neighbourhoods require extra checking. Plans with a partner and has no established itinerary tool.",
+      "sources": [
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and circumstances are illustrative."
+    },
+    {
+      "id": "T03",
+      "label": "The independent planner",
+      "persona": "Takes four leisure trips a year. Enjoys researching food and local activities, keeps a map of saved places and uses ChatGPT for initial ideas. Has an established routine but sometimes finds opening hours wrong.",
+      "sources": [
+        "TR01",
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and preferences are illustrative."
+    },
+    {
+      "id": "T04",
+      "label": "The family coordinator",
+      "persona": "Organises one family holiday a year. Needs to align rest breaks, meal preferences and travel times. Shares confirmations in a folder and updates the plan when the family changes its mind.",
+      "sources": [
+        "TR01"
+      ],
+      "assumption": "Authored workflow hypothesis; no representative family evidence collected."
+    },
+    {
+      "id": "T05",
+      "label": "The frequent work traveller",
+      "persona": "Travels for work most months. Employer arranges flights and hotels. Uses calendar and maps between meetings and occasionally adds a leisure day. Must keep work booking data separate from personal tools.",
+      "sources": [
+        "TR02",
+        "TR03"
+      ],
+      "assumption": "Authored boundary case; employer policy and frequency are illustrative."
+    },
+    {
+      "id": "T06",
+      "label": "The flexible explorer",
+      "persona": "Takes three short leisure trips a year with a small budget. Books transport early, chooses activities on arrival, and uses free maps and recommendations from friends. Sometimes needs an alternative plan when transport changes.",
+      "sources": [
+        "TR01",
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; budget and frequency are illustrative."
+    }
+  ],
+  "audience_version": 1,
+  "parent_id": null,
+  "evidence_version": "travel-v1",
+  "feedback": [],
+  "changes": [],
+  "id": "8d81e6ff29bc4301",
+  "requested": 6,
+  "created_at": "2026-09-19T21:36:33.078044+00:00",
+  "input_sha256": "88841b1adb7b69e54d05f4592bbbc5539db7af460ac396ef394ea90ce5d5fb18",
+  "status": "completed",
+  "responses": [
+    {
+      "profile_id": "T01",
+      "label": "The group organiser",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to collaboratively build itineraries and organise bookings saves significant time over solo planning.\",\n  \"valuable_feature\": \"Combining multiple preferences into coherent plans with booking organisation\",\n  \"objection\": \"No autonomous purchases means I still need to verify and approve everything manually\",\n  \"next_test\": \"Test if the tool reduces planning time by 30% compared to current methods\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 4,\n    \"value_per_hour_gbp\": 25,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Currently spend 8 hours per trip planning, often 2-3 evenings reconciling changes\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to collaboratively build itineraries and organise bookings saves significant time over solo planning.",
+        "valuable_feature": "Combining multiple preferences into coherent plans with booking organisation",
+        "objection": "No autonomous purchases means I still need to verify and approve everything manually",
+        "next_test": "Test if the tool reduces planning time by 30% compared to current methods",
+        "scenario": {
+          "hours_saved_per_trip": 4,
+          "value_per_hour_gbp": 25,
+          "trips_per_year": 2,
+          "rationale": "Currently spend 8 hours per trip planning, often 2-3 evenings reconciling changes"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 8,
+        "annual_time_value_gbp": 200,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:38:54.000188"
+    },
+    {
+      "profile_id": "T02",
+      "label": "The occasional traveller",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to collaboratively build itineraries and organise bookings would save time over current manual processes.\",\n  \"valuable_feature\": \"Editing shared itineraries and combining preferences with partner\",\n  \"objection\": \"No autonomous booking means still need to verify all changes manually\",\n  \"next_test\": \"Test if users prefer collaborative itinerary building over existing trip planning apps\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 3,\n    \"value_per_hour_gbp\": 25,\n    \"trips_per_year\": 1,\n    \"rationale\": \"Currently spend 6 hours per trip planning and coordinating with partner\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to collaboratively build itineraries and organise bookings would save time over current manual processes.",
+        "valuable_feature": "Editing shared itineraries and combining preferences with partner",
+        "objection": "No autonomous booking means still need to verify all changes manually",
+        "next_test": "Test if users prefer collaborative itinerary building over existing trip planning apps",
+        "scenario": {
+          "hours_saved_per_trip": 3,
+          "value_per_hour_gbp": 25,
+          "trips_per_year": 1,
+          "rationale": "Currently spend 6 hours per trip planning and coordinating with partner"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 3,
+        "annual_time_value_gbp": 75,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:40:53.867288"
+    },
+    {
+      "profile_id": "T03",
+      "label": "The independent planner",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to collaboratively build itineraries and organise bookings would save time over current free tools, despite ChatGPT's initial research capabilities.\",\n  \"valuable_feature\": \"Collaborative itinerary building and booking organisation\",\n  \"objection\": \"Existing routine and map-based research works well; no urgent need for change\",\n  \"next_test\": \"Test using the tool for one trip's planning and compare time spent vs current method\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 3,\n    \"value_per_hour_gbp\": 25,\n    \"trips_per_year\": 4,\n    \"rationale\": \"Current research takes 12 hours/trip; tool could reduce to 9 hours\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to collaboratively build itineraries and organise bookings would save time over current free tools, despite ChatGPT's initial research capabilities.",
+        "valuable_feature": "Collaborative itinerary building and booking organisation",
+        "objection": "Existing routine and map-based research works well; no urgent need for change",
+        "next_test": "Test using the tool for one trip's planning and compare time spent vs current method",
+        "scenario": {
+          "hours_saved_per_trip": 3,
+          "value_per_hour_gbp": 25,
+          "trips_per_year": 4,
+          "rationale": "Current research takes 12 hours/trip; tool could reduce to 9 hours"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 12,
+        "annual_time_value_gbp": 300,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:43:22.774148"
+    },
+    {
+      "profile_id": "T04",
+      "label": "The family coordinator",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to collaborate on plans and organise bookings would save time over current free tools.\",\n  \"valuable_feature\": \"Combining preferences and organising booking details\",\n  \"objection\": \"No autonomous purchases, so manual approval still needed\",\n  \"next_test\": \"Test if users prefer collaborative planning over individual free tools\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 3,\n    \"value_per_hour_gbp\": 25,\n    \"trips_per_year\": 1,\n    \"rationale\": \"1 hour per trip saved, valued at \u00a325/hour, with 1 family trip annually\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to collaborate on plans and organise bookings would save time over current free tools.",
+        "valuable_feature": "Combining preferences and organising booking details",
+        "objection": "No autonomous purchases, so manual approval still needed",
+        "next_test": "Test if users prefer collaborative planning over individual free tools",
+        "scenario": {
+          "hours_saved_per_trip": 3,
+          "value_per_hour_gbp": 25,
+          "trips_per_year": 1,
+          "rationale": "1 hour per trip saved, valued at \u00a325/hour, with 1 family trip annually"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 3,
+        "annual_time_value_gbp": 75,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:45:25.961048"
+    },
+    {
+      "profile_id": "T05",
+      "label": "The frequent work traveller",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to combine work and leisure planning while keeping data separate would save significant time.\",\n  \"valuable_feature\": \"Work vs personal booking separation with calendar integration\",\n  \"objection\": \"No autonomous booking means extra verification steps\",\n  \"next_test\": \"Test if users prefer separate work/personal trip tools over integrated ones\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 4,\n    \"value_per_hour_gbp\": 100,\n    \"trips_per_year\": 12,\n    \"rationale\": \"12 trips \u00d7 4 hours saved \u00d7 \u00a3100 = \u00a34,800 annual value\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to combine work and leisure planning while keeping data separate would save significant time.",
+        "valuable_feature": "Work vs personal booking separation with calendar integration",
+        "objection": "No autonomous booking means extra verification steps",
+        "next_test": "Test if users prefer separate work/personal trip tools over integrated ones",
+        "scenario": {
+          "hours_saved_per_trip": 4,
+          "value_per_hour_gbp": 100,
+          "trips_per_year": 12,
+          "rationale": "12 trips \u00d7 4 hours saved \u00d7 \u00a3100 = \u00a34,800 annual value"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 48,
+        "annual_time_value_gbp": 4800,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:47:34.687748"
+    },
+    {
+      "profile_id": "T06",
+      "label": "The flexible explorer",
+      "raw": "{\n  \"decision\": \"consider_paying\",\n  \"reason\": \"The ability to collaborate on itineraries and organise bookings would save time over free tools.\",\n  \"valuable_feature\": \"Editing shared itineraries and booking organisation\",\n  \"objection\": \"May not be significantly better than current free map and friend recommendations\",\n  \"next_test\": \"Test with friends if shared planning reduces trip preparation time\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 2,\n    \"value_per_hour_gbp\": 15,\n    \"trips_per_year\": 3,\n    \"rationale\": \"Three trips annually, each saving 2 hours of planning, valued at \u00a330 total\"\n  }\n}",
+      "answer": {
+        "decision": "consider_paying",
+        "reason": "The ability to collaborate on itineraries and organise bookings would save time over free tools.",
+        "valuable_feature": "Editing shared itineraries and booking organisation",
+        "objection": "May not be significantly better than current free map and friend recommendations",
+        "next_test": "Test with friends if shared planning reduces trip preparation time",
+        "scenario": {
+          "hours_saved_per_trip": 2,
+          "value_per_hour_gbp": 15,
+          "trips_per_year": 3,
+          "rationale": "Three trips annually, each saving 2 hours of planning, valued at \u00a330 total"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 6,
+        "annual_time_value_gbp": 90,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 05:49:40.827008"
+    }
+  ],
+  "failed": [],
+  "excluded": [],
+  "completed": 6,
+  "elapsed_seconds": 16.74,
+  "api_spend_usd": 0,
+  "usage": {
+    "prompt_tokens": 3972,
+    "completion_tokens": 933,
+    "calls": 6
+  },
+  "engine": "MiroFish-local IPCHandler \u2192 OASIS INTERVIEW \u2192 Ollama",
+  "scope": "Independent synthetic interviews; no social rounds or graph extraction",
+  "model": "qwen3-coder:30b",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "model_config": {
+    "temperature": 0.3,
+    "max_tokens": 700,
+    "max_retries": 0
+  },
+  "runner_sha256": "557ad80aee8a1b45940ee95fab5260c99571a9511aa5ba141d2cafde7debcfea",
+  "mirofish_source_sha256": "24bf8e09b354971fc2829d8d92933f91e2982f64f78977fa39f71aa5f744f697",
+  "system_prompts": [
+    {
+      "profile_id": "T01",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Plans two leisure trips a year for friends with different budgets. Collects preferences in messages and moves places into maps. Often spends several evenings reconciling changes. Usually compares tools before adopting one.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "T02",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Takes one leisure trip a year. Compares booking sites and reads reviews because unfamiliar transport and neighbourhoods require extra checking. Plans with a partner and has no established itinerary tool.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "T03",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Takes four leisure trips a year. Enjoys researching food and local activities, keeps a map of saved places and uses ChatGPT for initial ideas. Has an established routine but sometimes finds opening hours wrong.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "T04",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Organises one family holiday a year. Needs to align rest breaks, meal preferences and travel times. Shares confirmations in a folder and updates the plan when the family changes its mind.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "T05",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Travels for work most months. Employer arranges flights and hotels. Uses calendar and maps between meetings and occasionally adds a leisure day. Must keep work booking data separate from personal tools.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "T06",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Takes three short leisure trips a year with a small budget. Books transport early, chooses activities on arrival, and uses free maps and recommendations from friends. Sometimes needs an alternative plan when transport changes.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    }
+  ],
+  "prompt": "You are responding in a synthetic research interview as the assigned traveller. Do not act as an adviser or invent market facts. Your profile does not prescribe a purchase choice. Evaluate the offer as described, not as a better imagined product.\n{\"brief\": \"An AI travel assistant that helps people plan and navigate trips.\", \"offer\": \"Build and edit an itinerary, combine travellers' preferences, organise booking details and suggest changes during the trip. Users verify recommendations and approve bookings. No autonomous purchases or human concierge are included.\", \"question\": \"Who would consider paying, for which benefit, and why choose this over ChatGPT or free travel tools?\", \"evidence\": [{\"id\": \"TR01\", \"title\": \"Mindtrip traveller FAQs\", \"url\": \"https://resources.mindtrip.ai/travelers/help/traveler-faqs\", \"observation\": \"Vendor describes conversational recommendations, editable itineraries, collaboration, booking organisation and in-trip maps.\", \"limit\": \"Feature baseline only. Does not establish independent performance or payment demand.\", \"checked\": \"2026-09-20\"}, {\"id\": \"TR02\", \"title\": \"Layla\", \"url\": \"https://layla.ai/\", \"observation\": \"Vendor advertises AI trip planning and optional human travel experts.\", \"limit\": \"No verified price benchmark. Human support is outside this study's offer.\", \"checked\": \"2026-09-20\"}, {\"id\": \"TR03\", \"title\": \"Booking.com AI sentiment report\", \"url\": \"https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/\", \"observation\": \"2025 survey of 37,325 people in 33 markets reports interest in AI travel planning and limited comfort with autonomous AI decisions.\", \"limit\": \"Industry-sponsored self-report. Does not establish paid conversion or audience proportions.\", \"checked\": \"2026-09-20\"}]}\nNo price has been set. consider_paying means conditional interest, not a purchase or conversion. Return only JSON with decision (consider_paying, free_only or decline), reason, valuable_feature, objection, next_test, and scenario {hours_saved_per_trip, value_per_hour_gbp, trips_per_year, rationale}. The scenario numbers are your explicit hypothetical assumptions, not measured facts or willingness to pay. Use zero if no time saving. next_test must describe a concrete real-world experiment, not a source ID. Check that numerical assumptions are internally consistent with their rationale. Keep every string under 55 words.",
+  "counts": {
+    "consider_paying": 6,
+    "free_only": 0,
+    "decline": 0
+  }
+}

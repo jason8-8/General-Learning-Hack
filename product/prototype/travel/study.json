@@ -1,0 +1,92 @@
+{
+  "version": "travel-v2-priced-pilot",
+  "brief": "An AI travel assistant that helps people plan and navigate trips.",
+  "offer": "Build and edit an itinerary, combine travellers' preferences, organise booking details and suggest changes during the trip. Users verify recommendations and approve bookings. No autonomous purchases or human concierge are included.",
+  "question": "For your next trip, choose between this paid assistant, continuing with your existing free tools, or neither. Explain the trade-off using only your stated workflow. Do not assume unproven time savings, accuracy or capabilities.",
+  "sources": [
+    {
+      "id": "TR01",
+      "title": "Mindtrip traveller FAQs",
+      "url": "https://resources.mindtrip.ai/travelers/help/traveler-faqs",
+      "observation": "Vendor describes conversational recommendations, editable itineraries, collaboration, booking organisation and in-trip maps.",
+      "limit": "Feature baseline only. Does not establish independent performance or payment demand.",
+      "checked": "2026-09-20"
+    },
+    {
+      "id": "TR02",
+      "title": "Layla",
+      "url": "https://layla.ai/",
+      "observation": "Vendor advertises AI trip planning and optional human travel experts.",
+      "limit": "No verified price benchmark. Human support is outside this study's offer.",
+      "checked": "2026-09-20"
+    },
+    {
+      "id": "TR03",
+      "title": "Booking.com AI sentiment report",
+      "url": "https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/",
+      "observation": "2025 survey of 37,325 people in 33 markets reports interest in AI travel planning and limited comfort with autonomous AI decisions.",
+      "limit": "Industry-sponsored self-report. Does not establish paid conversion or audience proportions.",
+      "checked": "2026-09-20"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "T01",
+      "label": "The group organiser",
+      "persona": "Plans two leisure trips a year for friends with different budgets. Collects preferences in messages and moves places into maps. Often spends several evenings reconciling changes. Usually compares tools before adopting one.",
+      "sources": [
+        "TR01"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and effort are illustrative."
+    },
+    {
+      "id": "T02",
+      "label": "The occasional traveller",
+      "persona": "Takes one leisure trip a year. Compares booking sites and reads reviews because unfamiliar transport and neighbourhoods require extra checking. Plans with a partner and has no established itinerary tool.",
+      "sources": [
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and circumstances are illustrative."
+    },
+    {
+      "id": "T03",
+      "label": "The independent planner",
+      "persona": "Takes four leisure trips a year. Enjoys researching food and local activities, keeps a map of saved places and uses ChatGPT for initial ideas. Has an established routine but sometimes finds opening hours wrong.",
+      "sources": [
+        "TR01",
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; frequency and preferences are illustrative."
+    },
+    {
+      "id": "T04",
+      "label": "The family coordinator",
+      "persona": "Organises one family holiday a year. Needs to align rest breaks, meal preferences and travel times. Shares confirmations in a folder and updates the plan when the family changes its mind.",
+      "sources": [
+        "TR01"
+      ],
+      "assumption": "Authored workflow hypothesis; no representative family evidence collected."
+    },
+    {
+      "id": "T05",
+      "label": "The frequent work traveller",
+      "persona": "Travels for work most months. Employer arranges flights and hotels. Uses calendar and maps between meetings and occasionally adds a leisure day. Must keep work booking data separate from personal tools.",
+      "sources": [
+        "TR02",
+        "TR03"
+      ],
+      "assumption": "Authored boundary case; employer policy and frequency are illustrative."
+    },
+    {
+      "id": "T06",
+      "label": "The flexible explorer",
+      "persona": "Takes three short leisure trips a year with a small budget. Books transport early, chooses activities on arrival, and uses free maps and recommendations from friends. Sometimes needs an alternative plan when transport changes.",
+      "sources": [
+        "TR01",
+        "TR03"
+      ],
+      "assumption": "Authored workflow hypothesis; budget and frequency are illustrative."
+    }
+  ],
+  "price_gbp_per_trip": 10
+}

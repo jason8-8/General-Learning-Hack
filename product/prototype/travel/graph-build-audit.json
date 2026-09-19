@@ -1,0 +1,359 @@
+{
+  "engine": "MiroFish-local GraphBuilderService / LocalGraphExtractor / LocalGraphStore / EntityReader / OasisProfileGenerator",
+  "model": "qwen3-coder:30b",
+  "created_at": "2026-09-19T21:54:42.739845+00:00",
+  "calls": [
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a knowledge-graph extraction engine. Given a text chunk and an ontology (entity types + relation types), extract entities and relations as valid JSON.\n\nOutput ONLY valid JSON in this exact format:\n{\n  \"entities\": [\n    {\"name\": \"EntityName\", \"type\": \"EntityType\", \"summary\": \"One-sentence description\", \"attributes\": {}}\n  ],\n  \"edges\": [\n    {\"name\": \"relation_type\", \"fact\": \"Natural language fact statement\", \"source\": \"SourceEntityName\", \"target\": \"TargetEntityName\", \"attributes\": {}}\n  ]\n}\n\nRules:\n1. Only use entity types and relation types defined in the ontology\n2. Entity names should be proper nouns or specific identifiers from the text\n3. Each edge fact must be a complete sentence describing the relationship\n4. If no entities/edges are found, return {\"entities\": [], \"edges\": []}\n5. Do not include any text outside the JSON object\nUse AudienceCohort for the five named AI attitude cohorts. Put an exact supporting substring from the input in attributes.evidence_quote for EVERY entity and edge. Do not invent extra cohorts or travel preferences."
+        },
+        {
+          "role": "user",
+          "content": "Ontology: {\"entity_types\": [\"AudienceCohort\", \"Product\", \"Need\", \"Concern\", \"ResearchSource\"], \"edge_types\": [\"reports\", \"has_attitude\", \"offers\", \"raises_concern\", \"supports_task\"]}\nResearch summary:\nBooking.com reports five general AI attitude cohorts: AI Enthusiasts are interested in AI possibilities; AI Advocates promote benefits and responsible adoption; AI Cautious are wary of AI development or use; AI Skeptics express scepticism; AI Detractors resist adoption. Its online survey covered 37,325 respondents in 33 markets in April and May 2025. These are aggregate general-AI attitudes, not travel-product purchasing segments. The report identifies travel tasks including destination research, local activities, restaurant suggestions, translation and transport navigation. It also describes widespread verification of AI output and limited comfort with autonomous decisions. Neither the cohorts nor task interest establish willingness to pay for this assistant."
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\n      \"name\": \"AI Enthusiasts\",\n      \"type\": \"AudienceCohort\",\n      \"summary\": \"A cohort interested in AI possibilities.\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Enthusiasts are interested in AI possibilities\"\n      }\n    },\n    {\n      \"name\": \"AI Advocates\",\n      \"type\": \"AudienceCohort\",\n      \"summary\": \"A cohort that promotes benefits and responsible adoption of AI.\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Advocates promote benefits and responsible adoption\"\n      }\n    },\n    {\n      \"name\": \"AI Cautious\",\n      \"type\": \"AudienceCohort\",\n      \"summary\": \"A cohort that is wary of AI development or use.\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Cautious are wary of AI development or use\"\n      }\n    },\n    {\n      \"name\": \"AI Skeptics\",\n      \"type\": \"AudienceCohort\",\n      \"summary\": \"A cohort that expresses scepticism towards AI.\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Skeptics express scepticism\"\n      }\n    },\n    {\n      \"name\": \"AI Detractors\",\n      \"type\": \"AudienceCohort\",\n      \"summary\": \"A cohort that resists adoption of AI.\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Detractors resist adoption\"\n      }\n    },\n    {\n      \"name\": \"Booking.com\",\n      \"type\": \"ResearchSource\",\n      \"summary\": \"The source that reports on AI attitude cohorts.\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"destination research\",\n      \"type\": \"TravelTask\",\n      \"summary\": \"A travel task involving researching destinations.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including destination research\"\n      }\n    },\n    {\n      \"name\": \"local activities\",\n      \"type\": \"TravelTask\",\n      \"summary\": \"A travel task involving local activities.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including local activities\"\n      }\n    },\n    {\n      \"name\": \"restaurant suggestions\",\n      \"type\": \"TravelTask\",\n      \"summary\": \"A travel task involving restaurant suggestions.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including restaurant suggestions\"\n      }\n    },\n    {\n      \"name\": \"translation\",\n      \"type\": \"TravelTask\",\n      \"summary\": \"A travel task involving translation.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including translation\"\n      }\n    },\n    {\n      \"name\": \"transport navigation\",\n      \"type\": \"TravelTask\",\n      \"summary\": \"A travel task involving transport navigation.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including transport navigation\"\n      }\n    }\n  ],\n  \"edges\": [\n    {\n      \"name\": \"reports\",\n      \"fact\": \"Booking.com reports five general AI attitude cohorts.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"AI Enthusiasts\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"reports\",\n      \"fact\": \"Booking.com reports five general AI attitude cohorts.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"AI Advocates\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"reports\",\n      \"fact\": \"Booking.com reports five general AI attitude cohorts.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"AI Cautious\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"reports\",\n      \"fact\": \"Booking.com reports five general AI attitude cohorts.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"AI Skeptics\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"reports\",\n      \"fact\": \"Booking.com reports five general AI attitude cohorts.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"AI Detractors\",\n      \"attributes\": {\n        \"evidence_quote\": \"Booking.com reports five general AI attitude cohorts\"\n      }\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"AI Enthusiasts have an attitude of being interested in AI possibilities.\",\n      \"source\": \"AI Enthusiasts\",\n      \"target\": \"AI Enthusiasts\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Enthusiasts are interested in AI possibilities\"\n      }\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"AI Advocates have an attitude of promoting benefits and responsible adoption.\",\n      \"source\": \"AI Advocates\",\n      \"target\": \"AI Advocates\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Advocates promote benefits and responsible adoption\"\n      }\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"AI Cautious have an attitude of being wary of AI development or use.\",\n      \"source\": \"AI Cautious\",\n      \"target\": \"AI Cautious\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Cautious are wary of AI development or use\"\n      }\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"AI Skeptics have an attitude of expressing scepticism.\",\n      \"source\": \"AI Skeptics\",\n      \"target\": \"AI Skeptics\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Skeptics express scepticism\"\n      }\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"AI Detractors have an attitude of resisting adoption.\",\n      \"source\": \"AI Detractors\",\n      \"target\": \"AI Detractors\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Detractors resist adoption\"\n      }\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Booking.com offers travel tasks including destination research.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"destination research\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including destination research\"\n      }\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Booking.com offers travel tasks including local activities.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"local activities\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including local activities\"\n      }\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Booking.com offers travel tasks including restaurant suggestions.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"restaurant suggestions\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including restaurant suggestions\"\n      }\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Booking.com offers travel tasks including translation.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"translation\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including translation\"\n      }\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Booking.com offers travel tasks including transport navigation.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"transport navigation\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including transport navigation\"\n      }\n    },\n    {\n      \"name\": \"raises_concern\",\n      \"fact\": \"AI Cautious raise a concern about AI development or use.\",\n      \"source\": \"AI Cautious\",\n      \"target\": \"AI development or use\",\n      \"attributes\": {\n        \"evidence_quote\": \"AI Cautious are wary of AI development or use\"\n      }\n    },\n    {\n      \"name\": \"supports_task\",\n      \"fact\": \"Booking.com supports the task of destination research.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"destination research\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including destination research\"\n      }\n    },\n    {\n      \"name\": \"supports_task\",\n      \"fact\": \"Booking.com supports the task of local activities.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"local activities\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including local activities\"\n      }\n    },\n    {\n      \"name\": \"supports_task\",\n      \"fact\": \"Booking.com supports the task of restaurant suggestions.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"restaurant suggestions\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including restaurant suggestions\"\n      }\n    },\n    {\n      \"name\": \"supports_task\",\n      \"fact\": \"Booking.com supports the task of translation.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"translation\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including translation\"\n      }\n    },\n    {\n      \"name\": \"supports_task\",\n      \"fact\": \"Booking.com supports the task of transport navigation.\",\n      \"source\": \"Booking.com\",\n      \"target\": \"transport navigation\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report identifies travel tasks including transport navigation\"\n      }\n    }\n  ]\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a knowledge-graph extraction engine. Given a text chunk and an ontology (entity types + relation types), extract entities and relations as valid JSON.\n\nOutput ONLY valid JSON in this exact format:\n{\n  \"entities\": [\n    {\"name\": \"EntityName\", \"type\": \"EntityType\", \"summary\": \"One-sentence description\", \"attributes\": {}}\n  ],\n  \"edges\": [\n    {\"name\": \"relation_type\", \"fact\": \"Natural language fact statement\", \"source\": \"SourceEntityName\", \"target\": \"TargetEntityName\", \"attributes\": {}}\n  ]\n}\n\nRules:\n1. Only use entity types and relation types defined in the ontology\n2. Entity names should be proper nouns or specific identifiers from the text\n3. Each edge fact must be a complete sentence describing the relationship\n4. If no entities/edges are found, return {\"entities\": [], \"edges\": []}\n5. Do not include any text outside the JSON object\nUse AudienceCohort for the five named AI attitude cohorts. Put an exact supporting substring from the input in attributes.evidence_quote for EVERY entity and edge. Do not invent extra cohorts or travel preferences."
+        },
+        {
+          "role": "user",
+          "content": "Ontology: {\"entity_types\": [\"AudienceCohort\", \"Product\", \"Need\", \"Concern\", \"ResearchSource\"], \"edge_types\": [\"reports\", \"has_attitude\", \"offers\", \"raises_concern\", \"supports_task\"]}\nResearch summary:\nExpedia Group reports a gap between AI-assisted travel planning and trust in booking. YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026. Reported uses include travel suggestions, price monitoring and itinerary building. Search engines and online travel agencies remain common planning alternatives. The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions. Trusted travel brands are preferred by many respondents for booking. This industry-commissioned survey describes stated attitudes; it does not establish demand for a paid standalone travel assistant."
+        }
+      ],
+      "raw": "{\n  \"entities\": [\n    {\n      \"name\": \"Expedia Group\",\n      \"type\": \"Product\",\n      \"summary\": \"A travel company that reports on AI-assisted travel planning trends.\",\n      \"attributes\": {\n        \"evidence_quote\": \"Expedia Group reports a gap between AI-assisted travel planning and trust in booking\"\n      }\n    },\n    {\n      \"name\": \"YouGov\",\n      \"type\": \"ResearchSource\",\n      \"summary\": \"A research firm that conducted a survey on AI attitudes in travel planning.\",\n      \"attributes\": {\n        \"evidence_quote\": \"YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026\"\n      }\n    },\n    {\n      \"name\": \"AI-assisted travel planning\",\n      \"type\": \"Need\",\n      \"summary\": \"The use of artificial intelligence for helping with travel arrangements.\",\n      \"attributes\": {\n        \"evidence_quote\": \"Expedia Group reports a gap between AI-assisted travel planning and trust in booking\"\n      }\n    },\n    {\n      \"name\": \"Control\",\n      \"type\": \"Concern\",\n      \"summary\": \"A concern about AI transactions related to maintaining control over the booking process.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions\"\n      }\n    },\n    {\n      \"name\": \"Payment-data privacy\",\n      \"type\": \"Concern\",\n      \"summary\": \"A concern about the privacy of payment information in AI transactions.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions\"\n      }\n    },\n    {\n      \"name\": \"Misuse of personal data\",\n      \"type\": \"Concern\",\n      \"summary\": \"A concern about how personal information might be misused in AI transactions.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions\"\n      }\n    },\n    {\n      \"name\": \"Customer support\",\n      \"type\": \"Concern\",\n      \"summary\": \"A concern about the availability and quality of customer support in AI transactions.\",\n      \"attributes\": {\n        \"evidence_quote\": \"The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions\"\n      }\n    },\n    {\n      \"name\": \"Trusted travel brands\",\n      \"type\": \"Product\",\n      \"summary\": \"Travel companies that respondents prefer for booking due to trust.\",\n      \"attributes\": {\n        \"evidence_quote\": \"Trusted travel brands are preferred by many respondents for booking\"\n      }\n    }\n  ],\n  \"edges\": [\n    {\n      \"name\": \"reports\",\n      \"fact\": \"YouGov reports on AI attitudes in travel planning.\",\n      \"source\": \"YouGov\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"has_attitude\",\n      \"fact\": \"Expedia Group has an attitude about the gap between AI-assisted travel planning and trust in booking.\",\n      \"source\": \"Expedia Group\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"raises_concern\",\n      \"fact\": \"Control raises a concern about AI transactions.\",\n      \"source\": \"Control\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"raises_concern\",\n      \"fact\": \"Payment-data privacy raises a concern about AI transactions.\",\n      \"source\": \"Payment-data privacy\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"raises_concern\",\n      \"fact\": \"Misuse of personal data raises a concern about AI transactions.\",\n      \"source\": \"Misuse of personal data\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"raises_concern\",\n      \"fact\": \"Customer support raises a concern about AI transactions.\",\n      \"source\": \"Customer support\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    },\n    {\n      \"name\": \"offers\",\n      \"fact\": \"Trusted travel brands offer preferred booking options to respondents.\",\n      \"source\": \"Trusted travel brands\",\n      \"target\": \"AI-assisted travel planning\",\n      \"attributes\": {}\n    }\n  ]\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Create a synthetic travel-study attitude seed from the supplied knowledge-graph context. Return JSON with bio and persona only. No invented demographics, specific travel frequency, budget, employment, purchase choice or price. Preserve source uncertainty. Do not turn a general AI attitude into a prescribed product decision. Maximum 90 words."
+        },
+        {
+          "role": "user",
+          "content": "{\"name\": \"AI Advocates\", \"summary\": \"A cohort that promotes benefits and responsible adoption of AI.\", \"attributes\": {\"evidence_quote\": \"AI Advocates promote benefits and responsible adoption\", \"source_id\": \"GR01\", \"provenance\": \"LLM extraction from a recorded research summary; inspect source\"}, \"graph_context\": \"### Entity attributes\\n- evidence_quote: AI Advocates promote benefits and responsible adoption\\n- source_id: GR01\\n- provenance: LLM extraction from a recorded research summary; inspect source\\n\\n### Related facts and relationships\\n- Booking.com reports five general AI attitude cohorts.\\n- AI Advocates have an attitude of promoting benefits and responsible adoption.\\n\\n### Related entity info\\n- **Booking.com** (ResearchSource): The source that reports on AI attitude cohorts.\\n- **AI Advocates** (AudienceCohort): A cohort that promotes benefits and responsible adoption of AI.\\n\\n### Related nodes retrieved via graph search\\n- A cohort that promotes benefits and responsible adoption of AI.\"}"
+        }
+      ],
+      "raw": "{\n  \"bio\": \"Promotes AI benefits while emphasizing responsible adoption practices. Values thoughtful integration of artificial intelligence technologies.\",\n  \"persona\": \"Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations.\"\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Create a synthetic travel-study attitude seed from the supplied knowledge-graph context. Return JSON with bio and persona only. No invented demographics, specific travel frequency, budget, employment, purchase choice or price. Preserve source uncertainty. Do not turn a general AI attitude into a prescribed product decision. Maximum 90 words."
+        },
+        {
+          "role": "user",
+          "content": "{\"name\": \"AI Cautious\", \"summary\": \"A cohort that is wary of AI development or use.\", \"attributes\": {\"evidence_quote\": \"AI Cautious are wary of AI development or use\", \"source_id\": \"GR01\", \"provenance\": \"LLM extraction from a recorded research summary; inspect source\"}, \"graph_context\": \"### Entity attributes\\n- evidence_quote: AI Cautious are wary of AI development or use\\n- source_id: GR01\\n- provenance: LLM extraction from a recorded research summary; inspect source\\n\\n### Related facts and relationships\\n- Booking.com reports five general AI attitude cohorts.\\n- AI Cautious have an attitude of being wary of AI development or use.\\n\\n### Related entity info\\n- **Booking.com** (ResearchSource): The source that reports on AI attitude cohorts.\\n- **AI Cautious** (AudienceCohort): A cohort that is wary of AI development or use.\\n\\n### Related nodes retrieved via graph search\\n- A cohort that is wary of AI development or use.\"}"
+        }
+      ],
+      "raw": "{\n  \"bio\": \"Experiences uncertainty about AI's role in travel planning and decision-making. Approaches AI-powered travel tools with caution, preferring human oversight in booking and itinerary decisions.\",\n  \"persona\": \"Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods.\"\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Create a synthetic travel-study attitude seed from the supplied knowledge-graph context. Return JSON with bio and persona only. No invented demographics, specific travel frequency, budget, employment, purchase choice or price. Preserve source uncertainty. Do not turn a general AI attitude into a prescribed product decision. Maximum 90 words."
+        },
+        {
+          "role": "user",
+          "content": "{\"name\": \"AI Detractors\", \"summary\": \"A cohort that resists adoption of AI.\", \"attributes\": {\"evidence_quote\": \"AI Detractors resist adoption\", \"source_id\": \"GR01\", \"provenance\": \"LLM extraction from a recorded research summary; inspect source\"}, \"graph_context\": \"### Entity attributes\\n- evidence_quote: AI Detractors resist adoption\\n- source_id: GR01\\n- provenance: LLM extraction from a recorded research summary; inspect source\\n\\n### Related facts and relationships\\n- Booking.com reports five general AI attitude cohorts.\\n- AI Detractors have an attitude of resisting adoption.\\n\\n### Related entity info\\n- **Booking.com** (ResearchSource): The source that reports on AI attitude cohorts.\\n- **AI Detractors** (AudienceCohort): A cohort that resists adoption of AI.\\n\\n### Related nodes retrieved via graph search\\n- A cohort that resists adoption of AI.\"}"
+        }
+      ],
+      "raw": "{\n  \"bio\": \"Resists adopting AI technologies, preferring traditional methods and human-centered approaches to travel planning and decision-making.\",\n  \"persona\": \"Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations.\"\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Create a synthetic travel-study attitude seed from the supplied knowledge-graph context. Return JSON with bio and persona only. No invented demographics, specific travel frequency, budget, employment, purchase choice or price. Preserve source uncertainty. Do not turn a general AI attitude into a prescribed product decision. Maximum 90 words."
+        },
+        {
+          "role": "user",
+          "content": "{\"name\": \"AI Enthusiasts\", \"summary\": \"A cohort interested in AI possibilities.\", \"attributes\": {\"evidence_quote\": \"AI Enthusiasts are interested in AI possibilities\", \"source_id\": \"GR01\", \"provenance\": \"LLM extraction from a recorded research summary; inspect source\"}, \"graph_context\": \"### Entity attributes\\n- evidence_quote: AI Enthusiasts are interested in AI possibilities\\n- source_id: GR01\\n- provenance: LLM extraction from a recorded research summary; inspect source\\n\\n### Related facts and relationships\\n- Booking.com reports five general AI attitude cohorts.\\n- AI Enthusiasts have an attitude of being interested in AI possibilities.\\n\\n### Related entity info\\n- **Booking.com** (ResearchSource): The source that reports on AI attitude cohorts.\\n- **AI Enthusiasts** (AudienceCohort): A cohort interested in AI possibilities.\\n\\n### Related nodes retrieved via graph search\\n- A cohort interested in AI possibilities.\"}"
+        }
+      ],
+      "raw": "{\n  \"bio\": \"Curious about artificial intelligence's potential, I explore how AI might shape future experiences and opportunities. My interest lies in understanding AI possibilities rather than specific applications.\",\n  \"persona\": \"An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments.\"\n}",
+      "finish_reason": "stop"
+    },
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "Create a synthetic travel-study attitude seed from the supplied knowledge-graph context. Return JSON with bio and persona only. No invented demographics, specific travel frequency, budget, employment, purchase choice or price. Preserve source uncertainty. Do not turn a general AI attitude into a prescribed product decision. Maximum 90 words."
+        },
+        {
+          "role": "user",
+          "content": "{\"name\": \"AI Skeptics\", \"summary\": \"A cohort that expresses scepticism towards AI.\", \"attributes\": {\"evidence_quote\": \"AI Skeptics express scepticism\", \"source_id\": \"GR01\", \"provenance\": \"LLM extraction from a recorded research summary; inspect source\"}, \"graph_context\": \"### Entity attributes\\n- evidence_quote: AI Skeptics express scepticism\\n- source_id: GR01\\n- provenance: LLM extraction from a recorded research summary; inspect source\\n\\n### Related facts and relationships\\n- Booking.com reports five general AI attitude cohorts.\\n- AI Skeptics have an attitude of expressing scepticism.\\n\\n### Related entity info\\n- **Booking.com** (ResearchSource): The source that reports on AI attitude cohorts.\\n- **AI Skeptics** (AudienceCohort): A cohort that expresses scepticism towards AI.\\n\\n### Related nodes retrieved via graph search\\n- A cohort that expresses scepticism towards AI.\"}"
+        }
+      ],
+      "raw": "{\n  \"bio\": \"Experiences uncertainty about AI's role in travel planning, questioning its reliability and impact on decision-making processes.\",\n  \"persona\": \"Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies.\"\n}",
+      "finish_reason": "stop"
+    }
+  ],
+  "rejected": [
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "destination research",
+        "type": "TravelTask",
+        "summary": "A travel task involving researching destinations.",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including destination research"
+        }
+      },
+      "reason": "Type outside declared ontology"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "local activities",
+        "type": "TravelTask",
+        "summary": "A travel task involving local activities.",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including local activities"
+        }
+      },
+      "reason": "Type outside declared ontology"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "restaurant suggestions",
+        "type": "TravelTask",
+        "summary": "A travel task involving restaurant suggestions.",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including restaurant suggestions"
+        }
+      },
+      "reason": "Type outside declared ontology"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "translation",
+        "type": "TravelTask",
+        "summary": "A travel task involving translation.",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including translation"
+        }
+      },
+      "reason": "Type outside declared ontology"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "transport navigation",
+        "type": "TravelTask",
+        "summary": "A travel task involving transport navigation.",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including transport navigation"
+        }
+      },
+      "reason": "Type outside declared ontology"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "offers",
+        "fact": "Booking.com offers travel tasks including local activities.",
+        "source": "Booking.com",
+        "target": "local activities",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including local activities"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "offers",
+        "fact": "Booking.com offers travel tasks including restaurant suggestions.",
+        "source": "Booking.com",
+        "target": "restaurant suggestions",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including restaurant suggestions"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "offers",
+        "fact": "Booking.com offers travel tasks including translation.",
+        "source": "Booking.com",
+        "target": "translation",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including translation"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "offers",
+        "fact": "Booking.com offers travel tasks including transport navigation.",
+        "source": "Booking.com",
+        "target": "transport navigation",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including transport navigation"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "supports_task",
+        "fact": "Booking.com supports the task of local activities.",
+        "source": "Booking.com",
+        "target": "local activities",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including local activities"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "supports_task",
+        "fact": "Booking.com supports the task of restaurant suggestions.",
+        "source": "Booking.com",
+        "target": "restaurant suggestions",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including restaurant suggestions"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "supports_task",
+        "fact": "Booking.com supports the task of translation.",
+        "source": "Booking.com",
+        "target": "translation",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including translation"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR01",
+      "item": {
+        "name": "supports_task",
+        "fact": "Booking.com supports the task of transport navigation.",
+        "source": "Booking.com",
+        "target": "transport navigation",
+        "attributes": {
+          "evidence_quote": "The report identifies travel tasks including transport navigation"
+        }
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "reports",
+        "fact": "YouGov reports on AI attitudes in travel planning.",
+        "source": "YouGov",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "has_attitude",
+        "fact": "Expedia Group has an attitude about the gap between AI-assisted travel planning and trust in booking.",
+        "source": "Expedia Group",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "raises_concern",
+        "fact": "Control raises a concern about AI transactions.",
+        "source": "Control",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "raises_concern",
+        "fact": "Payment-data privacy raises a concern about AI transactions.",
+        "source": "Payment-data privacy",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "raises_concern",
+        "fact": "Misuse of personal data raises a concern about AI transactions.",
+        "source": "Misuse of personal data",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "raises_concern",
+        "fact": "Customer support raises a concern about AI transactions.",
+        "source": "Customer support",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    },
+    {
+      "source_id": "GR02",
+      "item": {
+        "name": "offers",
+        "fact": "Trusted travel brands offer preferred booking options to respondents.",
+        "source": "Trusted travel brands",
+        "target": "AI-assisted travel planning",
+        "attributes": {}
+      },
+      "reason": "Missing exact evidence anchor"
+    }
+  ],
+  "usage": {
+    "calls": 7,
+    "prompt_tokens": 2347,
+    "completion_tokens": 3353
+  },
+  "status": "completed",
+  "elapsed_seconds": 79.07,
+  "graph_id": "mirofish_35a4c5e66d90421c",
+  "nodes": 14,
+  "edges": 10,
+  "profiles": 1000
+}

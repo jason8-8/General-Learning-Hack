@@ -1,0 +1,1635 @@
+{
+  "version": "travel-v2-priced-pilot",
+  "brief": "An AI travel assistant that helps people plan and navigate trips.",
+  "offer": "Build and edit an itinerary, combine travellers' preferences, organise booking details and suggest changes during the trip. Users verify recommendations and approve bookings. No autonomous purchases or human concierge are included. Price: \u00a330 per trip, paid by this traveller. No free trial. Existing free tools remain available. Product benefits have not been demonstrated.",
+  "question": "For your next trip, choose between this paid assistant, continuing with your existing free tools, or neither. Explain the trade-off using only your stated workflow. Do not assume unproven time savings, accuracy or capabilities.",
+  "sources": [
+    {
+      "id": "GR01",
+      "title": "Booking.com Global AI Sentiment Report",
+      "url": "https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/",
+      "observation": "Booking.com reports five general AI attitude cohorts: AI Enthusiasts are interested in AI possibilities; AI Advocates promote benefits and responsible adoption; AI Cautious are wary of AI development or use; AI Skeptics express scepticism; AI Detractors resist adoption. Its online survey covered 37,325 respondents in 33 markets in April and May 2025. These are aggregate general-AI attitudes, not travel-product purchasing segments. The report identifies travel tasks including destination research, local activities, restaurant suggestions, translation and transport navigation. It also describes widespread verification of AI output and limited comfort with autonomous decisions. Neither the cohorts nor task interest establish willingness to pay for this assistant.",
+      "limit": "Aggregate published research; no paid-demand evidence",
+      "checked": "2026-09-20"
+    },
+    {
+      "id": "GR02",
+      "title": "Expedia Group AI Trust Gap",
+      "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Reveals-The-AI-Trust-Gap-Travelers-Embrace-AI-for-Planning-but-Rely-on-Trusted-Brands-to-Book/",
+      "observation": "Expedia Group reports a gap between AI-assisted travel planning and trust in booking. YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026. Reported uses include travel suggestions, price monitoring and itinerary building. Search engines and online travel agencies remain common planning alternatives. The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions. Trusted travel brands are preferred by many respondents for booking. This industry-commissioned survey describes stated attitudes; it does not establish demand for a paid standalone travel assistant.",
+      "limit": "Aggregate published research; no paid-demand evidence",
+      "checked": "2026-09-20"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "G0001",
+      "label": "AI Detractors / with friends",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with friends, takes 8 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "with friends",
+        "trips_per_year": 8,
+        "alternative": "ChatGPT plus manual checking",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0002",
+      "label": "AI Cautious / with family",
+      "persona": "Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with family, takes 2 trips a year, currently uses ChatGPT plus manual checking. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "b4044291-a8a8-457e-8b75-8e4b95eda700"
+      ],
+      "graph_edge_ids": [
+        "32c2f885-6a30-48b1-8827-449726191ba8",
+        "b6a52d81-7e0f-4c45-8e02-9acc1f788d88"
+      ],
+      "scenario": {
+        "companions": "with family",
+        "trips_per_year": 2,
+        "alternative": "ChatGPT plus manual checking",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0003",
+      "label": "AI Detractors / with a partner",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with a partner, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "with a partner",
+        "trips_per_year": 5,
+        "alternative": "search engines and maps",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0004",
+      "label": "AI Enthusiasts / alone",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels alone, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 2,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0005",
+      "label": "AI Skeptics / alone",
+      "persona": "Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies. Travel scenario assumptions: travels alone, takes 1 trips a year, currently uses booking sites and saved lists. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "6b251ace-71cc-4673-8e4b-e5c78c328573"
+      ],
+      "graph_edge_ids": [
+        "cd6f49c9-567d-4b9b-afd4-1cde4cc286ce",
+        "381097f3-22e6-4b7d-9d41-703a14344157"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 1,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0006",
+      "label": "AI Enthusiasts / with friends",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with friends, takes 3 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "with friends",
+        "trips_per_year": 3,
+        "alternative": "an established personal spreadsheet",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0007",
+      "label": "AI Enthusiasts / with a partner",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with a partner, takes 8 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "with a partner",
+        "trips_per_year": 8,
+        "alternative": "ChatGPT plus manual checking",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0008",
+      "label": "AI Advocates / with colleagues",
+      "persona": "Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations. Travel scenario assumptions: travels with colleagues, takes 8 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f"
+      ],
+      "graph_edge_ids": [
+        "0784596f-4fa7-4f00-b3bc-c9d5b0ddd4eb",
+        "55680d11-44e8-43d3-992b-362138da4427"
+      ],
+      "scenario": {
+        "companions": "with colleagues",
+        "trips_per_year": 8,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0009",
+      "label": "AI Cautious / with friends",
+      "persona": "Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with friends, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "b4044291-a8a8-457e-8b75-8e4b95eda700"
+      ],
+      "graph_edge_ids": [
+        "32c2f885-6a30-48b1-8827-449726191ba8",
+        "b6a52d81-7e0f-4c45-8e02-9acc1f788d88"
+      ],
+      "scenario": {
+        "companions": "with friends",
+        "trips_per_year": 2,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0010",
+      "label": "AI Cautious / alone",
+      "persona": "Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels alone, takes 1 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "b4044291-a8a8-457e-8b75-8e4b95eda700"
+      ],
+      "graph_edge_ids": [
+        "32c2f885-6a30-48b1-8827-449726191ba8",
+        "b6a52d81-7e0f-4c45-8e02-9acc1f788d88"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 1,
+        "alternative": "an established personal spreadsheet",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0011",
+      "label": "AI Advocates / alone",
+      "persona": "Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations. Travel scenario assumptions: travels alone, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f"
+      ],
+      "graph_edge_ids": [
+        "0784596f-4fa7-4f00-b3bc-c9d5b0ddd4eb",
+        "55680d11-44e8-43d3-992b-362138da4427"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 2,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0012",
+      "label": "AI Detractors / alone",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels alone, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 5,
+        "alternative": "search engines and maps",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0013",
+      "label": "AI Enthusiasts / with friends",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with friends, takes 2 trips a year, currently uses ChatGPT plus manual checking. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "with friends",
+        "trips_per_year": 2,
+        "alternative": "ChatGPT plus manual checking",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0014",
+      "label": "AI Enthusiasts / with colleagues",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with colleagues, takes 5 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "with colleagues",
+        "trips_per_year": 5,
+        "alternative": "ChatGPT plus manual checking",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0015",
+      "label": "AI Skeptics / alone",
+      "persona": "Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies. Travel scenario assumptions: travels alone, takes 3 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "6b251ace-71cc-4673-8e4b-e5c78c328573"
+      ],
+      "graph_edge_ids": [
+        "cd6f49c9-567d-4b9b-afd4-1cde4cc286ce",
+        "381097f3-22e6-4b7d-9d41-703a14344157"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 3,
+        "alternative": "an established personal spreadsheet",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0016",
+      "label": "AI Detractors / with colleagues",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with colleagues, takes 5 trips a year, currently uses search engines and maps. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "with colleagues",
+        "trips_per_year": 5,
+        "alternative": "search engines and maps",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0017",
+      "label": "AI Detractors / alone",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels alone, takes 8 trips a year, currently uses booking sites and saved lists. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "alone",
+        "trips_per_year": 8,
+        "alternative": "booking sites and saved lists",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0018",
+      "label": "AI Cautious / with a partner",
+      "persona": "Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with a partner, takes 8 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "b4044291-a8a8-457e-8b75-8e4b95eda700"
+      ],
+      "graph_edge_ids": [
+        "32c2f885-6a30-48b1-8827-449726191ba8",
+        "b6a52d81-7e0f-4c45-8e02-9acc1f788d88"
+      ],
+      "scenario": {
+        "companions": "with a partner",
+        "trips_per_year": 8,
+        "alternative": "an established personal spreadsheet",
+        "planning_effort": "Usually spends 8 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0019",
+      "label": "AI Enthusiasts / with family",
+      "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with family, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+      ],
+      "graph_edge_ids": [
+        "887b86fa-0392-494b-afce-8b15787c643d",
+        "7b090e06-7cd8-435f-aaf6-5f9c759c810c"
+      ],
+      "scenario": {
+        "companions": "with family",
+        "trips_per_year": 5,
+        "alternative": "search engines and maps",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    },
+    {
+      "id": "G0020",
+      "label": "AI Detractors / with friends",
+      "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with friends, takes 5 trips a year, currently uses an established personal spreadsheet. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.",
+      "sources": [
+        "GR01"
+      ],
+      "graph_node_ids": [
+        "36ab7864-5112-4f47-a522-d77617cab25a"
+      ],
+      "graph_edge_ids": [
+        "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "8a7c3f82-518f-428c-9c0c-b7ca799e64c7"
+      ],
+      "scenario": {
+        "companions": "with friends",
+        "trips_per_year": 5,
+        "alternative": "an established personal spreadsheet",
+        "planning_effort": "Usually spends 2 hours planning each trip."
+      },
+      "assumption": "Balanced factorial stress-test design. Equal allocation is not an estimated population distribution."
+    }
+  ],
+  "price_gbp_per_trip": 30,
+  "knowledge_graph": {
+    "graph_id": "mirofish_35a4c5e66d90421c",
+    "sha256": "c533a346708fa90542b6299806bfcc90550f2ecb3d2e8843bffb243042e8c214",
+    "nodes": [
+      {
+        "uuid": "9bb6b07f-4e09-433c-a14d-a767fd6658f5",
+        "name": "AI Enthusiasts",
+        "labels": [
+          "Entity",
+          "AudienceCohort"
+        ],
+        "summary": "A cohort interested in AI possibilities.",
+        "attributes": {
+          "evidence_quote": "AI Enthusiasts are interested in AI possibilities",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:12.437161"
+      },
+      {
+        "uuid": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f",
+        "name": "AI Advocates",
+        "labels": [
+          "Entity",
+          "AudienceCohort"
+        ],
+        "summary": "A cohort that promotes benefits and responsible adoption of AI.",
+        "attributes": {
+          "evidence_quote": "AI Advocates promote benefits and responsible adoption",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:13.909182"
+      },
+      {
+        "uuid": "b4044291-a8a8-457e-8b75-8e4b95eda700",
+        "name": "AI Cautious",
+        "labels": [
+          "Entity",
+          "AudienceCohort"
+        ],
+        "summary": "A cohort that is wary of AI development or use.",
+        "attributes": {
+          "evidence_quote": "AI Cautious are wary of AI development or use",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:15.244719"
+      },
+      {
+        "uuid": "6b251ace-71cc-4673-8e4b-e5c78c328573",
+        "name": "AI Skeptics",
+        "labels": [
+          "Entity",
+          "AudienceCohort"
+        ],
+        "summary": "A cohort that expresses scepticism towards AI.",
+        "attributes": {
+          "evidence_quote": "AI Skeptics express scepticism",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:16.681382"
+      },
+      {
+        "uuid": "36ab7864-5112-4f47-a522-d77617cab25a",
+        "name": "AI Detractors",
+        "labels": [
+          "Entity",
+          "AudienceCohort"
+        ],
+        "summary": "A cohort that resists adoption of AI.",
+        "attributes": {
+          "evidence_quote": "AI Detractors resist adoption",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:18.064937"
+      },
+      {
+        "uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "name": "Booking.com",
+        "labels": [
+          "Entity",
+          "ResearchSource"
+        ],
+        "summary": "The source that reports on AI attitude cohorts.",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:19.424657"
+      },
+      {
+        "uuid": "97b004fa-c32d-4fb4-8c48-33a099a8fbb9",
+        "name": "Expedia Group",
+        "labels": [
+          "Entity",
+          "Product"
+        ],
+        "summary": "A travel company that reports on AI-assisted travel planning trends.",
+        "attributes": {
+          "evidence_quote": "Expedia Group reports a gap between AI-assisted travel planning and trust in booking",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:47.624091"
+      },
+      {
+        "uuid": "bcfad1ee-6c26-42bf-9416-8076e451addc",
+        "name": "YouGov",
+        "labels": [
+          "Entity",
+          "ResearchSource"
+        ],
+        "summary": "A research firm that conducted a survey on AI attitudes in travel planning.",
+        "attributes": {
+          "evidence_quote": "YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:49.073801"
+      },
+      {
+        "uuid": "2cfaa432-3412-4c47-a078-ea0686bc079e",
+        "name": "AI-assisted travel planning",
+        "labels": [
+          "Entity",
+          "Need"
+        ],
+        "summary": "The use of artificial intelligence for helping with travel arrangements.",
+        "attributes": {
+          "evidence_quote": "Expedia Group reports a gap between AI-assisted travel planning and trust in booking",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:50.608629"
+      },
+      {
+        "uuid": "47ba89ba-97e1-4251-b299-4fab89f937b7",
+        "name": "Control",
+        "labels": [
+          "Entity",
+          "Concern"
+        ],
+        "summary": "A concern about AI transactions related to maintaining control over the booking process.",
+        "attributes": {
+          "evidence_quote": "The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:52.013743"
+      },
+      {
+        "uuid": "03e624a8-de67-4cae-becf-e43994021a5d",
+        "name": "Payment-data privacy",
+        "labels": [
+          "Entity",
+          "Concern"
+        ],
+        "summary": "A concern about the privacy of payment information in AI transactions.",
+        "attributes": {
+          "evidence_quote": "The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:53.443862"
+      },
+      {
+        "uuid": "ed204167-91ce-45bb-b50c-99f23d3dad9d",
+        "name": "Misuse of personal data",
+        "labels": [
+          "Entity",
+          "Concern"
+        ],
+        "summary": "A concern about how personal information might be misused in AI transactions.",
+        "attributes": {
+          "evidence_quote": "The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:54.741979"
+      },
+      {
+        "uuid": "99b0d446-782a-4303-9ec3-3e8a87b29e9d",
+        "name": "Customer support",
+        "labels": [
+          "Entity",
+          "Concern"
+        ],
+        "summary": "A concern about the availability and quality of customer support in AI transactions.",
+        "attributes": {
+          "evidence_quote": "The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:56.037651"
+      },
+      {
+        "uuid": "032d746c-ef8d-46be-bdea-186610f3a691",
+        "name": "Trusted travel brands",
+        "labels": [
+          "Entity",
+          "Product"
+        ],
+        "summary": "Travel companies that respondents prefer for booking due to trust.",
+        "attributes": {
+          "evidence_quote": "Trusted travel brands are preferred by many respondents for booking",
+          "source_id": "GR02",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:57.560544"
+      }
+    ],
+    "edges": [
+      {
+        "uuid": "887b86fa-0392-494b-afce-8b15787c643d",
+        "name": "reports",
+        "fact": "Booking.com reports five general AI attitude cohorts.",
+        "fact_type": "reports",
+        "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "target_node_uuid": "9bb6b07f-4e09-433c-a14d-a767fd6658f5",
+        "source_node_name": "Booking.com",
+        "target_node_name": "AI Enthusiasts",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:20.744200",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "0784596f-4fa7-4f00-b3bc-c9d5b0ddd4eb",
+        "name": "reports",
+        "fact": "Booking.com reports five general AI attitude cohorts.",
+        "fact_type": "reports",
+        "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "target_node_uuid": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f",
+        "source_node_name": "Booking.com",
+        "target_node_name": "AI Advocates",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:22.067449",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "32c2f885-6a30-48b1-8827-449726191ba8",
+        "name": "reports",
+        "fact": "Booking.com reports five general AI attitude cohorts.",
+        "fact_type": "reports",
+        "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "target_node_uuid": "b4044291-a8a8-457e-8b75-8e4b95eda700",
+        "source_node_name": "Booking.com",
+        "target_node_name": "AI Cautious",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:23.372315",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "cd6f49c9-567d-4b9b-afd4-1cde4cc286ce",
+        "name": "reports",
+        "fact": "Booking.com reports five general AI attitude cohorts.",
+        "fact_type": "reports",
+        "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "target_node_uuid": "6b251ace-71cc-4673-8e4b-e5c78c328573",
+        "source_node_name": "Booking.com",
+        "target_node_name": "AI Skeptics",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:24.736683",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "ec6671c6-704c-4480-a63e-9adb5f03ad2c",
+        "name": "reports",
+        "fact": "Booking.com reports five general AI attitude cohorts.",
+        "fact_type": "reports",
+        "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314",
+        "target_node_uuid": "36ab7864-5112-4f47-a522-d77617cab25a",
+        "source_node_name": "Booking.com",
+        "target_node_name": "AI Detractors",
+        "attributes": {
+          "evidence_quote": "Booking.com reports five general AI attitude cohorts",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:26.258308",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "7b090e06-7cd8-435f-aaf6-5f9c759c810c",
+        "name": "has_attitude",
+        "fact": "AI Enthusiasts have an attitude of being interested in AI possibilities.",
+        "fact_type": "has_attitude",
+        "source_node_uuid": "9bb6b07f-4e09-433c-a14d-a767fd6658f5",
+        "target_node_uuid": "9bb6b07f-4e09-433c-a14d-a767fd6658f5",
+        "source_node_name": "AI Enthusiasts",
+        "target_node_name": "AI Enthusiasts",
+        "attributes": {
+          "evidence_quote": "AI Enthusiasts are interested in AI possibilities",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:27.749916",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "55680d11-44e8-43d3-992b-362138da4427",
+        "name": "has_attitude",
+        "fact": "AI Advocates have an attitude of promoting benefits and responsible adoption.",
+        "fact_type": "has_attitude",
+        "source_node_uuid": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f",
+        "target_node_uuid": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f",
+        "source_node_name": "AI Advocates",
+        "target_node_name": "AI Advocates",
+        "attributes": {
+          "evidence_quote": "AI Advocates promote benefits and responsible adoption",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:29.193333",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "b6a52d81-7e0f-4c45-8e02-9acc1f788d88",
+        "name": "has_attitude",
+        "fact": "AI Cautious have an attitude of being wary of AI development or use.",
+        "fact_type": "has_attitude",
+        "source_node_uuid": "b4044291-a8a8-457e-8b75-8e4b95eda700",
+        "target_node_uuid": "b4044291-a8a8-457e-8b75-8e4b95eda700",
+        "source_node_name": "AI Cautious",
+        "target_node_name": "AI Cautious",
+        "attributes": {
+          "evidence_quote": "AI Cautious are wary of AI development or use",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:30.626524",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "381097f3-22e6-4b7d-9d41-703a14344157",
+        "name": "has_attitude",
+        "fact": "AI Skeptics have an attitude of expressing scepticism.",
+        "fact_type": "has_attitude",
+        "source_node_uuid": "6b251ace-71cc-4673-8e4b-e5c78c328573",
+        "target_node_uuid": "6b251ace-71cc-4673-8e4b-e5c78c328573",
+        "source_node_name": "AI Skeptics",
+        "target_node_name": "AI Skeptics",
+        "attributes": {
+          "evidence_quote": "AI Skeptics express scepticism",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:32.026384",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      },
+      {
+        "uuid": "8a7c3f82-518f-428c-9c0c-b7ca799e64c7",
+        "name": "has_attitude",
+        "fact": "AI Detractors have an attitude of resisting adoption.",
+        "fact_type": "has_attitude",
+        "source_node_uuid": "36ab7864-5112-4f47-a522-d77617cab25a",
+        "target_node_uuid": "36ab7864-5112-4f47-a522-d77617cab25a",
+        "source_node_name": "AI Detractors",
+        "target_node_name": "AI Detractors",
+        "attributes": {
+          "evidence_quote": "AI Detractors resist adoption",
+          "source_id": "GR01",
+          "provenance": "LLM extraction from a recorded research summary; inspect source"
+        },
+        "created_at": "2026-09-20T05:55:33.408362",
+        "valid_at": null,
+        "invalid_at": null,
+        "expired_at": null,
+        "episodes": []
+      }
+    ],
+    "sources": [
+      {
+        "id": "GR01",
+        "title": "Booking.com Global AI Sentiment Report",
+        "url": "https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/",
+        "published": "2025-07-23",
+        "checked": "2026-09-20",
+        "text": "Booking.com reports five general AI attitude cohorts: AI Enthusiasts are interested in AI possibilities; AI Advocates promote benefits and responsible adoption; AI Cautious are wary of AI development or use; AI Skeptics express scepticism; AI Detractors resist adoption. Its online survey covered 37,325 respondents in 33 markets in April and May 2025. These are aggregate general-AI attitudes, not travel-product purchasing segments. The report identifies travel tasks including destination research, local activities, restaurant suggestions, translation and transport navigation. It also describes widespread verification of AI output and limited comfort with autonomous decisions. Neither the cohorts nor task interest establish willingness to pay for this assistant."
+      },
+      {
+        "id": "GR02",
+        "title": "Expedia Group AI Trust Gap",
+        "url": "https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Reveals-The-AI-Trust-Gap-Travelers-Embrace-AI-for-Planning-but-Rely-on-Trusted-Brands-to-Book/",
+        "published": "2026-04-14",
+        "checked": "2026-09-20",
+        "text": "Expedia Group reports a gap between AI-assisted travel planning and trust in booking. YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026. Reported uses include travel suggestions, price monitoring and itinerary building. Search engines and online travel agencies remain common planning alternatives. The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions. Trusted travel brands are preferred by many respondents for booking. This industry-commissioned survey describes stated attitudes; it does not establish demand for a paid standalone travel assistant."
+      }
+    ],
+    "seeds": [
+      {
+        "entity_id": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f",
+        "name": "AI Advocates",
+        "persona": "Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations.",
+        "bio": "Promotes AI benefits while emphasizing responsible adoption practices. Values thoughtful integration of artificial intelligence technologies.",
+        "related_edges": [
+          {
+            "direction": "incoming",
+            "edge_name": "reports",
+            "fact": "Booking.com reports five general AI attitude cohorts.",
+            "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314"
+          },
+          {
+            "direction": "outgoing",
+            "edge_name": "has_attitude",
+            "fact": "AI Advocates have an attitude of promoting benefits and responsible adoption.",
+            "target_node_uuid": "2f17a861-5f73-4c3e-bdea-b84eee2c3a9f"
+          }
+        ],
+        "source_id": "GR01"
+      },
+      {
+        "entity_id": "b4044291-a8a8-457e-8b75-8e4b95eda700",
+        "name": "AI Cautious",
+        "persona": "Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods.",
+        "bio": "Experiences uncertainty about AI's role in travel planning and decision-making. Approaches AI-powered travel tools with caution, preferring human oversight in booking and itinerary decisions.",
+        "related_edges": [
+          {
+            "direction": "incoming",
+            "edge_name": "reports",
+            "fact": "Booking.com reports five general AI attitude cohorts.",
+            "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314"
+          },
+          {
+            "direction": "outgoing",
+            "edge_name": "has_attitude",
+            "fact": "AI Cautious have an attitude of being wary of AI development or use.",
+            "target_node_uuid": "b4044291-a8a8-457e-8b75-8e4b95eda700"
+          }
+        ],
+        "source_id": "GR01"
+      },
+      {
+        "entity_id": "36ab7864-5112-4f47-a522-d77617cab25a",
+        "name": "AI Detractors",
+        "persona": "Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations.",
+        "bio": "Resists adopting AI technologies, preferring traditional methods and human-centered approaches to travel planning and decision-making.",
+        "related_edges": [
+          {
+            "direction": "incoming",
+            "edge_name": "reports",
+            "fact": "Booking.com reports five general AI attitude cohorts.",
+            "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314"
+          },
+          {
+            "direction": "outgoing",
+            "edge_name": "has_attitude",
+            "fact": "AI Detractors have an attitude of resisting adoption.",
+            "target_node_uuid": "36ab7864-5112-4f47-a522-d77617cab25a"
+          }
+        ],
+        "source_id": "GR01"
+      },
+      {
+        "entity_id": "9bb6b07f-4e09-433c-a14d-a767fd6658f5",
+        "name": "AI Enthusiasts",
+        "persona": "An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments.",
+        "bio": "Curious about artificial intelligence's potential, I explore how AI might shape future experiences and opportunities. My interest lies in understanding AI possibilities rather than specific applications.",
+        "related_edges": [
+          {
+            "direction": "incoming",
+            "edge_name": "reports",
+            "fact": "Booking.com reports five general AI attitude cohorts.",
+            "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314"
+          },
+          {
+            "direction": "outgoing",
+            "edge_name": "has_attitude",
+            "fact": "AI Enthusiasts have an attitude of being interested in AI possibilities.",
+            "target_node_uuid": "9bb6b07f-4e09-433c-a14d-a767fd6658f5"
+          }
+        ],
+        "source_id": "GR01"
+      },
+      {
+        "entity_id": "6b251ace-71cc-4673-8e4b-e5c78c328573",
+        "name": "AI Skeptics",
+        "persona": "Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies.",
+        "bio": "Experiences uncertainty about AI's role in travel planning, questioning its reliability and impact on decision-making processes.",
+        "related_edges": [
+          {
+            "direction": "incoming",
+            "edge_name": "reports",
+            "fact": "Booking.com reports five general AI attitude cohorts.",
+            "source_node_uuid": "702d6158-e5d1-42f9-82f7-2df30225d314"
+          },
+          {
+            "direction": "outgoing",
+            "edge_name": "has_attitude",
+            "fact": "AI Skeptics have an attitude of expressing scepticism.",
+            "target_node_uuid": "6b251ace-71cc-4673-8e4b-e5c78c328573"
+          }
+        ],
+        "source_id": "GR01"
+      }
+    ],
+    "allocation": "5 graph-derived attitude cohorts \u00d7 5 travel parties \u00d7 5 trip frequencies \u00d7 4 alternatives \u00d7 2 planning-effort scenarios. All allocations are assumptions.",
+    "provenance": "MiroFish-local GraphBuilderService / LocalGraphExtractor / LocalGraphStore / EntityReader / OasisProfileGenerator"
+  },
+  "audience_version": 1,
+  "parent_id": null,
+  "evidence_version": "travel-v2-priced-pilot",
+  "feedback": [],
+  "changes": [],
+  "id": "0fa0698461e24616",
+  "requested": 20,
+  "created_at": "2026-09-19T22:24:31.127985+00:00",
+  "input_sha256": "26c9ec70dd0a8b72ea645993172e4766b26e48203ef34c728a7b1547fc0e33ac",
+  "status": "completed",
+  "responses": [
+    {
+      "profile_id": "G0003",
+      "label": "AI Detractors / with a partner",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools; prefer personal control\",\n  \"valuable_feature\": \"Trip organization and preference combining\",\n  \"objection\": \"No demonstrated benefits vs. existing workflow\",\n  \"next_test\": \"Compare trip planning time with free tools vs. AI assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently spend 2 hours per trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools; prefer personal control",
+        "valuable_feature": "Trip organization and preference combining",
+        "objection": "No demonstrated benefits vs. existing workflow",
+        "next_test": "Compare trip planning time with free tools vs. AI assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently spend 2 hours per trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:27:04.365087"
+    },
+    {
+      "profile_id": "G0004",
+      "label": "AI Enthusiasts / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools suffice; no proven benefit at \u00a330/trip\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No demonstrated time savings or accuracy gains\",\n  \"next_test\": \"Test if AI assistant reduces planning hours below 2\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Currently spends 2 hours per trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools suffice; no proven benefit at \u00a330/trip",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No demonstrated time savings or accuracy gains",
+        "next_test": "Test if AI assistant reduces planning hours below 2",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 2,
+          "rationale": "Currently spends 2 hours per trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:29:25.938087"
+    },
+    {
+      "profile_id": "G0001",
+      "label": "AI Detractors / with friends",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools; prefer manual verification\",\n  \"valuable_feature\": \"Trip organization and booking details\",\n  \"objection\": \"No demonstrated benefit over existing workflow\",\n  \"next_test\": \"Test AI assistant for one trip vs. manual planning\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 8,\n    \"rationale\": \"Currently spend 2 hours per trip manually\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools; prefer manual verification",
+        "valuable_feature": "Trip organization and booking details",
+        "objection": "No demonstrated benefit over existing workflow",
+        "next_test": "Test AI assistant for one trip vs. manual planning",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 8,
+          "rationale": "Currently spend 2 hours per trip manually"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:31:42.875127"
+    },
+    {
+      "profile_id": "G0002",
+      "label": "AI Cautious / with family",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning without demonstrated benefits, prefer manual verification\",\n  \"valuable_feature\": \"Trip organization and preference combining\",\n  \"objection\": \"No autonomous purchases, unproven time savings\",\n  \"next_test\": \"Test AI assistant for one trip vs. manual planning\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Currently spend 8 hours per trip manually\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning without demonstrated benefits, prefer manual verification",
+        "valuable_feature": "Trip organization and preference combining",
+        "objection": "No autonomous purchases, unproven time savings",
+        "next_test": "Test AI assistant for one trip vs. manual planning",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 2,
+          "rationale": "Currently spend 8 hours per trip manually"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:34:02.695947"
+    },
+    {
+      "profile_id": "G0005",
+      "label": "AI Skeptics / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Prefers human judgment over AI suggestions. Existing tools suffice.\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No autonomous purchases, unproven benefits\",\n  \"next_test\": \"Test AI assistant for one trip without payment\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 1,\n    \"rationale\": \"Travels alone, uses booking sites, spends 8 hrs/trip\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Prefers human judgment over AI suggestions. Existing tools suffice.",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No autonomous purchases, unproven benefits",
+        "next_test": "Test AI assistant for one trip without payment",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 1,
+          "rationale": "Travels alone, uses booking sites, spends 8 hrs/trip"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:36:36.007887"
+    },
+    {
+      "profile_id": "G0006",
+      "label": "AI Enthusiasts / with friends",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing spreadsheet meets needs; no proven benefit\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No demonstrated time savings or accuracy gains\",\n  \"next_test\": \"Test AI assistant for one trip vs. current method\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 3,\n    \"rationale\": \"Currently spends 8 hours planning each trip with spreadsheet\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing spreadsheet meets needs; no proven benefit",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No demonstrated time savings or accuracy gains",
+        "next_test": "Test AI assistant for one trip vs. current method",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 3,
+          "rationale": "Currently spends 8 hours planning each trip with spreadsheet"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:38:49.861047"
+    },
+    {
+      "profile_id": "G0007",
+      "label": "AI Enthusiasts / with a partner",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools suffice; no proven benefit at \u00a330/trip\",\n  \"valuable_feature\": \"Trip planning assistance\",\n  \"objection\": \"No demonstrated time savings or accuracy gains\",\n  \"next_test\": \"Compare manual vs AI-assisted trip planning time\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 8,\n    \"rationale\": \"Currently spends 2 hours per trip manually\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools suffice; no proven benefit at \u00a330/trip",
+        "valuable_feature": "Trip planning assistance",
+        "objection": "No demonstrated time savings or accuracy gains",
+        "next_test": "Compare manual vs AI-assisted trip planning time",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 8,
+          "rationale": "Currently spends 2 hours per trip manually"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:41:02.716527"
+    },
+    {
+      "profile_id": "G0008",
+      "label": "AI Advocates / with colleagues",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools suffice; no proven benefit at \u00a330/trip\",\n  \"valuable_feature\": \"Itinerary building and booking org\",\n  \"objection\": \"No demonstrated time savings or value\",\n  \"next_test\": \"Test if AI assistant reduces planning hours\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 8,\n    \"rationale\": \"Currently spend 2 hrs/trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools suffice; no proven benefit at \u00a330/trip",
+        "valuable_feature": "Itinerary building and booking org",
+        "objection": "No demonstrated time savings or value",
+        "next_test": "Test if AI assistant reduces planning hours",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 8,
+          "rationale": "Currently spend 2 hrs/trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:43:17.549187"
+    },
+    {
+      "profile_id": "G0011",
+      "label": "AI Advocates / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"No demonstrated benefit at \u00a330/trip. Existing tools suffice.\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"Unproven time savings, no autonomous purchases\",\n  \"next_test\": \"Test if AI assistant reduces planning time by 30 mins/trip\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Currently spend 2 hrs/trip planning, no time savings claimed\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "No demonstrated benefit at \u00a330/trip. Existing tools suffice.",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "Unproven time savings, no autonomous purchases",
+        "next_test": "Test if AI assistant reduces planning time by 30 mins/trip",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 2,
+          "rationale": "Currently spend 2 hrs/trip planning, no time savings claimed"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:45:52.263927"
+    },
+    {
+      "profile_id": "G0010",
+      "label": "AI Cautious / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing spreadsheet workflow proven reliable, no demonstrated time savings\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"Unproven AI accuracy, no autonomous purchase capability\",\n  \"next_test\": \"Compare 8hr vs 6hr planning with assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 1,\n    \"rationale\": \"Currently spends 8 hours planning alone, uses personal spreadsheet\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing spreadsheet workflow proven reliable, no demonstrated time savings",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "Unproven AI accuracy, no autonomous purchase capability",
+        "next_test": "Compare 8hr vs 6hr planning with assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 1,
+          "rationale": "Currently spends 8 hours planning alone, uses personal spreadsheet"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:48:10.459287"
+    },
+    {
+      "profile_id": "G0012",
+      "label": "AI Detractors / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools, prefer established search engines and maps for control.\",\n  \"valuable_feature\": \"None specified in offer\",\n  \"objection\": \"No demonstrated benefits, unproven accuracy\",\n  \"next_test\": \"Test AI assistant for one trip vs. current process\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently spend 2 hours per trip planning alone\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools, prefer established search engines and maps for control.",
+        "valuable_feature": "None specified in offer",
+        "objection": "No demonstrated benefits, unproven accuracy",
+        "next_test": "Test AI assistant for one trip vs. current process",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently spend 2 hours per trip planning alone"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:50:29.171427"
+    },
+    {
+      "profile_id": "G0009",
+      "label": "AI Cautious / with friends",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning without demonstrated benefits, prefer existing tools\",\n  \"valuable_feature\": \"Trip organization and preference combining\",\n  \"objection\": \"No proven time savings or accuracy improvements\",\n  \"next_test\": \"Use assistant for one trip, track actual time spent\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Currently spend 2 hours per trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning without demonstrated benefits, prefer existing tools",
+        "valuable_feature": "Trip organization and preference combining",
+        "objection": "No proven time savings or accuracy improvements",
+        "next_test": "Use assistant for one trip, track actual time spent",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 2,
+          "rationale": "Currently spend 2 hours per trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:52:45.732807"
+    },
+    {
+      "profile_id": "G0014",
+      "label": "AI Enthusiasts / with colleagues",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools sufficient for workflow; no proven benefit\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No demonstrated time savings or accuracy improvements\",\n  \"next_test\": \"Compare manual vs AI-assisted trip planning time\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently spend 2 hours per trip manually\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools sufficient for workflow; no proven benefit",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No demonstrated time savings or accuracy improvements",
+        "next_test": "Compare manual vs AI-assisted trip planning time",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently spend 2 hours per trip manually"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:55:19.754967"
+    },
+    {
+      "profile_id": "G0015",
+      "label": "AI Skeptics / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Prefer human control over planning process\",\n  \"valuable_feature\": \"Trip organization and booking details\",\n  \"objection\": \"No autonomous purchases, unproven benefits\",\n  \"next_test\": \"Test AI assistant for 1 trip with no cost\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 3,\n    \"rationale\": \"8 hours planning each trip, existing spreadsheet\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Prefer human control over planning process",
+        "valuable_feature": "Trip organization and booking details",
+        "objection": "No autonomous purchases, unproven benefits",
+        "next_test": "Test AI assistant for 1 trip with no cost",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 3,
+          "rationale": "8 hours planning each trip, existing spreadsheet"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:57:33.193527"
+    },
+    {
+      "profile_id": "G0013",
+      "label": "AI Enthusiasts / with friends",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools sufficient for 8hr planning workflow\",\n  \"valuable_feature\": \"Trip organization and booking coordination\",\n  \"objection\": \"No demonstrated time savings vs current 8hr process\",\n  \"next_test\": \"Time trial comparing manual vs AI itinerary building\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 2,\n    \"rationale\": \"Current workflow fully functional\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools sufficient for 8hr planning workflow",
+        "valuable_feature": "Trip organization and booking coordination",
+        "objection": "No demonstrated time savings vs current 8hr process",
+        "next_test": "Time trial comparing manual vs AI itinerary building",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 2,
+          "rationale": "Current workflow fully functional"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 06:59:48.061947"
+    },
+    {
+      "profile_id": "G0016",
+      "label": "AI Detractors / with colleagues",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools; prefer verified free alternatives\",\n  \"valuable_feature\": \"Trip organization and preference combining\",\n  \"objection\": \"No demonstrated benefits vs. existing workflow\",\n  \"next_test\": \"Compare trip planning time with free tools vs. AI assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently spend 8 hours per trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools; prefer verified free alternatives",
+        "valuable_feature": "Trip organization and preference combining",
+        "objection": "No demonstrated benefits vs. existing workflow",
+        "next_test": "Compare trip planning time with free tools vs. AI assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently spend 8 hours per trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 07:02:14.517087"
+    },
+    {
+      "profile_id": "G0019",
+      "label": "AI Enthusiasts / with family",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Existing tools suffice for planning; no proven benefit\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No demonstrated time savings or accuracy improvements\",\n  \"next_test\": \"Compare trip planning time with and without AI assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently spend 2 hours per trip planning\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Existing tools suffice for planning; no proven benefit",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No demonstrated time savings or accuracy improvements",
+        "next_test": "Compare trip planning time with and without AI assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently spend 2 hours per trip planning"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 07:04:49.159047"
+    },
+    {
+      "profile_id": "G0017",
+      "label": "AI Detractors / alone",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools, prefer proven processes\",\n  \"valuable_feature\": \"None specified in offer\",\n  \"objection\": \"No demonstrated benefits, unproven value\",\n  \"next_test\": \"Test free tools for 3 trips vs paid assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 8,\n    \"rationale\": \"Cautious traveler with existing workflow\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools, prefer proven processes",
+        "valuable_feature": "None specified in offer",
+        "objection": "No demonstrated benefits, unproven value",
+        "next_test": "Test free tools for 3 trips vs paid assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 8,
+          "rationale": "Cautious traveler with existing workflow"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 07:07:19.561467"
+    },
+    {
+      "profile_id": "G0018",
+      "label": "AI Cautious / with a partner",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning without demonstrated benefits, prefer existing spreadsheet method\",\n  \"valuable_feature\": \"Trip organization and booking details\",\n  \"objection\": \"No autonomous purchases, unproven time savings\",\n  \"next_test\": \"Test AI assistant for one trip vs. current method\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 8,\n    \"rationale\": \"Current spreadsheet method takes 8 hours per trip\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning without demonstrated benefits, prefer existing spreadsheet method",
+        "valuable_feature": "Trip organization and booking details",
+        "objection": "No autonomous purchases, unproven time savings",
+        "next_test": "Test AI assistant for one trip vs. current method",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 8,
+          "rationale": "Current spreadsheet method takes 8 hours per trip"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 07:09:51.913827"
+    },
+    {
+      "profile_id": "G0020",
+      "label": "AI Detractors / with friends",
+      "raw": "{\n  \"decision\": \"free_only\",\n  \"reason\": \"Skeptical of AI planning tools; prefer personal spreadsheet control\",\n  \"valuable_feature\": \"Trip planning and booking organisation\",\n  \"objection\": \"No demonstrated benefit over existing method\",\n  \"next_test\": \"Compare 2h trip planning time with assistant\",\n  \"scenario\": {\n    \"hours_saved_per_trip\": 0,\n    \"value_per_hour_gbp\": 0,\n    \"trips_per_year\": 5,\n    \"rationale\": \"Currently use spreadsheet; no time savings claimed\"\n  }\n}",
+      "answer": {
+        "decision": "free_only",
+        "reason": "Skeptical of AI planning tools; prefer personal spreadsheet control",
+        "valuable_feature": "Trip planning and booking organisation",
+        "objection": "No demonstrated benefit over existing method",
+        "next_test": "Compare 2h trip planning time with assistant",
+        "scenario": {
+          "hours_saved_per_trip": 0,
+          "value_per_hour_gbp": 0,
+          "trips_per_year": 5,
+          "rationale": "Currently use spreadsheet; no time savings claimed"
+        }
+      },
+      "calculation": {
+        "annual_hours_saved": 0,
+        "annual_time_value_gbp": 0,
+        "formula": "hours_saved_per_trip \u00d7 trips_per_year \u00d7 value_per_hour_gbp",
+        "provenance": "Deterministic Python applied to synthetic assumptions. Not revenue or willingness to pay."
+      },
+      "timestamp": "2026-09-20 07:12:17.157807"
+    }
+  ],
+  "failed": [],
+  "excluded": [],
+  "completed": 20,
+  "elapsed_seconds": 50.4,
+  "api_spend_usd": 0,
+  "usage": {
+    "prompt_tokens": 20136,
+    "completion_tokens": 2528,
+    "calls": 20
+  },
+  "engine": "MiroFish-local IPCHandler \u2192 OASIS INTERVIEW \u2192 Ollama",
+  "scope": "Graph-informed independent synthetic interviews; no social rounds",
+  "checkpoints": [],
+  "model": "qwen3-coder:30b",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "model_config": {
+    "temperature": 0.3,
+    "max_tokens": 400,
+    "max_retries": 0
+  },
+  "runner_sha256": "684d4c924e5060eaafaa902a0db4f9d011b3b415a4538b9bd1eda8670672666b",
+  "mirofish_source_sha256": "24bf8e09b354971fc2829d8d92933f91e2982f64f78977fa39f71aa5f744f697",
+  "system_prompts": [
+    {
+      "profile_id": "G0001",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with friends, takes 8 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0002",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with family, takes 2 trips a year, currently uses ChatGPT plus manual checking. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0003",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with a partner, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0004",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels alone, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0005",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies. Travel scenario assumptions: travels alone, takes 1 trips a year, currently uses booking sites and saved lists. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0006",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with friends, takes 3 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0007",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with a partner, takes 8 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0008",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations. Travel scenario assumptions: travels with colleagues, takes 8 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0009",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with friends, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0010",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels alone, takes 1 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0011",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Advocates for balanced AI development, focusing on beneficial applications rather than risks or limitations. Travel scenario assumptions: travels alone, takes 2 trips a year, currently uses booking sites and saved lists. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0012",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels alone, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0013",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with friends, takes 2 trips a year, currently uses ChatGPT plus manual checking. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0014",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with colleagues, takes 5 trips a year, currently uses ChatGPT plus manual checking. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0015",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Maintains cautious skepticism toward AI-driven travel recommendations, preferring human judgment over algorithmic suggestions while remaining open to exploring new technologies. Travel scenario assumptions: travels alone, takes 3 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0016",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with colleagues, takes 5 trips a year, currently uses search engines and maps. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0017",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels alone, takes 8 trips a year, currently uses booking sites and saved lists. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0018",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI integration in travel experiences, seeking balanced approaches that combine technological convenience with traditional planning methods. Travel scenario assumptions: travels with a partner, takes 8 trips a year, currently uses an established personal spreadsheet. Usually spends 8 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0019",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: An AI Enthusiast interested in exploring artificial intelligence's potential applications and implications for human experiences and future developments. Travel scenario assumptions: travels with family, takes 5 trips a year, currently uses search engines and maps. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    },
+    {
+      "profile_id": "G0020",
+      "prompt": "You are one synthetic traveller in a product research interview. Respond in first person from this workflow: Cautious traveler who maintains skepticism toward AI-driven solutions, favoring established processes and personal judgment over automated recommendations. Travel scenario assumptions: travels with friends, takes 5 trips a year, currently uses an established personal spreadsheet. Usually spends 2 hours planning each trip. These are hypothetical study conditions, not sourced personal facts. Decide based on the actual offer; do not infer a purchase choice from your AI attitude alone.. Do not assume the product is useful. Consider your existing alternatives and constraints. Do not invent capabilities, prices or demographics. A conditional yes, free-only answer, or rejection are equally valid. Distinguish hypothetical assumptions from facts. Return the requested JSON without tools."
+    }
+  ],
+  "prompt": "You are responding in a synthetic research interview as the assigned traveller. Do not act as an adviser or invent market facts. Your profile does not prescribe a purchase choice. Evaluate the offer as described, not as a better imagined product.\n{\"brief\": \"An AI travel assistant that helps people plan and navigate trips.\", \"offer\": \"Build and edit an itinerary, combine travellers' preferences, organise booking details and suggest changes during the trip. Users verify recommendations and approve bookings. No autonomous purchases or human concierge are included. Price: \\u00a330 per trip, paid by this traveller. No free trial. Existing free tools remain available. Product benefits have not been demonstrated.\", \"question\": \"For your next trip, choose between this paid assistant, continuing with your existing free tools, or neither. Explain the trade-off using only your stated workflow. Do not assume unproven time savings, accuracy or capabilities.\", \"evidence\": [{\"id\": \"GR01\", \"title\": \"Booking.com Global AI Sentiment Report\", \"url\": \"https://news.booking.com/bookingcom-releases-the-global-ai-sentiment-report/\", \"observation\": \"Booking.com reports five general AI attitude cohorts: AI Enthusiasts are interested in AI possibilities; AI Advocates promote benefits and responsible adoption; AI Cautious are wary of AI development or use; AI Skeptics express scepticism; AI Detractors resist adoption. Its online survey covered 37,325 respondents in 33 markets in April and May 2025. These are aggregate general-AI attitudes, not travel-product purchasing segments. The report identifies travel tasks including destination research, local activities, restaurant suggestions, translation and transport navigation. It also describes widespread verification of AI output and limited comfort with autonomous decisions. Neither the cohorts nor task interest establish willingness to pay for this assistant.\", \"limit\": \"Aggregate published research; no paid-demand evidence\", \"checked\": \"2026-09-20\"}, {\"id\": \"GR02\", \"title\": \"Expedia Group AI Trust Gap\", \"url\": \"https://ir.expediagroup.com/news-and-events/news/news-details/2026/Expedia-Group-Reveals-The-AI-Trust-Gap-Travelers-Embrace-AI-for-Planning-but-Rely-on-Trusted-Brands-to-Book/\", \"observation\": \"Expedia Group reports a gap between AI-assisted travel planning and trust in booking. YouGov surveyed more than 5,700 adults in the US, UK and India during March 2026. Reported uses include travel suggestions, price monitoring and itinerary building. Search engines and online travel agencies remain common planning alternatives. The report highlights control, payment-data privacy, misuse of personal data and customer support as concerns about AI transactions. Trusted travel brands are preferred by many respondents for booking. This industry-commissioned survey describes stated attitudes; it does not establish demand for a paid standalone travel assistant.\", \"limit\": \"Aggregate published research; no paid-demand evidence\", \"checked\": \"2026-09-20\"}]}\nA price is stated in the offer. consider_paying means hypothetically choosing the paid offer at that exact price; free_only means keeping existing free tools; decline means neither. Never infer a budget or willingness to pay from missing information. If the paid benefit is unproven, explain that uncertainty. This is not an actual purchase. Return only JSON with decision (consider_paying, free_only or decline), reason, valuable_feature, objection, next_test, and scenario {hours_saved_per_trip, value_per_hour_gbp, trips_per_year, rationale}. The scenario numbers are your explicit hypothetical assumptions, not measured facts or willingness to pay. Use zero if no time saving. next_test must describe a concrete real-world experiment, not a source ID. Check that numerical assumptions are internally consistent with their rationale. Keep each string under 15 words. Include a profile-specific constraint in the reason; do not claim features absent from the offer.",
+  "not_attempted": 0,
+  "counts": {
+    "consider_paying": 0,
+    "free_only": 20,
+    "decline": 0
+  }
+}

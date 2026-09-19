@@ -16,6 +16,8 @@ from contracts import audiences_record, brief_record, clean_text, fingerprint
 from quant_adapter import LABELS, WEIGHTS, assess
 from research import research, classify
 from assessment import build_report, compare
+import travel_service
+import showcase_service
 
 ROOT = Path(__file__).resolve().parent
 STATIC = ROOT / 'static'
@@ -40,6 +42,8 @@ def load(kind, key):
 def dispatch(path, data):
     if not isinstance(data, dict):
         raise ValueError('Request must be a JSON object')
+    if path.startswith('/api/travel/'):
+        return travel_service.dispatch(path, data)
     if path == '/api/save':
         report = load('reports', data.get('report_id'))
         saved = deepcopy(report)
@@ -150,6 +154,12 @@ class Handler(BaseHTTPRequestHandler):
         if not self.allowed_host():
             return self.send(403, {'error': 'Localhost access only'})
         path = urlsplit(self.path).path
+        if path == '/api/showcase':
+            from urllib.parse import parse_qs
+            query = parse_qs(urlsplit(self.path).query).get('q', ['travel planning itinerary control privacy'])[0][:500]
+            return self.send(200, showcase_service.study(query))
+        if path == '/api/travel':
+            return self.send(200, travel_service.index())
         if path == '/api/demo':
             return self.send(200, json.loads((ROOT / 'demo.json').read_text()))
         if path == '/api/saved':
@@ -165,8 +175,10 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/status':
             return self.send(200, {'token': TOKEN, 'mode': 'No paid APIs', 'llm': False, 'search': False,
                 'mirofish': False, 'factors': [{'key': k, 'label': LABELS[k], 'weight': v} for k, v in WEIGHTS.items()]})
-        routes = {'/': ('index.html', 'text/html; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
+        routes = {'/': ('showcase.html', 'text/html; charset=utf-8'), '/lab': ('travel.html', 'text/html; charset=utf-8'), '/showcase.js': ('showcase.js', 'text/javascript; charset=utf-8'), '/showcase.css': ('showcase.css', 'text/css; charset=utf-8'), '/legacy': ('index.html', 'text/html; charset=utf-8'), '/travel.js': ('travel.js', 'text/javascript; charset=utf-8'), '/travel.css': ('travel.css', 'text/css; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
                   '/style.css': ('style.css', 'text/css; charset=utf-8')}
+        if path in ('/fonts/SpaceGrotesk.ttf', '/fonts/SpaceMono-Regular.ttf'):
+            return self.send(200, (STATIC / path.lstrip('/')).read_bytes(), 'font/ttf')
         if path == '/logo.svg':
             return self.send(200, (ROOT.parents[1] / 'brand/logo.svg').read_bytes(), 'image/svg+xml')
         if path not in routes:

@@ -8,3 +8,6 @@ venv/
 *.xlsx
 .idea/
 .vscode/
+
+# Local simulation logs
+/log/

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/jasoncheng/.codex/worktrees/059c/general-learning-hack/docs/architecture/current-build.json",
+  "output": "/Users/jasoncheng/.codex/worktrees/059c/general-learning-hack/docs/architecture/current-build.html",
+  "specification": {
+    "sha256": "62e0c2dc6cb7d5ea462b97ca9c00e8bed593cc070eaba8b9a719f0a519bab512",
+    "bytes": 4202
+  },
+  "artifact": {
+    "sha256": "44cb8306c4427235ad2218c389b18364d56167fbaa8fdca2d7a0ad939ade9e46",
+    "bytes": 808709
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  }
+}

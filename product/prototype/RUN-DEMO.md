@@ -28,16 +28,17 @@ http://127.0.0.1:8765/
 
 `127.0.0.1` points to your own computer. Jason's local server is not a public deployment; each teammate runs their own copy.
 
-## Walk through the example
+## Walk through Hindsight
 
-1. Click **Start guided demo**. Review the prewritten voice-note brief and click **Confirm brief & inspect sources**.
-2. Open **Inspect sources and research gaps**. These are real recorded vendor excerpts, not fresh research. Review the three audience hypotheses.
-3. Open **Add explicit quant inputs**, then click **Use illustrative demo assumptions**. This explicitly fills eight sample inputs with 0.50. Click **Confirm audiences & run assessment**.
-4. The real deterministic calculation returns **0.500**. Evidence coverage stays **0/8**, and the commercial outlook stays **insufficient evidence**: these sample inputs do not establish demand.
-5. Open **Compare**, click **Load the demo comparison**, then **Compare with baseline**. Switching ease changes from 0.50 to 0.90; the index becomes **0.540**, a **+0.040** change. This is model sensitivity, not a success-probability increase.
-6. Click **Save comparison** to retain both runs locally. Reload and choose the saved assessment to replay them. **Export JSON** downloads a portable copy.
+1. Open the root page to see **Learn from the future. Shape the present.**
+2. Review the five travel buying situations and the cited competitor context.
+3. Compare the basic itinerary with the proposed trip-readiness pack. Change price and audience to inspect the commercial scenarios.
+4. Open the RAG explorer: search saved research and select a source, passage, profile, prompt or staged-answer node.
+5. Inspect assumptions and export the illustrative dataset. The 1,000 profiles and price-response assumptions are fictional, not measured customer demand.
 
-The six stress tests are authored rules, not LLM or MiroFish agents. Custom ideas currently support note-taking and personal productivity only. Their live mode fetches a limited catalogue of vendor pages; it needs an internet connection. Unsupported categories show an explanation instead of a generic empty report.
+The presentation needs no model. Retrieval over bundled summaries and chart calculations run locally. Generation is staged. Real recorded MiroFish pilots are at `/lab`; install the optional engine using [RUN-MIROFISH.md](RUN-MIROFISH.md) only to run new interviews. The earlier guided scorecard remains at `/legacy`.
+
+See [SHOWCASE-DEMO.md](SHOWCASE-DEMO.md) for the presentation method and latest revisions.
 
 ## If you already cloned the repository
 

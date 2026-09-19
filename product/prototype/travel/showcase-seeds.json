@@ -1,0 +1,245 @@
+{
+  "id": "travel-showcase-v1",
+  "mode": "illustrative",
+  "title": "An AI travel assistant",
+  "offer": "A shared itinerary, organised booking details and useful alternatives when plans change. You stay in control of every booking.",
+  "sample_size": 20,
+  "price_unit": "GBP per trip",
+  "segments": [
+    {
+      "name": "Group organisers",
+      "description": "Turning everyone\u2019s preferences into one shared plan."
+    },
+    {
+      "name": "Family planners",
+      "description": "Fitting travel around the people who need the most care."
+    },
+    {
+      "name": "Frequent explorers",
+      "description": "Finding worthwhile places without spending evenings researching."
+    },
+    {
+      "name": "Budget travellers",
+      "description": "Keeping the trip affordable, including the planning."
+    },
+    {
+      "name": "Work-trip extenders",
+      "description": "Making a spare evening or extra day count."
+    }
+  ],
+  "respondents": [
+    {
+      "id": "D01",
+      "segment": "Group organisers",
+      "label": "Group organiser 1",
+      "max_gbp_per_trip": 5,
+      "quote": "I would pay to stop rebuilding the itinerary after every group-chat message.",
+      "benefit": "Coordination",
+      "objection": "Our group already uses a shared document.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D02",
+      "segment": "Group organisers",
+      "label": "Group organiser 2",
+      "max_gbp_per_trip": 10,
+      "quote": "The shared plan matters more to me than another list of places.",
+      "benefit": "Coordination",
+      "objection": "Our group already uses a shared document.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D03",
+      "segment": "Group organisers",
+      "label": "Group organiser 3",
+      "max_gbp_per_trip": 15,
+      "quote": "It needs to handle competing budgets without making everyone sign up.",
+      "benefit": "Coordination",
+      "objection": "Our group already uses a shared document.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D04",
+      "segment": "Group organisers",
+      "label": "Group organiser 4",
+      "max_gbp_per_trip": 20,
+      "quote": "A useful assistant would keep the whole group looking at the same plan.",
+      "benefit": "Coordination",
+      "objection": "Our group already uses a shared document.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D05",
+      "segment": "Family planners",
+      "label": "Family planner 1",
+      "max_gbp_per_trip": 10,
+      "quote": "Getting meal stops and rest breaks right is worth paying for.",
+      "benefit": "Practical itineraries",
+      "objection": "I still need to check accessibility and opening hours.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D06",
+      "segment": "Family planners",
+      "label": "Family planner 2",
+      "max_gbp_per_trip": 15,
+      "quote": "I want one plan that works for children and grandparents.",
+      "benefit": "Practical itineraries",
+      "objection": "I still need to check accessibility and opening hours.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D07",
+      "segment": "Family planners",
+      "label": "Family planner 3",
+      "max_gbp_per_trip": 20,
+      "quote": "An itinerary is useful only if it survives a late start.",
+      "benefit": "Practical itineraries",
+      "objection": "I still need to check accessibility and opening hours.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D08",
+      "segment": "Family planners",
+      "label": "Family planner 4",
+      "max_gbp_per_trip": 25,
+      "quote": "Fewer tabs and a realistic daily pace would make a difference.",
+      "benefit": "Practical itineraries",
+      "objection": "I still need to check accessibility and opening hours.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D09",
+      "segment": "Frequent explorers",
+      "label": "Frequent explorer 1",
+      "max_gbp_per_trip": 0,
+      "quote": "I enjoy researching. Give me something my saved map cannot.",
+      "benefit": "In-trip alternatives",
+      "objection": "Recommendations can feel generic.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D10",
+      "segment": "Frequent explorers",
+      "label": "Frequent explorer 2",
+      "max_gbp_per_trip": 5,
+      "quote": "I would pay a little for changes that actually fit my preferences.",
+      "benefit": "In-trip alternatives",
+      "objection": "Recommendations can feel generic.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D11",
+      "segment": "Frequent explorers",
+      "label": "Frequent explorer 3",
+      "max_gbp_per_trip": 10,
+      "quote": "Good local alternatives would save me time when plans change.",
+      "benefit": "In-trip alternatives",
+      "objection": "Recommendations can feel generic.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D12",
+      "segment": "Frequent explorers",
+      "label": "Frequent explorer 4",
+      "max_gbp_per_trip": 15,
+      "quote": "I need a clear improvement over the free tools I already use.",
+      "benefit": "In-trip alternatives",
+      "objection": "Recommendations can feel generic.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D13",
+      "segment": "Budget travellers",
+      "label": "Budget traveller 1",
+      "max_gbp_per_trip": 0,
+      "quote": "That money is another meal on the trip. I would use free maps.",
+      "benefit": "Budget control",
+      "objection": "The subscription would compete with my travel budget.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D14",
+      "segment": "Budget travellers",
+      "label": "Budget traveller 2",
+      "max_gbp_per_trip": 0,
+      "quote": "My friends and free tools already give me enough ideas.",
+      "benefit": "Budget control",
+      "objection": "The subscription would compete with my travel budget.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D15",
+      "segment": "Budget travellers",
+      "label": "Budget traveller 3",
+      "max_gbp_per_trip": 5,
+      "quote": "A small one-off fee could work if the plan fits my budget.",
+      "benefit": "Budget control",
+      "objection": "The subscription would compete with my travel budget.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D16",
+      "segment": "Budget travellers",
+      "label": "Budget traveller 4",
+      "max_gbp_per_trip": 10,
+      "quote": "I would try it for a complicated trip, not every weekend away.",
+      "benefit": "Budget control",
+      "objection": "The subscription would compete with my travel budget.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D17",
+      "segment": "Work-trip extenders",
+      "label": "Work-trip extender 1",
+      "max_gbp_per_trip": 0,
+      "quote": "My work booking tool already handles the essentials.",
+      "benefit": "Time-aware suggestions",
+      "objection": "I cannot share employer booking details.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D18",
+      "segment": "Work-trip extenders",
+      "label": "Work-trip extender 2",
+      "max_gbp_per_trip": 5,
+      "quote": "I only need help with the few hours outside meetings.",
+      "benefit": "Time-aware suggestions",
+      "objection": "I cannot share employer booking details.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D19",
+      "segment": "Work-trip extenders",
+      "label": "Work-trip extender 3",
+      "max_gbp_per_trip": 10,
+      "quote": "I would pay for a compact plan near my hotel.",
+      "benefit": "Time-aware suggestions",
+      "objection": "I cannot share employer booking details.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    },
+    {
+      "id": "D20",
+      "segment": "Work-trip extenders",
+      "label": "Work-trip extender 4",
+      "max_gbp_per_trip": 15,
+      "quote": "A good free afternoon is worth a small one-off fee.",
+      "benefit": "Time-aware suggestions",
+      "objection": "I cannot share employer booking details.",
+      "provenance": "Manually authored illustrative fixture; not a model output or customer observation"
+    }
+  ],
+  "method": {
+    "data": "20 manually authored traveller scenarios. Maximum prices and quotes are fictional. They are not extracted from research or generated by MiroFish.",
+    "decision_rule": "Illustrative paid choice if max_gbp_per_trip >= selected price. Otherwise keep free tools.",
+    "retrieval": "Actual lexical retrieval over saved, curated public research summaries. Not a live web search or vector database.",
+    "rag": "Retrieval is implemented; generation in this presentation is replaced by authored fixtures. The separate lab implements actual MiroFish/OASIS/Ollama interviews.",
+    "stack": [
+      "HTML / CSS / JavaScript",
+      "Python HTTP server",
+      "Local JSON fixtures + deterministic calculations",
+      "Keyword retrieval over saved research",
+      "Separate lab: MiroFish-local / OASIS / Ollama / SQLite"
+    ]
+  }
+}

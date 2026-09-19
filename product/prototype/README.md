@@ -1,3 +1,9 @@
+# General Learning prototype
+
+The main page is now the **AI travel assistant study**, connected to a local MiroFish interview engine. See [RUN-MIROFISH.md](RUN-MIROFISH.md) for replay, live runs, teammate installation and evidence limits. Both Space Grotesk and Space Mono are bundled locally.
+
+The documentation below describes the **earlier fallback**, now available at `/legacy`.
+
 # Local launch-assessment prototype
 
 A zero-dependency Python/browser implementation of the founder flow. This is a working **fallback prototype**, not the completed LLM/MiroFish research system.
@@ -20,7 +26,7 @@ Open:
 http://127.0.0.1:8765
 ```
 
-The server binds only to loopback. It serves its own assets and the existing brand logo; fonts fall back to the system stack as specified by the brand guide. No external frontend dependencies, database, auth service or billing.
+The server binds only to loopback. It serves its own assets and the existing brand logo; Space Grotesk and Space Mono fonts are served locally. No external frontend dependencies, database, auth service or billing.
 
 ## Guided demo
 

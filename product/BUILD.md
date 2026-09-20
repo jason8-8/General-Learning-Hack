@@ -1,3 +1,5 @@
+> **Current-state notice, 20 September 2026:** This document contains historical plans. [Current product contract](CURRENT.md) takes precedence for implementation and demo claims.
+
 # Build plan: consumer SaaS launch assessment
 
 Status: travel direction implemented by Jason on 20 September 2026. **Verified in-repo:** local MiroFish/Ollama runs at 6 responses ([TRAVEL-VERIFICATION.md](prototype/TRAVEL-VERIFICATION.md)) and 20+20 responses ([PILOT-RESULTS.md](prototype/PILOT-RESULTS.md)), plus an illustrative authored presentation at `/` with no model calls. **Not verified:** completion of the full-size 1,000-profile run — do not state a 1,000-person figure on camera unless a completed run is on screen. The broader target below remains a roadmap; earlier time estimates are historical.

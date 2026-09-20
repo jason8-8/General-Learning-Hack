@@ -1,49 +1,56 @@
-> **Scope update, 20 September 2026:** The product assessed on screen is an **AI travel assistant**, not the earlier voice-notes example. Beats updated below to match the recorded demo. See [../product/BUILD.md](../product/BUILD.md) and the [video script](video.md).
+# Live pitch: 90 seconds
 
-# Live pitch — 90 seconds
+Updated 20 September 2026. Rehearse with the actual interface; timing is a target until spoken aloud.
 
-Two slides. 20 seconds of slides, 70 seconds of talking over the product if a screen is up. If there is no screen, say the same beats.
+## Slide 1: 0–8 seconds
 
-## Slide 1 — 0–10s
+```text
+Hindsight
+Test the assumption before you build the idea.
 
-```
-Enter an idea. Assess its commercial potential.
-
-Founders and VCs: buyers, alternatives, adoption — then test one assumption.
-```
-
-Spoken:
-
-```
-We type in one idea — an AI travel assistant — and a price.
-Then we inspect the evidence and watch what happens when we change one assumption.
+Learn from the future. Shape the present.
 ```
 
-## Middle — 10–80s
+## Spoken script
 
-Do not narrate architecture. Point at:
+```text
+Before you spend a month building, which assumption would you test first?
 
-1. The travel audience groups, with their sources.
-2. A split of reactions — not an average.
-3. The price move (£10 → £15) and how the counts change.
-4. One number from the scorecard if useful (`P(adopt)`), labelled as a heuristic.
+This is Hindsight. We’re testing an AI travel assistant. The obvious question is what people might pay. The harder question is why they’d leave their free tools.
 
-Say which route is on screen. If it is `/`, call it an illustrative authored sample; only `/lab` output is engine-generated.
+Here’s the competitor evidence. Here’s our proposed offer. And here are the assumptions behind this scenario.
 
-## Slide 2 — 80–90s
+I freeze the baseline, then change the price. The original stays visible. These numbers show what our assumptions imply. They aren’t customer demand.
 
-```
-What changed. What to test next.
+We also ran a real model pilot: the same twenty synthetic travellers at ten and thirty pounds per trip. All chose free tools at both prices. That doesn’t prove customers won’t pay. It tells us this pilot hasn’t distinguished the two prices.
 
-Observed change: [from the recorded run]
-Next test: [one real interview or price experiment]
-```
+So we leave with a better question: will a traveller with a complicated trip choose a concrete readiness check over the free tools they already use?
 
-Spoken:
+We save that test alongside the evidence and the decision rule, before collecting answers.
 
-```
-The value is seeing which assumption moves the assessment,
-why it moves, and what we should test with real people next.
+Hindsight helps founders decide what to test next, and keep a record of why.
+
+Learn from the future. Shape the present.
 ```
 
-Do not close on an accuracy percentage or a promise of startup success.
+## On-screen sequence
+
+| Time | Action |
+| --- | --- |
+| 0–8s | Title and one sentence |
+| 8–25s | Proposed travel offer and competitor evidence |
+| 25–43s | Freeze readiness £10 baseline; change only price to £15; show comparison |
+| 43–61s | Actual recorded 20-profile pilots and uniform outcomes |
+| 61–80s | Next-test note and export; no real customer claim |
+| 80–90s | Closing slide |
+
+## Slide 2
+
+```text
+One decision. A visible reason. A real next test.
+
+Next: show a priced readiness check beside existing free tools.
+Record traveller choices before revising the audience.
+```
+
+The presentation's readiness offer differs from the pilot's offer. Do not attribute differences between those surfaces to a feature change. The 1,000 rows remain labelled authored scenarios. Keep the example focused; skip the graph tour.

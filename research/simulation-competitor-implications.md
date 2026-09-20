@@ -2,7 +2,7 @@ Approved later amendment: fixed six-agent scope and mandatory pricing comparison
 
 # Simulation competitors and build implications
 
-Historical scope note: the internship example below was subsequently replaced by the AI travel assistant; see [current research](ai-travel-assistant.md) and [storyboard](../product/DEMO-STORYBOARD.md). Methodological recommendations remain relevant.
+Historical scope note: the internship example below was subsequently replaced by the AI travel assistant; see [current research](ai-travel-assistant.md) and [storyboard](../pitch/video.md). Methodological recommendations remain relevant.
 
 Updated 20 September 2026. Research/plan update only; implementation remains paused. Incorporates the GL video-plan task's handoff and the latest decisions in this build task.
 

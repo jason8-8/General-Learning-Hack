@@ -1,9 +1,10 @@
 # Discussion
 
-Working record. Not the pitch. Not the product.
+Historical working record, not current implementation claims. Start with [current decisions](../research/decisions.md).
 
 | File | What it is |
 | --- | --- |
-| [2026-09-19-judging.md](2026-09-19-judging.md) | Round 2 format |
-| [2026-09-19-segments.md](2026-09-19-segments.md) | Why two segments |
-| [2026-09-19-weights.md](2026-09-19-weights.md) | Why the placeholders moved |
+| [2026-09-19-intro.md](2026-09-19-intro.md) | Event introduction and brief |
+| [2026-09-19-Idea.md](2026-09-19-Idea.md) | Early idea discussion |
+| [2026-09-19-segments.md](2026-09-19-segments.md) | Earlier audience framing |
+| [consumer-saas-team-update.md](consumer-saas-team-update.md) | Consumer SaaS direction at that stage |

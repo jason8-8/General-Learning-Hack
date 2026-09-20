@@ -1,15 +1,16 @@
 # Run the guided demo on your computer
 
-> **Superseded — this is the legacy note-taking fallback**, now served at `/legacy`. The current demo product is the AI travel assistant: use [RUN-MIROFISH.md](RUN-MIROFISH.md) for the real engine at `/lab`, and [SHOWCASE-DEMO.md](SHOWCASE-DEMO.md) for the illustrative presentation at `/`. The instructions below still work, but they start the earlier voice-notes flow — do not record it as the current product.
-
 You need Git, Python 3.9 or newer, and a web browser. No API key, Node.js, pip install or paid account is required. The guided example works offline after cloning because its source excerpts are bundled and visibly dated.
 
 ## Fresh checkout
 
+These instructions run the published presentation at `/`. The optional model engine is separate at `/lab`; no model installation is required for this walkthrough.
+
+
 macOS / Linux:
 
 ```bash
-git clone --branch main https://github.com/jason8-8/General-Learning-Hack.git
+git clone https://github.com/jason8-8/General-Learning-Hack.git
 cd General-Learning-Hack
 python3 product/prototype/server.py --port 8765
 ```
@@ -17,7 +18,7 @@ python3 product/prototype/server.py --port 8765
 Windows PowerShell:
 
 ```powershell
-git clone --branch main https://github.com/jason8-8/General-Learning-Hack.git
+git clone https://github.com/jason8-8/General-Learning-Hack.git
 cd General-Learning-Hack
 py -3 product/prototype/server.py --port 8765
 ```
@@ -73,7 +74,7 @@ Windows PowerShell:
 py -3 -m unittest discover -s product/prototype/tests -v
 ```
 
-Expected: 20 tests pass. They cover missing inputs, citations, numerical behaviour, confirmation gates, recorded-demo network isolation, category matching and saved comparison replay. These tests do not need a server, API key or network.
+The suite includes the original 34 Python regression tests plus audit checks. See AUDIT-VERIFICATION.md for the current verified result. They cover missing inputs, citations, numerical behaviour, confirmation gates, recorded-demo network isolation, category matching and saved comparison replay. These tests do not need a server, API key or network.
 
 ## Common problems
 

@@ -1,3 +1,5 @@
+> **Audit update, 20 September 2026:** Use [video.md](video.md) for the revised, capability-matched narration and [slides.md](slides.md) for the live pitch. The approved opening assets below are unchanged. Existing CapCut cues still require replacement and timing; no final video or voice track was produced by this audit. The working prototype is now also present in this checkout, and its actual pilot counts are shown on the main presentation. See [CURRENT.md](../product/CURRENT.md).
+
 # Demo video production handover
 
 Updated: 20 September 2026.

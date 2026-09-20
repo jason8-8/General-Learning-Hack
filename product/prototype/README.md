@@ -1,10 +1,12 @@
+> **Current entrypoint:** Run `python3 product/prototype/server.py`. `/` is the scenario/decision presentation, `/lab` contains recorded actual model runs, and `/legacy` is the older guided workflow described below. See [CURRENT.md](../CURRENT.md) and [AUDIT-VERIFICATION.md](AUDIT-VERIFICATION.md).
+
 # General Learning prototype
 
 The server now hosts three distinct routes. They are not interchangeable:
 
 | Route | What it is | Model calls |
 | --- | --- | --- |
-| `/` | **Illustrative** Hindsight travel presentation: 20 authored responses, lexical keyword search over saved research passages. [Walkthrough](SHOWCASE-DEMO.md). | None |
+| `/` | **Illustrative** Hindsight travel presentation: 1,000 authored scenario rows, lexical keyword search over saved research passages. [Walkthrough](SHOWCASE-DEMO.md). | None |
 | `/lab` | **Real** AI travel assistant study, connected to the local MiroFish interview engine. [Setup and evidence limits](RUN-MIROFISH.md). | Local Ollama |
 | `/legacy` | The **earlier note-taking fallback**, superseded. Documented below. | None |
 

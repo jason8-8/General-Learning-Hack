@@ -1,26 +1,16 @@
 # Pitch
 
-Two artifacts. Same story. Work backwards from these, not from the stack.
+**Hindsight helps founders find the assumption to test before they build.**
 
 | Artifact | Length | File |
 | --- | --- | --- |
 | Submission video | 120 seconds | [video.md](video.md) |
 | Live pitch | 90 seconds | [slides.md](slides.md) |
-| Judging rules | — | this page |
+| Judge questions | Backup | [JUDGE-QA.md](JUDGE-QA.md) |
+| Existing edit/assets | Production state | [PRODUCTION-NOTES.md](PRODUCTION-NOTES.md) |
 
-## What judges will actually see
+The brief in this repository records a 10:00 HKT deadline on Sunday 20 September 2026. Creativity and communication of value matter. We have not reconfirmed the schedule or scoring weights with organisers during this audit.
 
-They will **not** look at code. The video and the live pitch are the whole product as far as they know.
+Make the product do something while speaking: inspect evidence, freeze a baseline, change one input, export the decision. The actual pilot's lack of discrimination is an honest limitation and a reason for the next test, not evidence that the market rejects the product.
 
-- No disqualifications. Everyone does the 90-second pitch.
-- After **10:00** there may be no time left to write it. Prep both now.
-- Official deadline: Sunday 20 September 2026, **10:00 HKT**.
-
-## The claim they should be able to repeat
-
-Enter an idea. See who might buy, who blocks, and why. Change one assumption. Compare. The number is a transparent scorecard, not “the market said yes.”
-
-## Split of labour
-
-- **Video (120s):** show the product. Input → assessment → evidence → one edit → compare.
-- **Live pitch (90s):** say the claim. Two segments, distribution not an average, one P(adopt) as backup. No architecture tour.
+Do not centre the pitch on population size, a RAG architecture tour or adoption probabilities. Minds and Aaru already provide audience simulation; our demonstration needs a specific founder decision and a visible record of what could change it.

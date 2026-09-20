@@ -18,5 +18,10 @@ def retrieve(query, limit=3):
 
 def study(query='travel planning itinerary control privacy'):
     fixture = json.loads((ROOT/'travel/showcase-fixture.json').read_text())
-    return {**fixture,'retrieval':{'query':query,'method':'Sentence chunks ranked by count of shared unique keywords; deterministic lexical retrieval, no embeddings',
+    pilots = []
+    for filename in ('pilot-10.json', 'pilot-30.json'):
+        run = json.loads((ROOT/'travel'/filename).read_text())
+        pilots.append({key:run[key] for key in ('id', 'created_at', 'price_gbp_per_trip', 'requested', 'completed', 'counts', 'engine', 'model')})
+        pilots[-1].update(failed=len(run['failed']), excluded=len(run['excluded']))
+    return {**fixture,'recorded_pilots':pilots,'retrieval':{'query':query,'method':'Sentence chunks ranked by count of shared unique keywords; deterministic lexical retrieval, no embeddings',
         'chunks':retrieve(query),'generation':'Authored response fixtures. Retrieved passages are displayed as context; they did not generate these responses.'}}

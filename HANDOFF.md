@@ -1,3 +1,5 @@
+> **Current-state notice, 20 September 2026:** This document contains historical plans. [Current product contract](product/CURRENT.md) takes precedence for implementation and demo claims.
+
 > **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
 # GL Hack: handoff for Claude Code
@@ -533,7 +535,7 @@ Feel like a scorecard on a terminal that someone turned the brightness down on â
 
 ## Tokens
 
-Source: [colors.md](colors.md), [type.md](type.md). Do not invent a third green.
+Source: [colors.md](brand/colors.md), [type.md](brand/type.md). Do not invent a third green.
 
 | Role | Token | Notes |
 | --- | --- |

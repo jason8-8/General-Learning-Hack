@@ -158,6 +158,11 @@ class Handler(BaseHTTPRequestHandler):
             from urllib.parse import parse_qs
             query = parse_qs(urlsplit(self.path).query).get('q', ['travel planning itinerary control privacy'])[0][:500]
             return self.send(200, showcase_service.study(query))
+        scroll_assets = {'/scrollcraft.js': 'text/javascript; charset=utf-8', '/hindsight-scroll.js': 'text/javascript; charset=utf-8', '/scrollcraft.css': 'text/css; charset=utf-8', '/hindsight-scroll.css': 'text/css; charset=utf-8'}
+        if path in scroll_assets:
+            return self.send(200, (STATIC / path[1:]).read_bytes(), scroll_assets[path])
+        if path == '/study-math.js':
+            return self.send(200, (STATIC / 'study-math.js').read_bytes(), 'text/javascript; charset=utf-8')
         if path == '/api/travel':
             return self.send(200, travel_service.index())
         if path == '/api/demo':
@@ -175,7 +180,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/status':
             return self.send(200, {'token': TOKEN, 'mode': 'No paid APIs', 'llm': False, 'search': False,
                 'mirofish': False, 'factors': [{'key': k, 'label': LABELS[k], 'weight': v} for k, v in WEIGHTS.items()]})
-        routes = {'/': ('showcase.html', 'text/html; charset=utf-8'), '/lab': ('travel.html', 'text/html; charset=utf-8'), '/showcase.js': ('showcase.js', 'text/javascript; charset=utf-8'), '/showcase.css': ('showcase.css', 'text/css; charset=utf-8'), '/legacy': ('index.html', 'text/html; charset=utf-8'), '/travel.js': ('travel.js', 'text/javascript; charset=utf-8'), '/travel.css': ('travel.css', 'text/css; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
+        routes = {'/green-wireframe-head.png': ('green-wireframe-head.png', 'image/png'), '/': ('showcase.html', 'text/html; charset=utf-8'), '/lab': ('travel.html', 'text/html; charset=utf-8'), '/showcase.js': ('showcase.js', 'text/javascript; charset=utf-8'), '/showcase.css': ('showcase.css', 'text/css; charset=utf-8'), '/legacy': ('index.html', 'text/html; charset=utf-8'), '/travel.js': ('travel.js', 'text/javascript; charset=utf-8'), '/travel.css': ('travel.css', 'text/css; charset=utf-8'), '/app.js': ('app.js', 'text/javascript; charset=utf-8'),
                   '/style.css': ('style.css', 'text/css; charset=utf-8')}
         if path in ('/fonts/SpaceGrotesk.ttf', '/fonts/SpaceMono-Regular.ttf'):
             return self.send(200, (STATIC / path.lstrip('/')).read_bytes(), 'font/ttf')

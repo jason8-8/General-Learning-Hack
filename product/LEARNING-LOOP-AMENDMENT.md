@@ -1,3 +1,5 @@
+> **Current-state notice, 20 September 2026:** This document contains historical plans. [Current product contract](CURRENT.md) takes precedence for implementation and demo claims.
+
 # Audience learning loop: build-plan amendment
 
 > Integrated build update: the root demo is now the illustrative Hindsight travel-market presentation; real MiroFish pilots remain at `/lab`. See [current walkthrough](prototype/SHOWCASE-DEMO.md) and [market research](../research/travel-market-positioning.md). Older scale and pause references below are historical.

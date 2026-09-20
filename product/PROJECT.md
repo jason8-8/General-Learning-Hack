@@ -1,3 +1,5 @@
+> **Current-state notice, 20 September 2026:** This document contains historical plans. [Current product contract](CURRENT.md) takes precedence for implementation and demo claims.
+
 > **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [BUILD.md](BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
 # Hindsight

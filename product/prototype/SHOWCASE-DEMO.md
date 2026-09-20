@@ -1,3 +1,5 @@
+> **Current audit update:** The main page now includes frozen scenario comparison, a decision note, recorded pilot counts, and a complete offer-aware export. The audience selection also controls the buying-situation chart. Use [CURRENT.md](../CURRENT.md), [the recording script](../../pitch/video.md) and [AUDIT-VERIFICATION.md](AUDIT-VERIFICATION.md). Counts and earlier walkthroughs below are historical where superseded.
+
 # Illustrative travel study
 
 Open http://127.0.0.1:8765/ for the presentation. The real experiment UI remains at /lab. No model runs are required for this presentation.

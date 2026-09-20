@@ -1,0 +1,34 @@
+[
+  {
+    "mode": "desktop",
+    "width": 1440,
+    "height": 900,
+    "states": 48,
+    "errors": [],
+    "receiptPassed": true
+  },
+  {
+    "mode": "mobile",
+    "width": 390,
+    "height": 844,
+    "states": 48,
+    "errors": [],
+    "receiptPassed": true
+  },
+  {
+    "mode": "compact",
+    "width": 360,
+    "height": 640,
+    "states": 48,
+    "errors": [],
+    "receiptPassed": true
+  },
+  {
+    "mode": "reduced",
+    "width": 1440,
+    "height": 900,
+    "states": 48,
+    "errors": [],
+    "receiptPassed": true
+  }
+]

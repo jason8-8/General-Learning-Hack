@@ -78,6 +78,8 @@ def sigmoid(z: float) -> float:
 
 
 def price_fit(price: float, wtp: float) -> float:
+    if not math.isfinite(price) or not math.isfinite(wtp):
+        raise ValueError('price and willingness-to-pay must be finite')
     if wtp <= 0:
         return 0.0
     if price <= 0:
@@ -88,7 +90,7 @@ def price_fit(price: float, wtp: float) -> float:
     if ratio <= 1.0:
         return 1.0 - 0.45 * (ratio - 0.6) / 0.4
     if ratio <= 2.0:
-        return 0.55 * (2.0 - ratio)
+        return max(0.02, 0.55 * (2.0 - ratio))
     return 0.02
 
 

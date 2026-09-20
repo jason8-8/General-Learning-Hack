@@ -1,6 +1,6 @@
 # Build plan: consumer SaaS launch assessment
 
-Status: Jason resumed implementation on 20 September 2026. The MiroFish-local graph pipeline and 1,000-profile population are now connected; the first full-size local run is in progress. The broader target below remains a roadmap. Earlier time estimates are historical.
+Status: travel direction implemented by Jason on 20 September 2026. **Verified in-repo:** local MiroFish/Ollama runs at 6 responses ([TRAVEL-VERIFICATION.md](prototype/TRAVEL-VERIFICATION.md)) and 20+20 responses ([PILOT-RESULTS.md](prototype/PILOT-RESULTS.md)), plus an illustrative authored presentation at `/` with no model calls. **Not verified:** completion of the full-size 1,000-profile run — do not state a 1,000-person figure on camera unless a completed run is on screen. The broader target below remains a roadmap; earlier time estimates are historical.
 Updated: 20 September 2026.
 
 Supersedes HANDOFF.md, PROJECT.md, ideating 2.md, the old architecture diagram, earlier pitch drafts.
@@ -108,9 +108,9 @@ This is evidence/profile revision, not foundation-model fine-tuning or recursive
 
 ## Build sequence and ownership
 
-**Historical schedule below:** ~8 hours at Q18. These blocks are retained for team context, not the current learning-loop execution order. Re-estimate when implementation resumes.
+**Historical schedule below:** ~8 hours at Q18. That estimate is stale — the deadline is 20 September, 10:00 HKT. These blocks are retained for team context only; plan against the time actually remaining.
 
-**Current proposed priority on resumption:** review study/evidence contracts → freeze baseline/versioning → benchmark bounded simulation and scale → add compatible feedback comparison → explicit audience revision → untouched evaluation. Pricing tools are optional. No block starts while paused.
+**Current priority order:** review study/evidence contracts → freeze baseline/versioning → benchmark bounded simulation and scale → add compatible feedback comparison → explicit audience revision → untouched evaluation. Pricing tools are optional. With the deadline close, recording the working routes takes precedence over any block below.
 
 | Block | Duration | Deliverable | Owner |
 | --- | --- | --- | --- |
@@ -121,9 +121,9 @@ This is evidence/profile revision, not foundation-model fine-tuning or recursive
 | 5 | 30 min | Buffer | — |
 | 6 | 90 min | Rehearse, record 120s video, finish two slides, practise 90s pitch | Team |
 
-**Open before Block 1 ends:**
-- **Q14:** current branch/runtime, model/retrieval providers, MiroFish setup status, interface contracts — not yet documented. Note: rebuilding frontend/backend (rather than reusing the working stack) adds real risk against an 8-hour budget; worth a quick gut-check before committing the full 120 minutes in Block 2.
-- **Q15:** total spend cap, per-assessment call/token limits, wait-time target before the swarm runs — no numbers supplied yet.
+**Resolved since:**
+- **Q14:** runs on local Python (`product/prototype/server.py`) with MiroFish-local → OASIS → Ollama `qwen3-coder:30b` → SQLite. Routes: `/` illustrative presentation, `/lab` real engine, `/legacy` old fallback. Setup in [RUN-MIROFISH.md](prototype/RUN-MIROFISH.md).
+- **Q15:** no paid API spend; local model only. Measured latency ~16.7s for 6 responses and ~51s for 20. A 1,000-response run has not been benchmarked — treat its cost/latency as unknown.
 
 Reuse the Python scorer and brand assets. No accounts, billing, fine-tuning, or database required. Cache expensive steps by brief/evidence version/model version/scenario; limit retries and concurrent requests; log calls, latency, and usage.
 
@@ -163,10 +163,10 @@ Reuse the Python scorer and brand assets. No accounts, billing, fine-tuning, or 
 | Q11 | Amended: aim for 1,000 independent respondents subject to benchmarks; six smoke test; 50/250/1,000 suggested gates only. |
 | Q12 | Independent decisions only; interactions out of scope. |
 | Q13 | Labelled fallback reaction layer if the MiroFish gate fails — disclosed, never silent. |
-| Q14 | Rebuilding frontend/backend against new design (risk vs. 8h budget); stack/provider details still undocumented. |
-| Q15 | Open — spend cap, per-call limits, wait target not yet set. |
+| Q14 | Frontend/backend rebuilt against the new design; runs on local Python + MiroFish-local/Ollama (`qwen3-coder:30b`), zero paid API spend. |
+| Q15 | Resolved in practice: local Ollama only, $0 paid API spend. Measured: ~16.7s for 6 responses; ~51s for 20. |
 | Q16 | Amended: feedback comparison/audience revision is main payoff; pricing optional and numerical defects still block old controls. |
 | Q17 | No launch data on the team — predictive accuracy stays unvalidated and is stated as a limitation. |
-| Q18 | Historical ~8-hour estimate; implementation now paused. Re-estimate before resuming. |
+| Q18 | Historical ~8-hour estimate is stale. Deadline 20 September, 10:00 HKT — plan against time actually remaining. |
 
 Consumer SaaS is fixed as the route. No application build is claimed by this document — it records decisions.

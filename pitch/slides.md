@@ -1,4 +1,4 @@
-> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [../product/BUILD.md](../product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+> **Scope update, 20 September 2026:** The product assessed on screen is an **AI travel assistant**, not the earlier voice-notes example. Beats updated below to match the recorded demo. See [../product/BUILD.md](../product/BUILD.md) and the [video script](video.md).
 
 # Live pitch — 90 seconds
 
@@ -15,7 +15,7 @@ Founders and VCs: buyers, alternatives, adoption — then test one assumption.
 Spoken:
 
 ```
-We type in one idea, an audience, and a price.
+We type in one idea — an AI travel assistant — and a price.
 Then we inspect the evidence and watch what happens when we change one assumption.
 ```
 
@@ -23,9 +23,12 @@ Then we inspect the evidence and watch what happens when we change one assumptio
 
 Do not narrate architecture. Point at:
 
-1. Two named segments (buyer vs skeptic), with sources.
+1. The travel audience groups, with their sources.
 2. A split of reactions — not an average.
-3. One number from the scorecard if useful (`P(adopt)`), labelled as a heuristic.
+3. The price move (£10 → £15) and how the counts change.
+4. One number from the scorecard if useful (`P(adopt)`), labelled as a heuristic.
+
+Say which route is on screen. If it is `/`, call it an illustrative authored sample; only `/lab` output is engine-generated.
 
 ## Slide 2 — 80–90s
 

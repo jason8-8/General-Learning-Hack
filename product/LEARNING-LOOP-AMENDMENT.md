@@ -5,7 +5,7 @@
 Updated: 20 September 2026.
 Status: planning direction approved by Jason. This document records the target learning loop, not implementation completion. Implementation later resumed; see [production notes](../pitch/PRODUCTION-NOTES.md) for the latest reported pilot results. This plan does not authorise additional API spending.
 
-This supersedes conflicting example, audience-count and demo-flow statements in this checkout's BUILD.md. That file still contains voice notes and an earlier countdown; those are stale. The build task owns the newer travel plan in its own worktree and must reconcile this amendment there. No implementation or worktree synchronisation is claimed.
+This supersedes conflicting example, audience-count and demo-flow statements in earlier BUILD.md revisions. **Reconciled:** BUILD.md has since been updated to the travel direction, and the travel worktree was merged into `main` (commit `c0c8a76`). No separate worktree reconciliation remains outstanding.
 
 ## Experience
 

@@ -1,6 +1,12 @@
-> **Runnable demo:** [Run the guided demo on your computer](product/prototype/RUN-DEMO.md). Requires Python 3.9+ only; no API keys or dependency installation. The current demo uses recorded sources and explicitly labelled illustrative assumptions. [Implementation status](product/prototype/README.md). Earlier forecasting claims below are historical and do not describe the current demo.
+> **Runnable demo:** [Run the travel demo on your computer](product/prototype/RUN-MIROFISH.md). Requires Python 3.9+; the local MiroFish/Ollama engine has its own setup steps. Once the server is running, three routes are served:
+>
+> - `/` — **illustrative** Hindsight travel presentation. Authored 20-response sample, lexical search over saved research passages, **no model calls**. ([walkthrough](product/prototype/SHOWCASE-DEMO.md))
+> - `/lab` — the **real** MiroFish-local experiment UI, where actual interview runs happen. ([setup](product/prototype/RUN-MIROFISH.md))
+> - `/legacy` — the earlier note-taking fallback, superseded. ([instructions](product/prototype/RUN-DEMO.md))
+>
+> Do not present `/` output as engine or interview results. [Implementation status](product/prototype/README.md). Earlier forecasting claims below are historical and do not describe the current demo.
 
-> **Scope update, 19 September 2026:** Consumer SaaS launch assessment is the agreed direction. Read [product/BUILD.md](product/BUILD.md) for the current build plan, architecture and demo flow. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
+> **Scope update, 20 September 2026:** The assessed demo product is now an **AI travel assistant**, superseding the earlier voice-notes / note-taking example. Read [product/BUILD.md](product/BUILD.md) for the current build plan and [LEARNING-LOOP-AMENDMENT.md](product/LEARNING-LOOP-AMENDMENT.md) for the approved learning loop. The earlier brief below is historical wherever it conflicts. The old architecture.spec.json is also historical; use the layering diagram in the build plan.
 
 # Hindsight
 

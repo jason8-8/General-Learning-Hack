@@ -1,5 +1,7 @@
 # Run the guided demo on your computer
 
+> **Superseded — this is the legacy note-taking fallback**, now served at `/legacy`. The current demo product is the AI travel assistant: use [RUN-MIROFISH.md](RUN-MIROFISH.md) for the real engine at `/lab`, and [SHOWCASE-DEMO.md](SHOWCASE-DEMO.md) for the illustrative presentation at `/`. The instructions below still work, but they start the earlier voice-notes flow — do not record it as the current product.
+
 You need Git, Python 3.9 or newer, and a web browser. No API key, Node.js, pip install or paid account is required. The guided example works offline after cloning because its source excerpts are bundled and visibly dated.
 
 ## Fresh checkout

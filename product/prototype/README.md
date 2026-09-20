@@ -1,14 +1,24 @@
 # General Learning prototype
 
-The main page is now the **AI travel assistant study**, connected to a local MiroFish interview engine. See [RUN-MIROFISH.md](RUN-MIROFISH.md) for replay, live runs, teammate installation and evidence limits. Both Space Grotesk and Space Mono are bundled locally.
+The server now hosts three distinct routes. They are not interchangeable:
 
-The documentation below describes the **earlier fallback**, now available at `/legacy`.
+| Route | What it is | Model calls |
+| --- | --- | --- |
+| `/` | **Illustrative** Hindsight travel presentation: 20 authored responses, lexical keyword search over saved research passages. [Walkthrough](SHOWCASE-DEMO.md). | None |
+| `/lab` | **Real** AI travel assistant study, connected to the local MiroFish interview engine. [Setup and evidence limits](RUN-MIROFISH.md). | Local Ollama |
+| `/legacy` | The **earlier note-taking fallback**, superseded. Documented below. | None |
+
+**Do not describe `/` output as engine, interview or simulation results** — it is authored illustrative data, and the report and narration must say so. Actual runs come from `/lab`; see [TRAVEL-VERIFICATION.md](TRAVEL-VERIFICATION.md) and [PILOT-RESULTS.md](PILOT-RESULTS.md) for what has genuinely been executed.
+
+Both Space Grotesk and Space Mono are bundled locally.
+
+The documentation below describes the **earlier fallback** at `/legacy`.
 
 # Local launch-assessment prototype
 
 A zero-dependency Python/browser implementation of the founder flow. This is a working **fallback prototype**, not the completed LLM/MiroFish research system.
 
-Latest decisions take precedence over `product/BUILD.md`: note-taking and personal-productivity consumer SaaS; English; optional geography, unknown by default; founder confirmation before research; no paid API calls in this build session. The old fixed Hong Kong restriction and eight-hour statement do not apply to this implementation.
+**These decisions are historical and apply to `/legacy` only:** note-taking and personal-productivity consumer SaaS; English; optional geography, unknown by default; founder confirmation before research; no paid API calls. The current product direction is the AI travel assistant — see [BUILD.md](../BUILD.md). Nothing in this section overrides it.
 
 ## Run
 
